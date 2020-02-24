@@ -10,6 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h1>Corporation Umbrella</h1>
             <asp:Label ID="Label1" runat="server" Text="Usuario"></asp:Label>
             <asp:Label ID="Label2" runat="server" Text="Contraseña"></asp:Label>
             <asp:TextBox ID="txt_usuario" runat="server"></asp:TextBox>
