@@ -196,6 +196,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Hoja Estilos\" />
+    <Folder Include="Modelos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
