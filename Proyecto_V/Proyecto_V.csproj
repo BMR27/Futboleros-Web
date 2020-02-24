@@ -113,6 +113,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Froms\frm_entrada.aspx" />
+    <Content Include="Froms\frm_ingreso_equipos.aspx" />
     <Content Include="Froms\frm_Inicio.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="Froms\frm_entrada.aspx.designer.cs">
       <DependentUpon>frm_entrada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Froms\frm_ingreso_equipos.aspx.cs">
+      <DependentUpon>frm_ingreso_equipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Froms\frm_ingreso_equipos.aspx.designer.cs">
+      <DependentUpon>frm_ingreso_equipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Froms\frm_Inicio.aspx.cs">
       <DependentUpon>frm_Inicio.aspx</DependentUpon>
