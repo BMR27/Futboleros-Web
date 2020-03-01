@@ -12,7 +12,7 @@
 <body>
     <div class="container well contenedor">
         <div class="row">
-            <h2>Inicio Sesión</h2>
+            <h2>Inicio Sesión.</h2>
         </div>
 
         <form runat="server" class="form-horizontal">
