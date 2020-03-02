@@ -160,3 +160,5 @@ C:\Users\Bryan Mejia Ruiz\Desktop\Repositorio\Proyecto_V\bin\roslyn\VBCSCompiler
 C:\Users\Bryan Mejia Ruiz\Desktop\Repositorio\Proyecto_V\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\bin\EntityFramework.dll
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\bin\EntityFramework.xml
+C:\Users\Bryan Mejia Ruiz\Desktop\Repositorio\Proyecto_V\bin\EntityFramework.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Repositorio\Proyecto_V\bin\EntityFramework.xml

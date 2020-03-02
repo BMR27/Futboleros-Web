@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_V
+namespace Proyecto_V.Forms
 {
 
 
-    public partial class Formulario_web1
+    public partial class frm_Tabla_Acumulada
     {
     }
 }

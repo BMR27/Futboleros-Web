@@ -8,6 +8,8 @@
     <title>Proyecto Programación</title>
     <link href="css/HojaEstilos.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/dependent-dropdown/1.4.9/css/dependent-dropdown.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -24,10 +26,48 @@
               
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="frm_entrada">Inicio</a></li>
-                    <li><a href="frm_entrada.aspx">Creacion de Torneo</a></li>
-                    <li><a href="frm_entrada.aspx">Partidos</a></li>
-                    <li><a href="#">Jugadores</a></li>
-                    <li><a href="#">Reportes</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Torneos
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav" >
+                          <a class="dropdown-item"  href="frm_Creacion_Torneos.aspx">Creacion de Torneos</a><br/>
+                          <a class="dropdown-item" href="frm_Registro de Encuentros.aspx">Registro de Encuentros</a><br/>
+                          <a class="dropdown-item" href="frm_Registro de Equipos.aspx">Registro de Equipos</a><br/>
+                          <a class="dropdown-item" href="frm_Tabla de Posiciones.aspx">Tabla de Posiciones</a>
+                        </div>
+                    </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Jugadores
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="frm_Registro de Jugadores.aspx">Registro de Jugadores</a><br/>
+                          <a class="dropdown-item" href="frm_Estadisticas Jugadores.aspx">Estadisticas Jugadores</a><br/>
+                          <a class="dropdown-item" href="frm_Goleadores.aspx">Goleadores</a><br/>
+                          <a class="dropdown-item" href="frm_Asistidores.aspx">Asistidores</a>
+                        </div>
+                   </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Historial de Torneos
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="frm_Tabla Acumulada.aspx">Tabla Acumulada</a><br />
+                          <a class="dropdown-item" href="frm_Ultimos Campeones.aspx">Ultimos Campeones</a><br/>
+                          <a class="dropdown-item" href="frm_Estado del Torneo.aspx">Estado del Torneo</a>
+                        </div>
+                   </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Reportes
+                    </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Tabla de Posiciones</a><br/>
+                          <a class="dropdown-item" href="#">Tabla Goleadores Historicos</a><br/>
+                          <a class="dropdown-item" href="#">Tabla de Jugadores</a><br/>
+                        </div>
+                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cerrar Sesion</a></li>
@@ -37,22 +77,7 @@
         </nav>
 
 
-        <div class="container">
-          <div class="panel panel bottom-left" >
-              <div class="panel-body">Mantenimientos  y Registro</div>
-        <nav>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Quiénes somos</a></li>
-            <li><a href="#">Servicios</a><ul>
-                <li><a href="#">Servicio A</a></li>
-                <li><a href="#">Servicio B</a></li>
-                <li><a href="#">Servicio C</a></li>
-            </ul></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </nav>
-        </div>
+       
 
 
 
