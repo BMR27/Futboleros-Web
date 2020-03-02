@@ -1,0 +1,10 @@
+﻿h2 {
+    text-align: center;
+}
+
+.contenedor {
+    width: 30%;
+    margin-top: 13%;
+    margin-left: auto;
+    border: 5px;
+}

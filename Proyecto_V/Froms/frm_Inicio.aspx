@@ -12,7 +12,7 @@
 <body>
     <div class="container well contenedor">
         <div class="row">
-            <h2>Inicio Sesión</h2>
+            <h2>Inicio Sesión.</h2>
         </div>
 
 
@@ -30,7 +30,7 @@
                 <div class="sol-sm-10">
 
 
-                    <asp:TextBox ID="txt_clave" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txt_clave" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
 
