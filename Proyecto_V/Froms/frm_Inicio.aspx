@@ -29,7 +29,7 @@
                 <div class="sol-sm-10">
 
 
-                    <asp:TextBox ID="txt_clave" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="txt_clave" TextMode="Password" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
 
