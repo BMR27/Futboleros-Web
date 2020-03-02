@@ -88,7 +88,7 @@ namespace Proyecto_V
         //METODO RETORNA EL NOMBRE DEL USUARIO 
         public string pc_retornar_nombre_usuario()
         {
-            return Lista_Datos_Usuario[0].Nombre;
+            return Lista_Datos_Usuario[0].Nombre + " " + Lista_Datos_Usuario[0].Apellido1 + " " + Lista_Datos_Usuario[0].Apellido2;
         }
         //METODO RETORNA EL NOMBRE DE USUARIO 
         public string pc_retornar_usuario()

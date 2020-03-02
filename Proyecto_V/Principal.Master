@@ -70,8 +70,8 @@
                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cerrar Sesion</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    <li><asp:LinkButton ID="lbl_Nombre" CssClass="glyphicon glyphicon-user" runat="server"></asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btn_cerrar_sesion" runat="server" OnClick="btn_cerrar_sesion_Click">Cerrar Sesión</asp:LinkButton></li>
                 </ul>
             </div>
         </nav>
@@ -111,7 +111,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
  
             </asp:ContentPlaceHolder>
-        </div>
     </form>
 </body>
 </html>
