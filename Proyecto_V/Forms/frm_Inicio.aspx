@@ -19,14 +19,15 @@
         <form runat="server" class="form-horizontal">
 
             <div class="form-group">
-                <asp:Label ID="Label1" runat="server" Text="Usuario" CssClass="control-label col-sm-2"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Usuario" CssClass="control-label col-sm-2"></asp:Label>&nbsp;&nbsp;<asp:RequiredFieldValidator ID="rqv_txt_Usuario" runat="server" ErrorMessage="Debe Ingresar un nombre de usuario" ControlToValidate="txt_usuario" ForeColor="#FF3300"></asp:RequiredFieldValidator>
                 <div class="sol-sm-10">
 
                     <asp:TextBox ID="txt_usuario" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label ID="Label2" runat="server" Text="Pass" CssClass="control-label col-sm-2"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Pass" CssClass="control-label col-sm-2"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:RequiredFieldValidator ID="rqv_txt_Pass" runat="server" ErrorMessage="Debe ingresar una contraseña" ControlToValidate="txt_clave" ForeColor="#FF3300"></asp:RequiredFieldValidator>
                 <div class="sol-sm-10">
 
 

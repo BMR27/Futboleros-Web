@@ -17,15 +17,18 @@ namespace Proyecto_V.Froms
         //BOTON DE INICIO SESION
         protected void btn_iniciar_Click(object sender, EventArgs e)
         {
-            Cls_Usuario _procesos_usuario = new Cls_Usuario(txt_usuario.Text,txt_clave.Text);
-            if (_procesos_usuario.pc_validar_sesion() > 0)
+            if (this.IsValid)
             {
-                Session["NombreUsuario"] = _procesos_usuario.pc_retornar_nombre_usuario();
-                Response.Redirect("frm_entrada.aspx");
-            }
-            else
-            {
-                lbl_mensaje.Text = "Usuario ó Contraseña incorrectos";
+                Cls_Usuario _procesos_usuario = new Cls_Usuario(txt_usuario.Text, txt_clave.Text);
+                if (_procesos_usuario.pc_validar_sesion() > 0)
+                {
+                    Session["NombreUsuario"] = _procesos_usuario.pc_retornar_nombre_usuario();
+                    Response.Redirect("frm_entrada.aspx");
+                }
+                else
+                {
+                    lbl_mensaje.Text = "Usuario ó Contraseña incorrectos";
+                }
             }
         }
         //VALIDAMOS QUE EL USUARIO NO ESTE NULL
