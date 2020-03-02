@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Corporación Umbrella</title>
+    <title>Futboleros</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <link href="../Hoja%20Estilos/HojaEstilos.css" rel="stylesheet" />
 </head>
@@ -14,6 +14,7 @@
         <div class="row">
             <h2>Inicio Sesión</h2>
         </div>
+
 
         <form runat="server" class="form-horizontal">
 

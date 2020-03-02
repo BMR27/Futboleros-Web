@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Proyecto Programación</title>
+    <link href="css/HojaEstilos.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -21,7 +22,6 @@
                     <a class="navbar-brand" href="#">FUTBOLEROS</a>
                 </div>
               
-              
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="frm_entrada">Inicio</a></li>
                     <li><a href="frm_entrada.aspx">Creacion de Torneo</a></li>
@@ -33,8 +33,6 @@
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span>Cerrar Sesion</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                 </ul>
-
-               
             </div>
         </nav>
 
@@ -42,32 +40,49 @@
         <div class="container">
           <div class="panel panel bottom-left" >
               <div class="panel-body">Mantenimientos  y Registro</div>
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Quiénes somos</a></li>
+            <li><a href="#">Servicios</a><ul>
+                <li><a href="#">Servicio A</a></li>
+                <li><a href="#">Servicio B</a></li>
+                <li><a href="#">Servicio C</a></li>
+            </ul></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        </div>
 
-                <ul class="nav flex-column">
-                   <li class="nav-item">
-                      <a class="nav-link active" href="#">Creacion de Torneos</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="#">Partidos</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link" href="#">Registro de Equipos</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Registro de Jugadores</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Estadisticas</a>
-                   </li>
-                   <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Reporteria</a>
-                   </li>
-                </ul>
 
-            </div>
-         </div>
 
-        <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+            
+
+           
+ 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
  
             </asp:ContentPlaceHolder>
