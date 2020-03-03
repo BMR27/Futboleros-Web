@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Ultimos Campeones de la decada</h1>
+    
+
+     <div id="contenedor" style="width:1400px; background:#0094ff">
+       <h2>Ultimos Campeones de la decada</h2>
+     </div>
 
 </asp:Content>
