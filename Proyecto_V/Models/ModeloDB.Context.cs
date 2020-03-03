@@ -240,5 +240,81 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VALIDAR_INICIO_SESION_Result>("SP_VALIDAR_INICIO_SESION", uSUARIOParameter, pASSParameter);
         }
+    
+        public virtual ObjectResult<SP_CONSULTAR_LISTA_JUGADORES_Result> SP_CONSULTAR_LISTA_JUGADORES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_Result>("SP_CONSULTAR_LISTA_JUGADORES");
+        }
+    
+        public virtual int SP_ELIMINAR_JUGADOR(string cEDULA)
+        {
+            var cEDULAParameter = cEDULA != null ?
+                new ObjectParameter("CEDULA", cEDULA) :
+                new ObjectParameter("CEDULA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_JUGADOR", cEDULAParameter);
+        }
+    
+        public virtual int SP_REGISTRAR_JUGADOR(string cEDULA, string gENERO, Nullable<System.DateTime> fECHA_NACIMIENTO, string nOMBRE, string aPELLIDO1, string aPELLIDO2, string tELEFONO, string cORREO, Nullable<int> iD_PROVINCIA, Nullable<int> iD_CANTON, Nullable<int> iD_DISTRITO, string dIRECCION)
+        {
+            var cEDULAParameter = cEDULA != null ?
+                new ObjectParameter("CEDULA", cEDULA) :
+                new ObjectParameter("CEDULA", typeof(string));
+    
+            var gENEROParameter = gENERO != null ?
+                new ObjectParameter("GENERO", gENERO) :
+                new ObjectParameter("GENERO", typeof(string));
+    
+            var fECHA_NACIMIENTOParameter = fECHA_NACIMIENTO.HasValue ?
+                new ObjectParameter("FECHA_NACIMIENTO", fECHA_NACIMIENTO) :
+                new ObjectParameter("FECHA_NACIMIENTO", typeof(System.DateTime));
+    
+            var nOMBREParameter = nOMBRE != null ?
+                new ObjectParameter("NOMBRE", nOMBRE) :
+                new ObjectParameter("NOMBRE", typeof(string));
+    
+            var aPELLIDO1Parameter = aPELLIDO1 != null ?
+                new ObjectParameter("APELLIDO1", aPELLIDO1) :
+                new ObjectParameter("APELLIDO1", typeof(string));
+    
+            var aPELLIDO2Parameter = aPELLIDO2 != null ?
+                new ObjectParameter("APELLIDO2", aPELLIDO2) :
+                new ObjectParameter("APELLIDO2", typeof(string));
+    
+            var tELEFONOParameter = tELEFONO != null ?
+                new ObjectParameter("TELEFONO", tELEFONO) :
+                new ObjectParameter("TELEFONO", typeof(string));
+    
+            var cORREOParameter = cORREO != null ?
+                new ObjectParameter("CORREO", cORREO) :
+                new ObjectParameter("CORREO", typeof(string));
+    
+            var iD_PROVINCIAParameter = iD_PROVINCIA.HasValue ?
+                new ObjectParameter("ID_PROVINCIA", iD_PROVINCIA) :
+                new ObjectParameter("ID_PROVINCIA", typeof(int));
+    
+            var iD_CANTONParameter = iD_CANTON.HasValue ?
+                new ObjectParameter("ID_CANTON", iD_CANTON) :
+                new ObjectParameter("ID_CANTON", typeof(int));
+    
+            var iD_DISTRITOParameter = iD_DISTRITO.HasValue ?
+                new ObjectParameter("ID_DISTRITO", iD_DISTRITO) :
+                new ObjectParameter("ID_DISTRITO", typeof(int));
+    
+            var dIRECCIONParameter = dIRECCION != null ?
+                new ObjectParameter("DIRECCION", dIRECCION) :
+                new ObjectParameter("DIRECCION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_JUGADOR", cEDULAParameter, gENEROParameter, fECHA_NACIMIENTOParameter, nOMBREParameter, aPELLIDO1Parameter, aPELLIDO2Parameter, tELEFONOParameter, cORREOParameter, iD_PROVINCIAParameter, iD_CANTONParameter, iD_DISTRITOParameter, dIRECCIONParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_PROVINCIAS_Result> SP_CONSULTAR_PROVINCIAS(string nombre)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_PROVINCIAS_Result>("SP_CONSULTAR_PROVINCIAS", nombreParameter);
+        }
     }
 }

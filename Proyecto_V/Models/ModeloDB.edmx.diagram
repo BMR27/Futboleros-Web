@@ -47,6 +47,7 @@
         <AssociationConnector Association="programacion5Model.FK__TBL_JUGAD__C_FK___5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_TELEF__C_FK___6477ECF3" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_USUAR__C_TIP__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

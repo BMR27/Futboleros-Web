@@ -19,6 +19,7 @@ namespace Proyecto_V.Models
             this.TBL_CORREOS = new HashSet<TBL_CORREOS>();
             this.TBL_GOLEADORES = new HashSet<TBL_GOLEADORES>();
             this.TBL_TELEFONOS = new HashSet<TBL_TELEFONOS>();
+            this.TBL_JUG_X_EQUIPO = new HashSet<TBL_JUG_X_EQUIPO>();
         }
     
         public int C_CONSECUTIVO { get; set; }
@@ -32,6 +33,7 @@ namespace Proyecto_V.Models
         public string C_APELLIDO1 { get; set; }
         public string C_APELLIDO2 { get; set; }
         public string C_DIRECCION { get; set; }
+        public Nullable<bool> C_ACTIVO { get; set; }
     
         public virtual TBL_CANTON TBL_CANTON { get; set; }
         public virtual ICollection<TBL_CORREOS> TBL_CORREOS { get; set; }
@@ -39,5 +41,6 @@ namespace Proyecto_V.Models
         public virtual ICollection<TBL_GOLEADORES> TBL_GOLEADORES { get; set; }
         public virtual TBL_PROVINCIA TBL_PROVINCIA { get; set; }
         public virtual ICollection<TBL_TELEFONOS> TBL_TELEFONOS { get; set; }
+        public virtual ICollection<TBL_JUG_X_EQUIPO> TBL_JUG_X_EQUIPO { get; set; }
     }
 }
