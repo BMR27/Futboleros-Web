@@ -9,23 +9,7 @@
     border: 5px;
 }
 
-.dropdown-menu {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: thick;
-    cursor: pointer;
-}
 
-.nav-item dropdown #navbarDropdown2 {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: medium;
-    cursor: pointer;
-}
 
 
 

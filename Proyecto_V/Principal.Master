@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Proyecto Programación</title>
-    <link href="css/HojaEstilos.css" rel="stylesheet"/>
+    <link href="Hoja Estilos/HojaEstilos.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/dependent-dropdown/1.4.9/css/dependent-dropdown.css" />
@@ -14,6 +14,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+
+    <style>
+
+        dropdown-menu {
+            border-style: inset;
+        }
+
+        dropdown-item{
+            border-style: inset;
+        } 
+
+
+    </style>
+
 
 </head>
 <body>
@@ -30,7 +44,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Torneos
                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav" >
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                           <a class="dropdown-item"  href="frm_Creacion_Torneos.aspx">Creacion de Torneos</a><br/>
                           <a class="dropdown-item" href="frm_Registro de Encuentros.aspx">Registro de Encuentros</a><br/>
                           <a class="dropdown-item" href="frm_Registro de Equipos.aspx">Registro de Equipos</a><br/>
@@ -41,7 +55,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Jugadores
                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                           <a class="dropdown-item" href="frm_Registro de Jugadores.aspx">Registro de Jugadores</a><br/>
                           <a class="dropdown-item" href="frm_Estadisticas Jugadores.aspx">Estadisticas Jugadores</a><br/>
                           <a class="dropdown-item" href="frm_Goleadores.aspx">Goleadores</a><br/>
@@ -52,7 +66,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Historial de Torneos
                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                           <a class="dropdown-item" href="frm_Tabla Acumulada.aspx">Tabla Acumulada</a><br />
                           <a class="dropdown-item" href="frm_Ultimos Campeones.aspx">Ultimos Campeones</a><br/>
                           <a class="dropdown-item" href="frm_Estado del Torneo.aspx">Estado del Torneo</a>
@@ -62,7 +76,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Reportes
                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                           <a class="dropdown-item" href="#">Tabla de Posiciones</a><br/>
                           <a class="dropdown-item" href="#">Tabla Goleadores Historicos</a><br/>
                           <a class="dropdown-item" href="#">Tabla de Jugadores</a><br/>
