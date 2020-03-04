@@ -86,6 +86,8 @@
                 <asp:RequiredFieldValidator ID="rqtxt_direccion" runat="server" ErrorMessage="* Debe ingresar la dirección de la vivienda" ControlToValidate="txt_direccion" ForeColor="Red"></asp:RequiredFieldValidator>
                   <textarea id="txt_direccion" class="form-control" runat="server" ></textarea>
               </div>
+            <!---BOTON-->
+            <asp:Button Text="Agregar Jugador" ID="btn_agregar" CssClass="btn btn-primary" runat="server" />
         </div>
     </div>
     
