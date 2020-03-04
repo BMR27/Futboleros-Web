@@ -44,12 +44,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -100,11 +109,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -112,9 +116,20 @@
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Froms\frm_entrada.aspx" />
-    <Content Include="Froms\frm_ingreso_equipos.aspx" />
-    <Content Include="Froms\frm_Inicio.aspx" />
+    <Content Include="Forms\frm_Asistidores.aspx" />
+    <Content Include="Forms\frm_Creacion_Torneos.aspx" />
+    <Content Include="Forms\frm_Estadisticas Jugadores.aspx" />
+    <Content Include="Forms\frm_Estado del Torneo.aspx" />
+    <Content Include="Forms\frm_Goleadores.aspx" />
+    <Content Include="Forms\frm_entrada.aspx" />
+    <Content Include="Forms\frm_ingreso_equipos.aspx" />
+    <Content Include="Forms\frm_Inicio.aspx" />
+    <Content Include="Forms\frm_Registro de Encuentros.aspx" />
+    <Content Include="Forms\frm_Registro de Equipos.aspx" />
+    <Content Include="Forms\frm_Registro de Jugadores.aspx" />
+    <Content Include="Forms\frm_Tabla Acumulada.aspx" />
+    <Content Include="Forms\frm_Tabla de Posiciones.aspx" />
+    <Content Include="Forms\frm_Ultimos Campeones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -124,8 +139,26 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Hoja Estilos\Estilos_Reg_Jugadores.css" />
     <Content Include="Hoja Estilos\HojaEstilos.css" />
+    <Content Include="Models\ModeloDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModeloDB.Context.cs</LastGenOutput>
+      <DependentUpon>ModeloDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModeloDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloDB.edmx</DependentUpon>
+      <LastGenOutput>ModeloDB.cs</LastGenOutput>
+    </Content>
     <Content Include="Principal.Master" />
+    <EntityDeploy Include="Models\ModeloDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModeloDB.edmx.diagram">
+      <DependentUpon>ModeloDB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -162,29 +195,192 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Froms\frm_entrada.aspx.cs">
+    <Compile Include="Clases\Cls_Provincia.cs" />
+    <Compile Include="Clases\Cls_Usuario.cs" />
+    <Compile Include="Forms\frm_Asistidores.aspx.cs">
+      <DependentUpon>frm_Asistidores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Asistidores.aspx.designer.cs">
+      <DependentUpon>frm_Asistidores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Creacion_Torneos.aspx.cs">
+      <DependentUpon>frm_Creacion_Torneos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Creacion_Torneos.aspx.designer.cs">
+      <DependentUpon>frm_Creacion_Torneos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Estadisticas Jugadores.aspx.cs">
+      <DependentUpon>frm_Estadisticas Jugadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Estadisticas Jugadores.aspx.designer.cs">
+      <DependentUpon>frm_Estadisticas Jugadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Estado del Torneo.aspx.cs">
+      <DependentUpon>frm_Estado del Torneo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Estado del Torneo.aspx.designer.cs">
+      <DependentUpon>frm_Estado del Torneo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Goleadores.aspx.cs">
+      <DependentUpon>frm_Goleadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Goleadores.aspx.designer.cs">
+      <DependentUpon>frm_Goleadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_entrada.aspx.cs">
       <DependentUpon>frm_entrada.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Froms\frm_entrada.aspx.designer.cs">
+    <Compile Include="Forms\frm_entrada.aspx.designer.cs">
       <DependentUpon>frm_entrada.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Froms\frm_ingreso_equipos.aspx.cs">
+    <Compile Include="Forms\frm_ingreso_equipos.aspx.cs">
       <DependentUpon>frm_ingreso_equipos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Froms\frm_ingreso_equipos.aspx.designer.cs">
+    <Compile Include="Forms\frm_ingreso_equipos.aspx.designer.cs">
       <DependentUpon>frm_ingreso_equipos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Froms\frm_Inicio.aspx.cs">
+    <Compile Include="Forms\frm_Inicio.aspx.cs">
       <DependentUpon>frm_Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Froms\frm_Inicio.aspx.designer.cs">
+    <Compile Include="Forms\frm_Inicio.aspx.designer.cs">
       <DependentUpon>frm_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Registro de Encuentros.aspx.cs">
+      <DependentUpon>frm_Registro de Encuentros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Registro de Encuentros.aspx.designer.cs">
+      <DependentUpon>frm_Registro de Encuentros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Registro de Equipos.aspx.cs">
+      <DependentUpon>frm_Registro de Equipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Registro de Equipos.aspx.designer.cs">
+      <DependentUpon>frm_Registro de Equipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Registro de Jugadores.aspx.cs">
+      <DependentUpon>frm_Registro de Jugadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Registro de Jugadores.aspx.designer.cs">
+      <DependentUpon>frm_Registro de Jugadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Tabla Acumulada.aspx.cs">
+      <DependentUpon>frm_Tabla Acumulada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Tabla Acumulada.aspx.designer.cs">
+      <DependentUpon>frm_Tabla Acumulada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Tabla de Posiciones.aspx.cs">
+      <DependentUpon>frm_Tabla de Posiciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Tabla de Posiciones.aspx.designer.cs">
+      <DependentUpon>frm_Tabla de Posiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Ultimos Campeones.aspx.cs">
+      <DependentUpon>frm_Ultimos Campeones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Ultimos Campeones.aspx.designer.cs">
+      <DependentUpon>frm_Ultimos Campeones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_PROVINCIAS_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_VALIDAR_INICIO_SESION_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_BITACORA_ERRORES.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_CANTON.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_CORREOS.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_DETALLE_TORNEO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_DISTRITO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_ENCUENTROS_X_TORNEO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_ENC_TORNEOS.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_EQUIPO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_GOLEADORES.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_INGRESOS_X_USUARIO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_JUGADORES.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_JUG_X_EQUIPO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_POSICIONES.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_PROVINCIA.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_TELEFONOS.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_TIPO_USUARIO.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_USUARIOS_LOG.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
@@ -204,7 +400,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -216,6 +411,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

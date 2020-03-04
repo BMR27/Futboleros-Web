@@ -22,6 +22,15 @@ namespace Proyecto_V.Froms {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Control rqv_txt_Usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqv_txt_Usuario;
+        
+        /// <summary>
         /// Control txt_usuario.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Proyecto_V.Froms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Control rqv_txt_Pass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqv_txt_Pass;
         
         /// <summary>
         /// Control txt_clave.

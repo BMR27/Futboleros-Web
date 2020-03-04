@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Proyecto_V.Froms
+namespace Proyecto_V.Forms
 {
-    public partial class frm_entrada : System.Web.UI.Page
+    public partial class frm_Estadisticas_Jugadores : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

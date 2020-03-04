@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c63c829aebed4db1a955ca479016ed5b" Name="Diagram1">
+        <EntityTypeShape EntityType="programacion5Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_BITACORA_ERRORES" Width="1.5" PointX="2.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_CANTON" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_CORREOS" Width="1.5" PointX="12.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_DETALLE_TORNEO" Width="1.5" PointX="9.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_DISTRITO" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_ENC_TORNEOS" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_ENCUENTROS_X_TORNEO" Width="1.5" PointX="12.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_EQUIPO" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_GOLEADORES" Width="1.5" PointX="15" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_INGRESOS_X_USUARIO" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_JUG_X_EQUIPO" Width="1.5" PointX="9.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_JUGADORES" Width="1.5" PointX="10.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_POSICIONES" Width="1.5" PointX="15" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_PROVINCIA" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_TELEFONOS" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_TIPO_USUARIO" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_USUARIOS_LOG" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="programacion5Model.Canton_ref_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.Distrito_ref_Canton" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_EQUIP__C_FK___6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUGAD__C_FK___5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_CORRE__C_FK___68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_DETAL__C_FK___01142BA1" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_DETAL__C_FK___02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_EQUIP__C_FK___6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUGAD__C_FK___5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_ENC_T__C_FK___7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_ENCUE__C_FK___04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_GOLEA__C_FK___09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_ENCUE__C_FK___05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_ENCUE__C_FK___06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_GOLEA__C_FK___0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_POSIC__C_FK___0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_EQUIP__C_FK___6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUG_X__C_FK___71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_POSIC__C_FK___0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_GOLEA__C_FK___0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_INGRE__C_FK___151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUGAD__C_FK___5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_TELEF__C_FK___6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_USUAR__C_TIP__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
