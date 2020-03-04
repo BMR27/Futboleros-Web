@@ -21,6 +21,11 @@ namespace Proyecto_V.Clases
         {
 
         }
+
+        public Cls_Provincia(int pIdProvincia)
+        {
+            this.IdProvincia = pIdProvincia;
+        }
         #endregion
 
         //METODOS DE LA CLASE
