@@ -69,15 +69,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RetornaCantonesID", id_CantonParameter);
         }
     
-        public virtual int RetornaProvincias(string nombre)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("nombre", nombre) :
-                new ObjectParameter("nombre", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RetornaProvincias", nombreParameter);
-        }
-    
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
             var diagramnameParameter = diagramname != null ?
@@ -315,6 +306,15 @@ namespace Proyecto_V.Models
                 new ObjectParameter("nombre", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_PROVINCIAS_Result>("SP_CONSULTAR_PROVINCIAS", nombreParameter);
+        }
+    
+        public virtual ObjectResult<RetornaProvincias_Result> RetornaProvincias(string nombre)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RetornaProvincias_Result>("RetornaProvincias", nombreParameter);
         }
     }
 }

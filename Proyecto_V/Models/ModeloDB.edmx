@@ -1354,9 +1354,6 @@
           <FunctionImport Name="RetornaCantonesID">
           <Parameter Name="id_Canton" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="RetornaProvincias">
-          <Parameter Name="nombre" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -1428,6 +1425,9 @@
             <Parameter Name="DIRECCION" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_PROVINCIAS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_PROVINCIAS_Result)">
+          <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RetornaProvincias" ReturnType="Collection(programacion5Model.RetornaProvincias_Result)">
             <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
@@ -1477,6 +1477,15 @@
           <Property Type="String" Name="DISTRITO" Nullable="false" MaxLength="100" />
         </ComplexType>
         <ComplexType Name="SP_CONSULTAR_PROVINCIAS_Result">
+          <Property Type="Int32" Name="id_Provincia" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="usuarioCrea" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaCrea" Nullable="true" Precision="23" />
+          <Property Type="String" Name="usuarioModifica" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="fechaModifica" Nullable="true" Precision="23" />
+          <Property Type="String" Name="vc_Estado" Nullable="true" MaxLength="3" />
+        </ComplexType>
+        <ComplexType Name="RetornaProvincias_Result">
           <Property Type="Int32" Name="id_Provincia" Nullable="false" />
           <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="usuarioCrea" Nullable="true" MaxLength="50" />
@@ -1703,7 +1712,6 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="RetornaCantones" FunctionName="programacion5Model.Store.RetornaCantones" />
           <FunctionImportMapping FunctionImportName="RetornaCantonesID" FunctionName="programacion5Model.Store.RetornaCantonesID" />
-          <FunctionImportMapping FunctionImportName="RetornaProvincias" FunctionName="programacion5Model.Store.RetornaProvincias" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="programacion5Model.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="programacion5Model.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="programacion5Model.Store.sp_dropdiagram" />
@@ -1766,6 +1774,19 @@
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_PROVINCIAS" FunctionName="programacion5Model.Store.SP_CONSULTAR_PROVINCIAS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_PROVINCIAS_Result">
+                <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />
+                <ScalarProperty Name="fechaCrea" ColumnName="fechaCrea" />
+                <ScalarProperty Name="usuarioModifica" ColumnName="usuarioModifica" />
+                <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
+                <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="RetornaProvincias" FunctionName="programacion5Model.Store.RetornaProvincias">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.RetornaProvincias_Result">
                 <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="usuarioCrea" ColumnName="usuarioCrea" />

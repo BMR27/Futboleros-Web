@@ -314,6 +314,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RetornaProvincias_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
