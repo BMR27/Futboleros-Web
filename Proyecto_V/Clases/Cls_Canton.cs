@@ -5,7 +5,7 @@ using System.Web;
 using Proyecto_V.Models;
 namespace Proyecto_V.Clases
 {
-    public class Cls_Canton: Cls_Provincia
+    public class Cls_Canton:Cls_Provincia
     {
         //INSTANCIAS DE CASE
         #region INSTANCIAS
@@ -20,11 +20,10 @@ namespace Proyecto_V.Clases
 
         //CONSTRUCTORES DE CLASE
         #region CONSTRUCTORES DE CLASE
-        public Cls_Canton()
-        {
+        //public Cls_Canton(int p_provincia): base(provincia)
+        //{
 
-        }
-
+        //}
         #endregion
 
         //METODOS DE CLASE

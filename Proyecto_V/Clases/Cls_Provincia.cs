@@ -21,10 +21,9 @@ namespace Proyecto_V.Clases
         {
 
         }
-
-        public Cls_Provincia(int pIdProvincia)
+        public Cls_Provincia(int provincia)
         {
-            this.IdProvincia = pIdProvincia;
+            this.IdProvincia = provincia;
         }
         #endregion
 
