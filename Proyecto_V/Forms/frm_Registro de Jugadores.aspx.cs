@@ -14,7 +14,7 @@ namespace Proyecto_V.Forms
         Cls_Provincia _provincia = new Cls_Provincia();
         protected void Page_Load(object sender, EventArgs e)
         {
-            pc_cargar_provincias();
+                pc_cargar_provincias();
         }
 
         void pc_cargar_provincias()
@@ -30,7 +30,15 @@ namespace Proyecto_V.Forms
             {
                 dl_lista_cantones.DataSource = _Canton.pc_retornar_lista();
                 dl_lista_cantones.DataBind();
+                _Canton.pc_limpiar_lista_canton();
             }
+        }
+
+        protected void dl_lista_cantones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cls_Distrito _distrito = new Cls_Distrito(0, Convert.ToInt32(dl_lista_cantones.SelectedValue));
+            dl_lista_distritos.DataSource = _distrito.pc_retornar_distrito();
+            dl_lista_distritos.DataBind();
         }
     }
 }

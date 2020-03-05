@@ -196,6 +196,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\Cls_Canton.cs" />
+    <Compile Include="Clases\Cls_Distrito.cs" />
     <Compile Include="Clases\Cls_Provincia.cs" />
     <Compile Include="Clases\Cls_Usuario.cs" />
     <Compile Include="Forms\frm_Asistidores.aspx.cs">
@@ -333,6 +334,9 @@
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_RETORNAR_DISTRITO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_VALIDAR_INICIO_SESION_Result.cs">

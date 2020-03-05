@@ -5,7 +5,7 @@ using System.Web;
 using Proyecto_V.Models;
 namespace Proyecto_V.Clases
 {
-    public class Cls_Canton:Cls_Provincia
+    public class Cls_Canton : Cls_Provincia
     {
         //INSTANCIAS DE CASE
         #region INSTANCIAS
@@ -25,8 +25,12 @@ namespace Proyecto_V.Clases
         {
 
         }
-        public Cls_Canton(int id_provincia):base(id_provincia)
+        public Cls_Canton(int id_provincia) : base(id_provincia)
         {
+        }
+        public Cls_Canton(int id_provincia,int id_canton):base(id_provincia)
+        {
+            this.IdCanton = id_canton;
         }
         #endregion
 
@@ -51,6 +55,12 @@ namespace Proyecto_V.Clases
         public List<RetornaCantones1_Result> pc_retornar_lista()
         {
             return lista_canton;
+        }
+
+        //LIMPIAMOS LA LISTA 
+        public void pc_limpiar_lista_canton()
+        {
+            lista_canton.Clear();
         }
         #endregion
 
