@@ -121,6 +121,33 @@ namespace Proyecto_V.Forms {
         protected global::System.Web.UI.WebControls.TextBox txt_apellido2;
         
         /// <summary>
+        /// Control btn_imagen_calendar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_imagen_calendar;
+        
+        /// <summary>
+        /// Control txt_fecha_nacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_fecha_nacimiento;
+        
+        /// <summary>
+        /// Control dt_fechas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dt_fechas;
+        
+        /// <summary>
         /// Control rb_masculino.
         /// </summary>
         /// <remarks>

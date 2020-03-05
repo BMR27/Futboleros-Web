@@ -60,6 +60,24 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="El apellido debe llevar solo letras" ControlToValidate="txt_apellido2" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
                 <asp:TextBox runat="server" ID="txt_apellido2" CssClass="form-control" />
             </div>
+            <div class="form-group">
+                <asp:Label Text="Fecha Nacimiento" runat="server" />
+                <br />
+                <asp:ImageButton ImageUrl="~/Imagenes/icons8_Calendar_48px_1.png" CausesValidation="false" runat="server" ID="btn_imagen_calendar" OnClick="btn_imagen_calendar_Click" />
+                <asp:TextBox runat="server" ID="txt_fecha_nacimiento" CssClass="form-control" />
+            </div>
+            <!---FECHA DE NACIMIENTO-->
+            <div class="form-group">
+                <asp:Calendar ID="dt_fechas" runat="server"  BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" ShowGridLines="True" Width="200px" OnSelectionChanged="dt_fechas_SelectionChanged">
+                    <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+                    <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                    <OtherMonthDayStyle ForeColor="#CC9966" />
+                    <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                    <SelectorStyle BackColor="#FFCC66" />
+                    <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+                    <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                </asp:Calendar>
+            </div>
               <!---GENERO-->
             <asp:Label Text="Genero" runat="server" />
             <div class="custom-control custom-radio custom-control-inline">

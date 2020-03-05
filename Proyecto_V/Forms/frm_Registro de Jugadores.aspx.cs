@@ -18,6 +18,7 @@ namespace Proyecto_V.Forms
             if (!this.IsPostBack)
             {
                 pc_cargar_provincias();
+                dt_fechas.Visible = false;
             }
         }
 
@@ -57,6 +58,24 @@ namespace Proyecto_V.Forms
                 _jugador.Genero = "F";
             }
 
+        }
+
+        protected void btn_imagen_calendar_Click(object sender, ImageClickEventArgs e)
+        {
+            if (dt_fechas.Visible)
+            {
+                dt_fechas.Visible = false;
+            }
+            else
+            {
+                dt_fechas.Visible = true;
+            }
+        }
+
+        protected void dt_fechas_SelectionChanged(object sender, EventArgs e)
+        {
+            txt_fecha_nacimiento.Text = this.dt_fechas.SelectedDate.ToShortDateString();
+            dt_fechas.Visible = false;
         }
     }
 }
