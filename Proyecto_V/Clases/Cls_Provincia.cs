@@ -12,7 +12,7 @@ namespace Proyecto_V.Clases
         //ATRIBUTOS DE CLASE
         #region ATRIBUTOS DE LA CLASE
         protected int IdProvincia { get; set; }
-        string NombreProvincia { get; set; }
+        protected string NombreProvincia { get; set; }
         #endregion
 
         //CONSTRUCTORES DE CLASE

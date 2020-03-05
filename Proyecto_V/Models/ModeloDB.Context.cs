@@ -326,5 +326,27 @@ namespace Proyecto_V.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_RETONRAR_ID_USUARIO");
         }
+    
+        public virtual ObjectResult<RetornaCantones1_Result> RetornaCantones1(string nombre, Nullable<int> id_Provincia)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var id_ProvinciaParameter = id_Provincia.HasValue ?
+                new ObjectParameter("id_Provincia", id_Provincia) :
+                new ObjectParameter("id_Provincia", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RetornaCantones1_Result>("RetornaCantones1", nombreParameter, id_ProvinciaParameter);
+        }
+    
+        public virtual ObjectResult<RetornaCantonesID1_Result> RetornaCantonesID1(Nullable<int> id_Canton)
+        {
+            var id_CantonParameter = id_Canton.HasValue ?
+                new ObjectParameter("id_Canton", id_Canton) :
+                new ObjectParameter("id_Canton", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RetornaCantonesID1_Result>("RetornaCantonesID1", id_CantonParameter);
+        }
     }
 }

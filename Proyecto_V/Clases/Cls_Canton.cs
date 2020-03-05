@@ -14,8 +14,9 @@ namespace Proyecto_V.Clases
 
         //ATRUBUTOS DE CLASE
         #region ATRIBUTOS DE CLASE
-        int IdCanton { get; set; }
-        string NombreCanton { get; set; }
+        protected int IdCanton { get; set; }
+        protected string NombreCanton { get; set; }
+        
         #endregion
 
         //CONSTRUCTORES DE CLASE

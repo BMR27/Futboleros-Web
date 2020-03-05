@@ -314,6 +314,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RetornaCantones1_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetornaCantonesID1_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RetornaProvincias_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
