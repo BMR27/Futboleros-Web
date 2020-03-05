@@ -30,6 +30,10 @@ namespace Proyecto_V.Clases
         {
 
         }
+        public Cls_Distrito(int id_provincia, int id_canton,int id_distrito) : base(id_provincia, id_canton)
+        {
+            this.IdDistrito = id_distrito;
+        }
         #endregion
 
         //METODOS DE CLASE

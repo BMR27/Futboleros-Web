@@ -30,7 +30,7 @@ namespace Proyecto_V.Clases
 
         //CONSTRUCTORES DE CLASE
         #region CONSTRUCTORES DE CLASE
-        public Cls_Jugador()
+        public Cls_Jugador(int id_provincia, int id_canton,int id_distrito):base(id_provincia, id_canton,id_distrito)
         {
 
         }
