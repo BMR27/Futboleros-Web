@@ -20,7 +20,9 @@ namespace Proyecto_V.Clases
 
         //CONSTRUCTORES DE CLASE
         #region CONSTRUCTORES DE CLASE
-        
+        public Cls_Canton(int id_provincia):base(id_provincia)
+        {
+        }
         #endregion
 
         //METODOS DE CLASE
@@ -28,7 +30,7 @@ namespace Proyecto_V.Clases
 
         public void pc_prueba()
         {
-
+            
         }
 
         #endregion
