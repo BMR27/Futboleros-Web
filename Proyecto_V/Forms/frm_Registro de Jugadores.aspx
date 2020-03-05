@@ -60,6 +60,24 @@
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="El apellido debe llevar solo letras" ControlToValidate="txt_apellido2" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
                 <asp:TextBox runat="server" ID="txt_apellido2" CssClass="form-control" />
             </div>
+            <div class="form-group">
+                <asp:Label Text="Fecha Nacimiento" runat="server" />
+                <br />
+                <asp:ImageButton ImageUrl="~/Imagenes/icons8_Calendar_48px_1.png" CausesValidation="false" runat="server" ID="btn_imagen_calendar" OnClick="btn_imagen_calendar_Click" />
+                <asp:TextBox runat="server" ID="txt_fecha_nacimiento" CssClass="form-control" />
+            </div>
+            <!---FECHA DE NACIMIENTO-->
+
+            <asp:Calendar ID="dt_fechas" runat="server" BackColor="White" BorderColor="#999999" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="237px" OnSelectionChanged="dt_fechas_SelectionChanged" CellPadding="4">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                <NextPrevStyle VerticalAlign="Bottom" />
+                <OtherMonthDayStyle ForeColor="#808080" />
+                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" />
+                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <WeekendDayStyle BackColor="#FFFFCC" />
+            </asp:Calendar>
               <!---GENERO-->
             <asp:Label Text="Genero" runat="server" />
             <div class="custom-control custom-radio custom-control-inline">
@@ -109,6 +127,9 @@
               </div>
             <!---BOTON-->
             <asp:Button Text="Agregar Jugador" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" />
+            <br />
+            <br />
+            <asp:Label Text="" ID="lbl_mensaje" runat="server" />
         </div>
     </div>
     
