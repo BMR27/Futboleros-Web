@@ -12,6 +12,7 @@ namespace Proyecto_V.Forms
     {
         //INSTANCIAS DE CLASE
         Cls_Provincia _provincia = new Cls_Provincia();
+        Cls_Jugador _jugador = new Cls_Jugador();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -42,6 +43,20 @@ namespace Proyecto_V.Forms
             Cls_Distrito _distrito = new Cls_Distrito(0, Convert.ToInt32(dl_lista_cantones.SelectedValue));
             dl_lista_distritos.DataSource = _distrito.pc_retornar_distrito();
             dl_lista_distritos.DataBind();
+        }
+
+        protected void btn_agregar_Click(object sender, EventArgs e)
+        {
+            _jugador.NumeroCedula = txt_cedula.Text;
+            if (rb_masculino.Checked == true)
+            {
+                _jugador.Genero = "M";
+            }
+            else
+            {
+                _jugador.Genero = "F";
+            }
+
         }
     }
 }

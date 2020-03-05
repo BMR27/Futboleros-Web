@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\Cls_Canton.cs" />
     <Compile Include="Clases\Cls_Distrito.cs" />
+    <Compile Include="Clases\Cls_Jugador.cs" />
     <Compile Include="Clases\Cls_Provincia.cs" />
     <Compile Include="Clases\Cls_Usuario.cs" />
     <Compile Include="Forms\frm_Asistidores.aspx.cs">

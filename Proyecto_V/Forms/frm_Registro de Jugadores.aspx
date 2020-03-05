@@ -108,7 +108,7 @@
                   <textarea id="txt_direccion" class="form-control" runat="server" ></textarea>
               </div>
             <!---BOTON-->
-            <asp:Button Text="Agregar Jugador" ID="btn_agregar" CssClass="btn btn-primary" runat="server" />
+            <asp:Button Text="Agregar Jugador" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" />
         </div>
     </div>
     
