@@ -35,6 +35,7 @@ namespace Proyecto_V.Clases
         {
             List<SP_CONSULTAR_PROVINCIAS_Result> list_provincias = this.ModeloDB.SP_CONSULTAR_PROVINCIAS(null).ToList();
             return list_provincias;
+
         }
         #endregion
 

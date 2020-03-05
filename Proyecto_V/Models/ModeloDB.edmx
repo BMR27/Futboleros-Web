@@ -514,6 +514,7 @@
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="SP_CONSULTA_ULTIMA_CONEXION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_LISTA_JUGADORES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_PROVINCIAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -572,6 +573,7 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="SP_RETONRAR_ID_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_VALIDAR_INICIO_SESION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="USUARIO" Type="varchar" Mode="In" />
@@ -1428,8 +1430,10 @@
           <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="RetornaProvincias" ReturnType="Collection(programacion5Model.RetornaProvincias_Result)">
-            <Parameter Name="nombre" Mode="In" Type="String" />
+          <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_CONSULTA_ULTIMA_CONEXION" ReturnType="Collection(DateTime)" />
+          <FunctionImport Name="SP_RETONRAR_ID_USUARIO" ReturnType="Collection(Int32)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1797,6 +1801,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CONSULTA_ULTIMA_CONEXION" FunctionName="programacion5Model.Store.SP_CONSULTA_ULTIMA_CONEXION" />
+          <FunctionImportMapping FunctionImportName="SP_RETONRAR_ID_USUARIO" FunctionName="programacion5Model.Store.SP_RETONRAR_ID_USUARIO" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

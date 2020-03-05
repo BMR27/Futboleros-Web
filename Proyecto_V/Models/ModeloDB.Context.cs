@@ -316,5 +316,15 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RetornaProvincias_Result>("RetornaProvincias", nombreParameter);
         }
+    
+        public virtual ObjectResult<Nullable<System.DateTime>> SP_CONSULTA_ULTIMA_CONEXION()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<System.DateTime>>("SP_CONSULTA_ULTIMA_CONEXION");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> SP_RETONRAR_ID_USUARIO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_RETONRAR_ID_USUARIO");
+        }
     }
 }
