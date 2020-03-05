@@ -22,5 +22,15 @@ namespace Proyecto_V.Forms
             dl_lista_provincia.DataSource = _provincia.pc_consultar_provincias();
             dl_lista_provincia.DataBind();
         }
+
+        protected void dl_lista_provincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cls_Canton _Canton = new Cls_Canton(Convert.ToInt32(dl_lista_provincia.SelectedValue));
+            if (_Canton.pc_consultar_cantones()!="")
+            {
+                dl_lista_cantones.DataSource = _Canton.pc_retornar_lista();
+                dl_lista_cantones.DataBind();
+            }
+        }
     }
 }

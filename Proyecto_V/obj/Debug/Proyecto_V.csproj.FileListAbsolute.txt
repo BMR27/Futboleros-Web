@@ -161,7 +161,6 @@ C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyec
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.pdb
-C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\Proyecto_V.dll.config
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\Proyecto_V.dll
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\Proyecto_V.pdb
@@ -217,3 +216,4 @@ C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\roslyn\vbc.rsp
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\roslyn\VBCSCompiler.exe
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
+C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache

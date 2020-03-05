@@ -69,11 +69,11 @@
             <!---PROVINCIA,CANTON,DISTRITO-->
             <div class="form-group">
                 <asp:Label Text="Provincia" runat="server" />
-                <asp:DropDownList ID="dl_lista_provincia" runat="server" CssClass="form-control" DataTextField="nombre" DataValueField="id_Provincia"></asp:DropDownList>
+                <asp:DropDownList ID="dl_lista_provincia" runat="server" CssClass="form-control" DataTextField="nombre" DataValueField="id_Provincia" AutoPostBack="True" OnSelectedIndexChanged="dl_lista_provincia_SelectedIndexChanged"></asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label Text="Cantón" runat="server" />
-                <asp:DropDownList ID="dl_lista_cantones" runat="server" CssClass="form-control"></asp:DropDownList>
+                <asp:DropDownList ID="dl_lista_cantones" runat="server" CssClass="form-control" DataTextField="nombre" DataValueField="id_Canton"></asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label Text="Distrito" runat="server" />

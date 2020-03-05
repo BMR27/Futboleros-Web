@@ -16,11 +16,15 @@ namespace Proyecto_V.Clases
         #region ATRIBUTOS DE CLASE
         protected int IdCanton { get; set; }
         protected string NombreCanton { get; set; }
-        
+        static List<RetornaCantones1_Result> lista_canton = new List<RetornaCantones1_Result>();
         #endregion
 
         //CONSTRUCTORES DE CLASE
         #region CONSTRUCTORES DE CLASE
+        public Cls_Canton()
+        {
+
+        }
         public Cls_Canton(int id_provincia):base(id_provincia)
         {
         }
@@ -29,11 +33,25 @@ namespace Proyecto_V.Clases
         //METODOS DE CLASE
         #region METODOS DE CLASE
 
-        public void pc_prueba()
+        public string pc_consultar_cantones()
         {
-            
+            try
+            {
+                lista_canton = this.modeloDB.RetornaCantones1(null, this.IdProvincia).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                this.Error = ex.Message;
+            }
+            return Error;
         }
 
+        //METODO QUE RETORNA LA LISTA DE LOS CANTONES
+        public List<RetornaCantones1_Result> pc_retornar_lista()
+        {
+            return lista_canton;
+        }
         #endregion
 
 
