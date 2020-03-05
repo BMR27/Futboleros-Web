@@ -514,7 +514,6 @@
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
-        <Function Name="SP_CONSULTA_ULTIMA_CONEXION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_LISTA_JUGADORES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_PROVINCIAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -573,7 +572,6 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="SP_RETONRAR_ID_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_VALIDAR_INICIO_SESION" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="USUARIO" Type="varchar" Mode="In" />
@@ -827,8 +825,8 @@
           <NavigationProperty Name="TBL_ENCUENTROS_X_TORNEO" Relationship="Self.FK__TBL_ENCUE__C_FK___05D8E0BE" FromRole="TBL_EQUIPO" ToRole="TBL_ENCUENTROS_X_TORNEO" />
           <NavigationProperty Name="TBL_ENCUENTROS_X_TORNEO1" Relationship="Self.FK__TBL_ENCUE__C_FK___06CD04F7" FromRole="TBL_EQUIPO" ToRole="TBL_ENCUENTROS_X_TORNEO" />
           <NavigationProperty Name="TBL_PROVINCIA" Relationship="Self.FK__TBL_EQUIP__C_FK___6C190EBB" FromRole="TBL_EQUIPO" ToRole="TBL_PROVINCIA" />
-          <NavigationProperty Name="TBL_JUG_X_EQUIPO" Relationship="Self.FK__TBL_JUG_X__C_FK___71D1E811" FromRole="TBL_EQUIPO" ToRole="TBL_JUG_X_EQUIPO" />
           <NavigationProperty Name="TBL_POSICIONES" Relationship="Self.FK__TBL_POSIC__C_FK___0F624AF8" FromRole="TBL_EQUIPO" ToRole="TBL_POSICIONES" />
+          <NavigationProperty Name="TBL_JUG_X_EQUIPO" Relationship="programacion5Model.FK__TBL_JUG_X__C_FK___43D61337" FromRole="TBL_EQUIPO" ToRole="TBL_JUG_X_EQUIPO" />
         </EntityType>
         <EntityType Name="TBL_GOLEADORES">
           <Key>
@@ -851,17 +849,6 @@
           <Property Name="C_FK_USUARIO" Type="Int32" Nullable="false" />
           <Property Name="C_INGRESO" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="TBL_USUARIOS_LOG" Relationship="Self.FK__TBL_INGRE__C_FK___151B244E" FromRole="TBL_INGRESOS_X_USUARIO" ToRole="TBL_USUARIOS_LOG" />
-        </EntityType>
-        <EntityType Name="TBL_JUG_X_EQUIPO">
-          <Key>
-            <PropertyRef Name="C_CONSECUTIVO" />
-          </Key>
-          <Property Name="C_CONSECUTIVO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="C_FK_CEDULA" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="C_FK_EQUIPO" Type="Int32" />
-          <NavigationProperty Name="TBL_EQUIPO" Relationship="Self.FK__TBL_JUG_X__C_FK___71D1E811" FromRole="TBL_JUG_X_EQUIPO" ToRole="TBL_EQUIPO" />
-          <Property Name="C_FK_JUGADOR" Type="Int32" />
-          <NavigationProperty Name="TBL_JUGADORES" Relationship="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE" FromRole="TBL_JUG_X_EQUIPO" ToRole="TBL_JUGADORES" />
         </EntityType>
         <EntityType Name="TBL_JUGADORES">
           <Key>
@@ -1150,18 +1137,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TBL_JUG_X__C_FK___71D1E811">
-          <End Role="TBL_EQUIPO" Type="Self.TBL_EQUIPO" Multiplicity="0..1" />
-          <End Role="TBL_JUG_X_EQUIPO" Type="Self.TBL_JUG_X_EQUIPO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_EQUIPO">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_JUG_X_EQUIPO">
-              <PropertyRef Name="C_FK_EQUIPO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TBL_POSIC__C_FK___0F624AF8">
           <End Role="TBL_EQUIPO" Type="Self.TBL_EQUIPO" Multiplicity="0..1" />
           <End Role="TBL_POSICIONES" Type="Self.TBL_POSICIONES" Multiplicity="*" />
@@ -1246,7 +1221,6 @@
           <EntitySet Name="TBL_EQUIPO" EntityType="Self.TBL_EQUIPO" />
           <EntitySet Name="TBL_GOLEADORES" EntityType="Self.TBL_GOLEADORES" />
           <EntitySet Name="TBL_INGRESOS_X_USUARIO" EntityType="Self.TBL_INGRESOS_X_USUARIO" />
-          <EntitySet Name="TBL_JUG_X_EQUIPO" EntityType="Self.TBL_JUG_X_EQUIPO" />
           <EntitySet Name="TBL_JUGADORES" EntityType="Self.TBL_JUGADORES" />
           <EntitySet Name="TBL_POSICIONES" EntityType="Self.TBL_POSICIONES" />
           <EntitySet Name="TBL_PROVINCIA" EntityType="Self.TBL_PROVINCIA" />
@@ -1320,10 +1294,6 @@
           <AssociationSet Name="FK__TBL_EQUIP__C_FK___6C190EBB" Association="Self.FK__TBL_EQUIP__C_FK___6C190EBB">
             <End Role="TBL_PROVINCIA" EntitySet="TBL_PROVINCIA" />
             <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__TBL_JUG_X__C_FK___71D1E811" Association="Self.FK__TBL_JUG_X__C_FK___71D1E811">
-            <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
-            <End Role="TBL_JUG_X_EQUIPO" EntitySet="TBL_JUG_X_EQUIPO" />
           </AssociationSet>
           <AssociationSet Name="FK__TBL_POSIC__C_FK___0F624AF8" Association="Self.FK__TBL_POSIC__C_FK___0F624AF8">
             <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
@@ -1404,10 +1374,6 @@
             <Parameter Name="USUARIO" Mode="In" Type="String" />
             <Parameter Name="PASS" Mode="In" Type="String" />
           </FunctionImport>
-          <AssociationSet Name="FK__TBL_JUG_X__C_FK___42E1EEFE" Association="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE">
-            <End Role="TBL_JUGADORES" EntitySet="TBL_JUGADORES" />
-            <End Role="TBL_JUG_X_EQUIPO" EntitySet="TBL_JUG_X_EQUIPO" />
-          </AssociationSet>
           <FunctionImport Name="SP_CONSULTAR_LISTA_JUGADORES" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result)" />
           <FunctionImport Name="SP_ELIMINAR_JUGADOR">
           <Parameter Name="CEDULA" Mode="In" Type="String" />
@@ -1434,6 +1400,15 @@
           </FunctionImport>
           <FunctionImport Name="SP_CONSULTA_ULTIMA_CONEXION" ReturnType="Collection(DateTime)" />
           <FunctionImport Name="SP_RETONRAR_ID_USUARIO" ReturnType="Collection(Int32)" />
+          <EntitySet Name="TBL_JUG_X_EQUIPO" EntityType="programacion5Model.TBL_JUG_X_EQUIPO" />
+          <AssociationSet Name="FK__TBL_JUG_X__C_FK___43D61337" Association="programacion5Model.FK__TBL_JUG_X__C_FK___43D61337">
+            <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
+            <End Role="TBL_JUG_X_EQUIPO" EntitySet="TBL_JUG_X_EQUIPO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TBL_JUG_X__C_FK___42E1EEFE" Association="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE">
+            <End Role="TBL_JUGADORES" EntitySet="TBL_JUGADORES" />
+            <End Role="TBL_JUG_X_EQUIPO" EntitySet="TBL_JUG_X_EQUIPO" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1455,18 +1430,6 @@
           <Property Type="Boolean" Name="C_ACTIVO" Nullable="true" />
           <Property Type="String" Name="C_NOM_TIPO" Nullable="false" MaxLength="60" />
         </ComplexType>
-        <Association Name="FK__TBL_JUG_X__C_FK___42E1EEFE">
-          <End Type="programacion5Model.TBL_JUGADORES" Role="TBL_JUGADORES" Multiplicity="0..1" />
-          <End Type="programacion5Model.TBL_JUG_X_EQUIPO" Role="TBL_JUG_X_EQUIPO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_JUGADORES">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_JUG_X_EQUIPO">
-              <PropertyRef Name="C_FK_JUGADOR" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <ComplexType Name="SP_CONSULTAR_LISTA_JUGADORES_Result">
           <Property Type="String" Name="C_CEDULA" Nullable="false" MaxLength="9" />
           <Property Type="String" Name="C_NOMBRE" Nullable="false" MaxLength="60" />
@@ -1498,6 +1461,40 @@
           <Property Type="DateTime" Name="fechaModifica" Nullable="true" Precision="23" />
           <Property Type="String" Name="vc_Estado" Nullable="true" MaxLength="3" />
         </ComplexType>
+        <EntityType Name="TBL_JUG_X_EQUIPO">
+          <Key>
+            <PropertyRef Name="C_CONSECUTIVO" />
+          </Key>
+          <Property Name="C_CONSECUTIVO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_FK_JUGADOR" Type="Int32" />
+          <Property Name="C_FK_EQUIPO" Type="Int32" />
+          <NavigationProperty Name="TBL_EQUIPO" Relationship="programacion5Model.FK__TBL_JUG_X__C_FK___43D61337" FromRole="TBL_JUG_X_EQUIPO" ToRole="TBL_EQUIPO" />
+          <NavigationProperty Name="TBL_JUGADORES" Relationship="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE" FromRole="TBL_JUG_X_EQUIPO" ToRole="TBL_JUGADORES" />
+        </EntityType>
+        <Association Name="FK__TBL_JUG_X__C_FK___43D61337">
+          <End Type="programacion5Model.TBL_EQUIPO" Role="TBL_EQUIPO" Multiplicity="0..1" />
+          <End Type="programacion5Model.TBL_JUG_X_EQUIPO" Role="TBL_JUG_X_EQUIPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_EQUIPO">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_JUG_X_EQUIPO">
+              <PropertyRef Name="C_FK_EQUIPO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TBL_JUG_X__C_FK___42E1EEFE">
+          <End Type="programacion5Model.TBL_JUGADORES" Role="TBL_JUGADORES" Multiplicity="0..1" />
+          <End Type="programacion5Model.TBL_JUG_X_EQUIPO" Role="TBL_JUG_X_EQUIPO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_JUGADORES">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_JUG_X_EQUIPO">
+              <PropertyRef Name="C_FK_JUGADOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1630,15 +1627,6 @@
                 <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
                 <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
                 <ScalarProperty Name="C_INGRESO" ColumnName="C_INGRESO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_JUG_X_EQUIPO">
-            <EntityTypeMapping TypeName="programacion5Model.TBL_JUG_X_EQUIPO">
-              <MappingFragment StoreEntitySet="TBL_JUG_X_EQUIPO">
-                <ScalarProperty Name="C_FK_JUGADOR" ColumnName="C_FK_JUGADOR" />
-                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
-                <ScalarProperty Name="C_FK_EQUIPO" ColumnName="C_FK_EQUIPO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1801,9 +1789,16 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CONSULTA_ULTIMA_CONEXION" FunctionName="programacion5Model.Store.SP_CONSULTA_ULTIMA_CONEXION" />
-          <FunctionImportMapping FunctionImportName="SP_RETONRAR_ID_USUARIO" FunctionName="programacion5Model.Store.SP_RETONRAR_ID_USUARIO" />
-        </EntityContainerMapping>
+          <EntitySetMapping Name="TBL_JUG_X_EQUIPO">
+            <EntityTypeMapping TypeName="programacion5Model.TBL_JUG_X_EQUIPO">
+              <MappingFragment StoreEntitySet="TBL_JUG_X_EQUIPO">
+                <ScalarProperty Name="C_FK_EQUIPO" ColumnName="C_FK_EQUIPO" />
+                <ScalarProperty Name="C_FK_JUGADOR" ColumnName="C_FK_JUGADOR" />
+                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

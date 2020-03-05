@@ -19,8 +19,8 @@ namespace Proyecto_V.Models
             this.TBL_DETALLE_TORNEO = new HashSet<TBL_DETALLE_TORNEO>();
             this.TBL_ENCUENTROS_X_TORNEO = new HashSet<TBL_ENCUENTROS_X_TORNEO>();
             this.TBL_ENCUENTROS_X_TORNEO1 = new HashSet<TBL_ENCUENTROS_X_TORNEO>();
-            this.TBL_JUG_X_EQUIPO = new HashSet<TBL_JUG_X_EQUIPO>();
             this.TBL_POSICIONES = new HashSet<TBL_POSICIONES>();
+            this.TBL_JUG_X_EQUIPO = new HashSet<TBL_JUG_X_EQUIPO>();
         }
     
         public int C_CONSECUTIVO { get; set; }
@@ -36,7 +36,7 @@ namespace Proyecto_V.Models
         public virtual ICollection<TBL_ENCUENTROS_X_TORNEO> TBL_ENCUENTROS_X_TORNEO { get; set; }
         public virtual ICollection<TBL_ENCUENTROS_X_TORNEO> TBL_ENCUENTROS_X_TORNEO1 { get; set; }
         public virtual TBL_PROVINCIA TBL_PROVINCIA { get; set; }
-        public virtual ICollection<TBL_JUG_X_EQUIPO> TBL_JUG_X_EQUIPO { get; set; }
         public virtual ICollection<TBL_POSICIONES> TBL_POSICIONES { get; set; }
+        public virtual ICollection<TBL_JUG_X_EQUIPO> TBL_JUG_X_EQUIPO { get; set; }
     }
 }

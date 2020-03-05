@@ -39,13 +39,13 @@ namespace Proyecto_V.Models
         public DbSet<TBL_EQUIPO> TBL_EQUIPO { get; set; }
         public DbSet<TBL_GOLEADORES> TBL_GOLEADORES { get; set; }
         public DbSet<TBL_INGRESOS_X_USUARIO> TBL_INGRESOS_X_USUARIO { get; set; }
-        public DbSet<TBL_JUG_X_EQUIPO> TBL_JUG_X_EQUIPO { get; set; }
         public DbSet<TBL_JUGADORES> TBL_JUGADORES { get; set; }
         public DbSet<TBL_POSICIONES> TBL_POSICIONES { get; set; }
         public DbSet<TBL_PROVINCIA> TBL_PROVINCIA { get; set; }
         public DbSet<TBL_TELEFONOS> TBL_TELEFONOS { get; set; }
         public DbSet<TBL_TIPO_USUARIO> TBL_TIPO_USUARIO { get; set; }
         public DbSet<TBL_USUARIOS_LOG> TBL_USUARIOS_LOG { get; set; }
+        public DbSet<TBL_JUG_X_EQUIPO> TBL_JUG_X_EQUIPO { get; set; }
     
         public virtual int RetornaCantones(string nombre, Nullable<int> id_Provincia)
         {

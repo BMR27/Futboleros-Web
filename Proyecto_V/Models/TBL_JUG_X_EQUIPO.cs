@@ -15,9 +15,8 @@ namespace Proyecto_V.Models
     public partial class TBL_JUG_X_EQUIPO
     {
         public int C_CONSECUTIVO { get; set; }
-        public string C_FK_CEDULA { get; set; }
-        public Nullable<int> C_FK_EQUIPO { get; set; }
         public Nullable<int> C_FK_JUGADOR { get; set; }
+        public Nullable<int> C_FK_EQUIPO { get; set; }
     
         public virtual TBL_EQUIPO TBL_EQUIPO { get; set; }
         public virtual TBL_JUGADORES TBL_JUGADORES { get; set; }
