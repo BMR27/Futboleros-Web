@@ -10,15 +10,15 @@
 namespace Proyecto_V.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TBL_JUG_X_EQUIPO
+    public partial class SP_CONSULTAR_PROVINCIAS_Result
     {
-        public int C_CONSECUTIVO { get; set; }
-        public Nullable<int> C_FK_JUGADOR { get; set; }
-        public Nullable<int> C_FK_EQUIPO { get; set; }
-    
-        public virtual TBL_EQUIPO TBL_EQUIPO { get; set; }
-        public virtual TBL_JUGADORES TBL_JUGADORES { get; set; }
+        public int id_Provincia { get; set; }
+        public string nombre { get; set; }
+        public string usuarioCrea { get; set; }
+        public Nullable<System.DateTime> fechaCrea { get; set; }
+        public string usuarioModifica { get; set; }
+        public Nullable<System.DateTime> fechaModifica { get; set; }
+        public string vc_Estado { get; set; }
     }
 }

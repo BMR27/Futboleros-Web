@@ -139,6 +139,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Hoja Estilos\Estilos_Reg_Jugadores.css" />
     <Content Include="Hoja Estilos\HojaEstilos.css" />
     <Content Include="Models\ModeloDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -194,6 +195,10 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Clases\Cls_Canton.cs" />
+    <Compile Include="Clases\Cls_Distrito.cs" />
+    <Compile Include="Clases\Cls_Jugador.cs" />
+    <Compile Include="Clases\Cls_Provincia.cs" />
     <Compile Include="Clases\Cls_Usuario.cs" />
     <Compile Include="Forms\frm_Asistidores.aspx.cs">
       <DependentUpon>frm_Asistidores.aspx</DependentUpon>
@@ -311,10 +316,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RetornaCantones1_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetornaCantonesID1_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetornaProvincias_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_PROVINCIAS_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_RETORNAR_DISTRITO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_VALIDAR_INICIO_SESION_Result.cs">

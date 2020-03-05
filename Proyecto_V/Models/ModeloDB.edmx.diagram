@@ -16,7 +16,6 @@
         <EntityTypeShape EntityType="programacion5Model.TBL_EQUIPO" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="programacion5Model.TBL_GOLEADORES" Width="1.5" PointX="15" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="programacion5Model.TBL_INGRESOS_X_USUARIO" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="programacion5Model.TBL_JUG_X_EQUIPO" Width="1.5" PointX="9.75" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="programacion5Model.TBL_JUGADORES" Width="1.5" PointX="10.5" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="programacion5Model.TBL_POSICIONES" Width="1.5" PointX="15" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="programacion5Model.TBL_PROVINCIA" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
@@ -40,13 +39,15 @@
         <AssociationConnector Association="programacion5Model.FK__TBL_GOLEA__C_FK___0B91BA14" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_POSIC__C_FK___0E6E26BF" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_EQUIP__C_FK___6C190EBB" ManuallyRouted="false" />
-        <AssociationConnector Association="programacion5Model.FK__TBL_JUG_X__C_FK___71D1E811" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_POSIC__C_FK___0F624AF8" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_GOLEA__C_FK___0A9D95DB" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_INGRE__C_FK___151B244E" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_JUGAD__C_FK___5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_TELEF__C_FK___6477ECF3" ManuallyRouted="false" />
         <AssociationConnector Association="programacion5Model.FK__TBL_USUAR__C_TIP__10566F31" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="programacion5Model.TBL_JUG_X_EQUIPO" Width="1.5" PointX="15.75" PointY="10.5" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUG_X__C_FK___43D61337" />
+        <AssociationConnector Association="programacion5Model.FK__TBL_JUG_X__C_FK___42E1EEFE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -85,7 +85,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><asp:LinkButton ID="lbl_Nombre" CssClass="glyphicon glyphicon-user" runat="server"></asp:LinkButton></li>
-                    <li><asp:LinkButton ID="btn_cerrar_sesion" runat="server" OnClick="btn_cerrar_sesion_Click">Cerrar Sesión</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="btn_cerrar_sesion" runat="server" CausesValidation="false" OnClick="btn_cerrar_sesion_Click">Cerrar Sesión</asp:LinkButton></li>
                 </ul>
             </div>
         </nav>
