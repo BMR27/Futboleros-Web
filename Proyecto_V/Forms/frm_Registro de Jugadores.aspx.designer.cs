@@ -22,6 +22,15 @@ namespace Proyecto_V.Forms {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_txt_cedula;
         
         /// <summary>
+        /// Control rgvTxt_Cedula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxt_Cedula;
+        
+        /// <summary>
         /// Control txt_cedula.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Proyecto_V.Forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_txt_nombre;
+        
+        /// <summary>
+        /// Control rgvTxtNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxtNombre;
         
         /// <summary>
         /// Control txt_nombre.
@@ -58,6 +76,15 @@ namespace Proyecto_V.Forms {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_txt_apellido1;
         
         /// <summary>
+        /// Control rgvTxt_Apellido1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxt_Apellido1;
+        
+        /// <summary>
         /// Control txt_apellido1.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace Proyecto_V.Forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_txt_apellido2;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
         
         /// <summary>
         /// Control txt_apellido2.
@@ -128,6 +164,15 @@ namespace Proyecto_V.Forms {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_txt_correo;
+        
+        /// <summary>
+        /// Control rgvTxt_Correo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxt_Correo;
         
         /// <summary>
         /// Control txt_correo.

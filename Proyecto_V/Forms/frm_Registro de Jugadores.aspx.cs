@@ -14,7 +14,10 @@ namespace Proyecto_V.Forms
         Cls_Provincia _provincia = new Cls_Provincia();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
                 pc_cargar_provincias();
+            }
         }
 
         void pc_cargar_provincias()

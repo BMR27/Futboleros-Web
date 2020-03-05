@@ -18,7 +18,10 @@
                     <asp:Label Text="Cédula" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:RequiredFieldValidator ID="rq_txt_cedula" runat="server" ErrorMessage="* Debe indicar el número de Cédula" ControlToValidate="txt_cedula" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:TextBox runat="server" ID="txt_cedula" CssClass="form-control" />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:RegularExpressionValidator ID="rgvTxt_Cedula" runat="server" ErrorMessage="Debe ingresar la cédula en el formato (000000000)" ControlToValidate="txt_cedula" ForeColor="Red" ValidationExpression="([0-9]|-)*"></asp:RegularExpressionValidator>
+                    <asp:TextBox runat="server" ID="txt_cedula" CssClass="form-control" MaxLength="9" />
                 </div>
             </div>
             <!---NOMBRE-->
@@ -26,6 +29,11 @@
                 <asp:Label Text="Nombre" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rq_txt_nombre" runat="server" ErrorMessage="* Debe ingresar el nombre" ControlToValidate="txt_nombre" ForeColor="Red"></asp:RequiredFieldValidator>
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:RegularExpressionValidator ID="rgvTxtNombre" runat="server" ErrorMessage="El nombre solo puede llevar letras" ControlToValidate="txt_nombre" ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
                 <asp:TextBox runat="server" ID="txt_nombre" CssClass="form-control" />
             </div>
             <!---APELLIDO 1-->
@@ -33,6 +41,11 @@
                 <asp:Label Text="Apellido 1" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rq_txt_apellido1" runat="server" ErrorMessage="* Debe ingresar el Apellido 1" ControlToValidate="txt_apellido1" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:RegularExpressionValidator ID="rgvTxt_Apellido1" runat="server" ErrorMessage="El apellido solo debe llevar letras" ControlToValidate="txt_apellido1" ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
                 <asp:TextBox runat="server" ID="txt_apellido1" CssClass="form-control" />
             </div>
             <!---APELLIDO2-->
@@ -40,6 +53,11 @@
                 <asp:Label Text="Apellido 2" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rq_txt_apellido2" runat="server" ErrorMessage="* Debe ingresar el Apellido 2" ControlToValidate="txt_apellido2" ForeColor="Red"></asp:RequiredFieldValidator>
+                               <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="El apellido debe llevar solo letras" ControlToValidate="txt_apellido2" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
                 <asp:TextBox runat="server" ID="txt_apellido2" CssClass="form-control" />
             </div>
               <!---GENERO-->
@@ -64,7 +82,10 @@
                   <asp:Label Text="Correo" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rq_txt_correo" runat="server" ErrorMessage="* Debe ingresar un correo eléctronico" ControlToValidate="txt_correo" ForeColor="Red"></asp:RequiredFieldValidator>
-                  <asp:TextBox runat="server" ID="txt_correo" CssClass="form-control" />
+                  <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <asp:RegularExpressionValidator ID="rgvTxt_Correo" runat="server" ErrorMessage="Debe ingresar un correo valido" ControlToValidate="txt_correo" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                <asp:TextBox runat="server" ID="txt_correo" CssClass="form-control" />
               </div>
             <!---PROVINCIA,CANTON,DISTRITO-->
             <div class="form-group">
