@@ -67,17 +67,17 @@
                 <asp:TextBox runat="server" ID="txt_fecha_nacimiento" CssClass="form-control" />
             </div>
             <!---FECHA DE NACIMIENTO-->
-            <div class="form-group">
-                <asp:Calendar ID="dt_fechas" runat="server"  BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" ShowGridLines="True" Width="200px" OnSelectionChanged="dt_fechas_SelectionChanged">
-                    <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
-                    <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-                    <OtherMonthDayStyle ForeColor="#CC9966" />
-                    <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-                    <SelectorStyle BackColor="#FFCC66" />
-                    <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
-                    <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
-                </asp:Calendar>
-            </div>
+
+            <asp:Calendar ID="dt_fechas" runat="server" BackColor="White" BorderColor="#999999" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="237px" OnSelectionChanged="dt_fechas_SelectionChanged" CellPadding="4">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                <NextPrevStyle VerticalAlign="Bottom" />
+                <OtherMonthDayStyle ForeColor="#808080" />
+                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" />
+                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <WeekendDayStyle BackColor="#FFFFCC" />
+            </asp:Calendar>
               <!---GENERO-->
             <asp:Label Text="Genero" runat="server" />
             <div class="custom-control custom-radio custom-control-inline">
@@ -127,6 +127,9 @@
               </div>
             <!---BOTON-->
             <asp:Button Text="Agregar Jugador" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" />
+            <br />
+            <br />
+            <asp:Label Text="" ID="lbl_mensaje" runat="server" />
         </div>
     </div>
     

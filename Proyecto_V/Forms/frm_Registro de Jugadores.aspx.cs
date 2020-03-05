@@ -57,6 +57,25 @@ namespace Proyecto_V.Forms
             {
                 _jugador.Genero = "F";
             }
+            _jugador.FechaNacimiento = txt_fecha_nacimiento.Text;
+            _jugador.NumeroTelefono = txt_telefono.Text;
+            _jugador.Correo = txt_correo.Text;
+            _jugador.Nombre = txt_nombre.Text;
+            _jugador.Apellido1 = txt_apellido1.Text;
+            _jugador.Apellido2 = txt_apellido2.Text;
+            _jugador.DireccionCasa = txt_direccion.Value;
+
+            //HACEMOS LA VALIDACION SI SE REGISTRP EL JUGADOR
+            switch (_jugador.pc_registrar_jugador())
+            {
+                case -100:
+                    lbl_mensaje.Text = "Ocurrio un error";
+                    break;
+                default:
+                    lbl_mensaje.Text = "Jugador registrado";
+                    break;
+            }
+
 
         }
 
