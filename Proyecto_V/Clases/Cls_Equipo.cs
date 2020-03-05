@@ -38,7 +38,7 @@ namespace Proyecto_V.Clases
             int filas = 0;
             try
             {
-                filas = this.ModeloDB.SP_REGISTRA_EQUIPO(IdProvincia, IdCanton, IdDistrito, Convert.ToDateTime(Fundacion));
+               // filas = this.ModeloDB.SP_REGISTRA_EQUIPO();   
             }
             catch
             {

@@ -361,5 +361,30 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_RETORNAR_DISTRITO_Result>("SP_RETORNAR_DISTRITO", nombreParameter, id_CantonParameter);
         }
+    
+        public virtual int SP_REGISTRA_EQUIPO(Nullable<int> iD_PROVINCIA, Nullable<int> iD_CANTON, Nullable<int> iD_DISTRITO, string nOMBRE_EQUIPO, Nullable<System.DateTime> fUNDACION)
+        {
+            var iD_PROVINCIAParameter = iD_PROVINCIA.HasValue ?
+                new ObjectParameter("ID_PROVINCIA", iD_PROVINCIA) :
+                new ObjectParameter("ID_PROVINCIA", typeof(int));
+    
+            var iD_CANTONParameter = iD_CANTON.HasValue ?
+                new ObjectParameter("ID_CANTON", iD_CANTON) :
+                new ObjectParameter("ID_CANTON", typeof(int));
+    
+            var iD_DISTRITOParameter = iD_DISTRITO.HasValue ?
+                new ObjectParameter("ID_DISTRITO", iD_DISTRITO) :
+                new ObjectParameter("ID_DISTRITO", typeof(int));
+    
+            var nOMBRE_EQUIPOParameter = nOMBRE_EQUIPO != null ?
+                new ObjectParameter("NOMBRE_EQUIPO", nOMBRE_EQUIPO) :
+                new ObjectParameter("NOMBRE_EQUIPO", typeof(string));
+    
+            var fUNDACIONParameter = fUNDACION.HasValue ?
+                new ObjectParameter("FUNDACION", fUNDACION) :
+                new ObjectParameter("FUNDACION", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRA_EQUIPO", iD_PROVINCIAParameter, iD_CANTONParameter, iD_DISTRITOParameter, nOMBRE_EQUIPOParameter, fUNDACIONParameter);
+        }
     }
 }

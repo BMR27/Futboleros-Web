@@ -162,4 +162,3 @@ C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\roslyn\vbc.rsp
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\roslyn\VBCSCompiler.exe
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\andre\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
-C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
