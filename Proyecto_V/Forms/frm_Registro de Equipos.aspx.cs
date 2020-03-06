@@ -50,8 +50,28 @@ namespace Proyecto_V.Forms
         protected void btn_agregar_Click(object sender, EventArgs e)
         {
             _equipo.NombreEquipo = TxtNombreEquipo.Text;
+            _equipo.Fundacion = txt_fundacion.Text;
+            _
+
+        }
 
 
+        protected void btn_imagen_calendar_Click(object sender, ImageClickEventArgs e)
+        {
+            if (Calendar1.Visible)
+            {
+                Calendar1.Visible = false;
+            }
+            else
+            {
+                Calendar1.Visible = true;
+            }
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            txt_fundacion.Text = this.Calendar1.SelectedDate.ToShortDateString();
+            Calendar1.Visible = false;
         }
     }
 }
