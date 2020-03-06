@@ -24,7 +24,7 @@ namespace Proyecto_V.Clases
 
         //CONSTRUCTORES DE LA CLASE
         #region CONSTRUCTORES DE CLASE
-        public Cls_Equipo()
+        public Cls_Equipo(int id_provincia, int id_canton, int id_distrito) : base(id_provincia, id_canton, id_distrito)
         {
 
         }
@@ -40,7 +40,7 @@ namespace Proyecto_V.Clases
             {
                filas = this.ModeloDB.SP_REGISTRA_EQUIPO(IdProvincia, IdCanton, IdDistrito, NombreEquipo, Convert.ToDateTime(Fundacion));   
             }
-            catch
+            catch (Exception)
             {
                 filas = -100;
             }

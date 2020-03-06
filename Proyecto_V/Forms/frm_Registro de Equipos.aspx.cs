@@ -14,12 +14,13 @@ namespace Proyecto_V.Forms
     {
         //INSTANCIAS DE CLASE
         Cls_Provincia _provincia = new Cls_Provincia();
-        Cls_Equipo _equipo = new Cls_Equipo();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
                 pc_cargar_provincias();
+                Calendar1.Visible = false;
             }
         }
 
@@ -49,12 +50,24 @@ namespace Proyecto_V.Forms
 
         protected void btn_agregar_Click(object sender, EventArgs e)
         {
+            Cls_Equipo _equipo = new Cls_Equipo(Convert.ToInt32(dl_lista_provincia.SelectedValue),
+                    Convert.ToInt32(dl_lista_cantones.SelectedValue), Convert.ToInt32(dl_lista_distritos.SelectedValue));
             _equipo.NombreEquipo = TxtNombreEquipo.Text;
             _equipo.Fundacion = txt_fundacion.Text;
-            _
+
+
+            //VALIDACION DE REGISTRO DEL EQUIPO
+            switch (_equipo.pc_registrar_equipo())
+            {
+                case -100:
+                    lbl_mensaje.Text = "Ocurrio un error";
+                    break;
+                default:
+                    lbl_mensaje.Text = "Equipo registrado";
+                    break;
+            }
 
         }
-
 
         protected void btn_imagen_calendar_Click(object sender, ImageClickEventArgs e)
         {

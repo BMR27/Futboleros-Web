@@ -55,7 +55,10 @@
             </div>
             
             <!---BOTON-->
-            <asp:Button Text="Agregar Equipo" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" />
+           <asp:Button Text="Agregar Equipo" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" />
+            <br />
+            <br />
+            <asp:Label Text="" ID="lbl_mensaje" runat="server" />
         </div>
     </div>
     
