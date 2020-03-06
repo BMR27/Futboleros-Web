@@ -58,6 +58,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                           <a class="dropdown-item" href="frm_Registro de Jugadores.aspx">Registro de Jugadores</a><br/>
                           <a class="dropdown-item" href="frm_Estadisticas Jugadores.aspx">Estadisticas Jugadores</a><br/>
+                            <asp:LinkButton Text="Ver lista jugadores" ID="btn_lista_jugadores" OnClick="btn_lista_jugadores_Click" runat="server" />
                           <a class="dropdown-item" href="frm_Goleadores.aspx">Goleadores</a><br/>
                           <a class="dropdown-item" href="frm_Asistidores.aspx">Asistidores</a>
                         </div>

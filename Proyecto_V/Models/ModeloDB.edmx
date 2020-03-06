@@ -1385,7 +1385,6 @@
             <Parameter Name="USUARIO" Mode="In" Type="String" />
             <Parameter Name="PASS" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_CONSULTAR_LISTA_JUGADORES" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result)" />
           <FunctionImport Name="SP_ELIMINAR_JUGADOR">
           <Parameter Name="CEDULA" Mode="In" Type="String" />
           </FunctionImport>
@@ -1438,6 +1437,7 @@
             <Parameter Name="NOMBRE_EQUIPO" Mode="In" Type="String" />
             <Parameter Name="FUNDACION" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_LISTA_JUGADORES" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1458,19 +1458,6 @@
           <Property Type="String" Name="C_NOM_USUARIO" Nullable="false" MaxLength="25" />
           <Property Type="Boolean" Name="C_ACTIVO" Nullable="true" />
           <Property Type="String" Name="C_NOM_TIPO" Nullable="false" MaxLength="60" />
-        </ComplexType>
-        <ComplexType Name="SP_CONSULTAR_LISTA_JUGADORES_Result">
-          <Property Type="String" Name="C_CEDULA" Nullable="false" MaxLength="9" />
-          <Property Type="String" Name="C_NOMBRE" Nullable="false" MaxLength="60" />
-          <Property Type="String" Name="C_APELLIDO1" Nullable="false" MaxLength="60" />
-          <Property Type="String" Name="C_APELLIDO2" Nullable="false" MaxLength="60" />
-          <Property Type="String" Name="FECHA" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="TELEFONO" Nullable="false" MaxLength="12" />
-          <Property Type="String" Name="CORREO" Nullable="false" MaxLength="30" />
-          <Property Type="String" Name="GENERO" Nullable="true" MaxLength="9" />
-          <Property Type="String" Name="PROVINCIA" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="CANTON" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="DISTRITO" Nullable="false" MaxLength="100" />
         </ComplexType>
         <ComplexType Name="SP_CONSULTAR_PROVINCIAS_Result">
           <Property Type="Int32" Name="id_Provincia" Nullable="false" />
@@ -1559,6 +1546,19 @@
           <Property Type="DateTime" Name="fechaModifica" Nullable="true" Precision="23" />
           <Property Type="String" Name="vc_Estado" Nullable="true" MaxLength="3" />
           <Property Type="Int32" Name="id_DistritoInec" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CONSULTAR_LISTA_JUGADORES_Result">
+          <Property Type="String" Name="C_CEDULA" Nullable="false" MaxLength="9" />
+          <Property Type="String" Name="C_NOMBRE" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="C_APELLIDO1" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="C_APELLIDO2" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="FECHA" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="TELEFONO" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="CORREO" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="GENERO" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="PROVINCIA" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="CANTON" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="DISTRITO" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1807,23 +1807,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_JUGADORES" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_JUGADORES">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result">
-                <ScalarProperty Name="C_CEDULA" ColumnName="C_CEDULA" />
-                <ScalarProperty Name="C_NOMBRE" ColumnName="C_NOMBRE" />
-                <ScalarProperty Name="C_APELLIDO1" ColumnName="C_APELLIDO1" />
-                <ScalarProperty Name="C_APELLIDO2" ColumnName="C_APELLIDO2" />
-                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
-                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
-                <ScalarProperty Name="CORREO" ColumnName="CORREO" />
-                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
-                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
-                <ScalarProperty Name="CANTON" ColumnName="CANTON" />
-                <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_JUGADOR" FunctionName="programacion5Model.Store.SP_ELIMINAR_JUGADOR" />
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_JUGADOR" FunctionName="programacion5Model.Store.SP_REGISTRAR_JUGADOR" />
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_PROVINCIAS" FunctionName="programacion5Model.Store.SP_CONSULTAR_PROVINCIAS">
@@ -1910,6 +1893,23 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRA_EQUIPO" FunctionName="programacion5Model.Store.SP_REGISTRA_EQUIPO" />
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_JUGADORES" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_JUGADORES">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result">
+                <ScalarProperty Name="C_CEDULA" ColumnName="C_CEDULA" />
+                <ScalarProperty Name="C_NOMBRE" ColumnName="C_NOMBRE" />
+                <ScalarProperty Name="C_APELLIDO1" ColumnName="C_APELLIDO1" />
+                <ScalarProperty Name="C_APELLIDO2" ColumnName="C_APELLIDO2" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="CANTON" ColumnName="CANTON" />
+                <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

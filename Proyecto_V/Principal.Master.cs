@@ -44,5 +44,10 @@ namespace Proyecto_V
         {
             pc_cerrar_sesion();
         }
+
+        protected void btn_lista_jugadores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_lista_jugadores.aspx");
+        }
     }
 }

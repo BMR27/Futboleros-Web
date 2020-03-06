@@ -30,6 +30,10 @@ namespace Proyecto_V.Clases
 
         //CONSTRUCTORES DE CLASE
         #region CONSTRUCTORES DE CLASE
+        public Cls_Jugador()
+        {
+
+        }
         public Cls_Jugador(int id_provincia, int id_canton,int id_distrito):base(id_provincia, id_canton,id_distrito)
         {
 
@@ -53,6 +57,13 @@ namespace Proyecto_V.Clases
                 filas = -100;
             }
             return filas;
+        }
+
+        ////METODO CONSULTA LOS JUGADORES
+        public List<SP_CONSULTAR_LISTA_JUGADORES_Result> pc_consultar_jugadores()
+        {
+            List<SP_CONSULTAR_LISTA_JUGADORES_Result> lista_jugadores = this.ModeloDB.SP_CONSULTAR_LISTA_JUGADORES().ToList();
+            return lista_jugadores;
         }
         #endregion
     }

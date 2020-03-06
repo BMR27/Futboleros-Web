@@ -124,6 +124,7 @@
     <Content Include="Forms\frm_entrada.aspx" />
     <Content Include="Forms\frm_ingreso_equipos.aspx" />
     <Content Include="Forms\frm_Inicio.aspx" />
+    <Content Include="Forms\frm_lista_jugadores.aspx" />
     <Content Include="Forms\frm_Registro de Encuentros.aspx" />
     <Content Include="Forms\frm_Registro de Equipos.aspx" />
     <Content Include="Forms\frm_Registro de Jugadores.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="Forms\frm_Inicio.aspx.designer.cs">
       <DependentUpon>frm_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_lista_jugadores.aspx.cs">
+      <DependentUpon>frm_lista_jugadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_lista_jugadores.aspx.designer.cs">
+      <DependentUpon>frm_lista_jugadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_Registro de Encuentros.aspx.cs">
       <DependentUpon>frm_Registro de Encuentros.aspx</DependentUpon>
