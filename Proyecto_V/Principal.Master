@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Proyecto Programación</title>
     <link href="Hoja Estilos/HojaEstilos.css" rel="stylesheet"/>
+    <link href="Hoja%20Estilos/Estilos_Reg_Jugadores.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/dependent-dropdown/1.4.9/css/dependent-dropdown.css" />
