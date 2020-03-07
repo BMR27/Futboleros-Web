@@ -65,6 +65,22 @@ namespace Proyecto_V.Clases
             List<SP_CONSULTAR_LISTA_JUGADORES_Result> lista_jugadores = this.ModeloDB.SP_CONSULTAR_LISTA_JUGADORES().ToList();
             return lista_jugadores;
         }
+
+        //METODO PARA ELIMINAR UN JUGADOR
+        public int pc_eliminar_jugador()
+        {
+            int filas = 0;
+            try
+            {
+                filas = this.ModeloDB.SP_ELIMINAR_JUGADOR(NumeroCedula);
+            }
+            catch (Exception)
+            {
+
+            }
+
+            return filas;
+        }
         #endregion
     }
 }

@@ -38,5 +38,26 @@ namespace Proyecto_V.Forms
         {
             tbl_lista_jugadores.Enabled = false;
         }
+
+        protected void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            int filas = 0;
+            for (int i = 0; i < tbl_lista_jugadores.Rows.Count; i++)
+            {
+                Cls_Jugador _jugador = new Cls_Jugador();
+                CheckBox check = (CheckBox)tbl_lista_jugadores.Rows[i].FindControl("ch_tbl_jugadores");
+                if (check.Checked == true)
+                {
+                    _jugador.NumeroCedula = tbl_lista_jugadores.Rows[i].Cells[0].Text;
+                    filas = _jugador.pc_eliminar_jugador();
+                    break;
+                }
+            }
+
+            if (filas > 0)
+            {
+                Response.Redirect("frm_lista_jugadores.aspx");
+            }
+        }
     }
 }
