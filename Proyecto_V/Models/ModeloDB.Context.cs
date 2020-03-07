@@ -232,15 +232,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VALIDAR_INICIO_SESION_Result>("SP_VALIDAR_INICIO_SESION", uSUARIOParameter, pASSParameter);
         }
     
-        public virtual int SP_ELIMINAR_JUGADOR(string cEDULA)
-        {
-            var cEDULAParameter = cEDULA != null ?
-                new ObjectParameter("CEDULA", cEDULA) :
-                new ObjectParameter("CEDULA", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_JUGADOR", cEDULAParameter);
-        }
-    
         public virtual ObjectResult<SP_CONSULTAR_PROVINCIAS_Result> SP_CONSULTAR_PROVINCIAS(string nombre)
         {
             var nombreParameter = nombre != null ?
@@ -385,6 +376,15 @@ namespace Proyecto_V.Models
         public virtual ObjectResult<SP_CONSULTAR_LISTA_JUGADORES_Result> SP_CONSULTAR_LISTA_JUGADORES()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_Result>("SP_CONSULTAR_LISTA_JUGADORES");
+        }
+    
+        public virtual int SP_ELIMINAR_JUGADOR(string cEDULA)
+        {
+            var cEDULAParameter = cEDULA != null ?
+                new ObjectParameter("CEDULA", cEDULA) :
+                new ObjectParameter("CEDULA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_JUGADOR", cEDULAParameter);
         }
     }
 }

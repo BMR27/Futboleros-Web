@@ -19,7 +19,15 @@
             <asp:BoundField DataField="PROVINCIA" HeaderText="Provincia " />
             <asp:BoundField DataField="CANTON" HeaderText="Cantón" />
             <asp:BoundField DataField="DISTRITO" HeaderText="Distrito" />
+            <asp:TemplateField HeaderText="Seleccionar">
+                <ItemTemplate>
+                    <asp:CheckBox ID="ch_tbl_jugadores" runat="server" AutoPostBack="True" OnCheckedChanged="ch_tbl_jugadores_CheckedChanged" />
+                </ItemTemplate>
+            </asp:TemplateField>
         </Columns>
       </asp:GridView>
+        <asp:Button ID="btn_cambiar" runat="server" Text="Cambiar Jugador" CssClass="btn btn-primary" OnClick="btn_cambiar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btn_eliminar" runat="server" Text="Eliminar Jugador" CssClass="btn btn-primary" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btn_actualizar" runat="server" Text="Actualizar Jugador" CssClass="btn btn-primary" OnClick="btn_actualizar_Click" />
     </div>
 </asp:Content>
