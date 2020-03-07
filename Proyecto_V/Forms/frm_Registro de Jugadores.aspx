@@ -116,7 +116,7 @@
             </div>
             <div class="form-group">
                 <asp:Label Text="Distrito" runat="server" />
-                <asp:DropDownList ID="dl_lista_distritos" runat="server" CssClass="form-control" DataTextField="nombre" DataValueField="id_Canton"></asp:DropDownList>
+                <asp:DropDownList ID="dl_lista_distritos" runat="server" CssClass="form-control" DataTextField="nombre" DataValueField="id_Distrito"></asp:DropDownList>
             </div>
             <!---DIRECCION-->
               <div class="form-group">

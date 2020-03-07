@@ -5,7 +5,8 @@
     <link href="../Hoja%20Estilos/Estilos_Reg_Jugadores.css" rel="stylesheet" />
       <h2 id="Titulo">Jugadores del torneo</h2>
     <!----Hacemos una lista para mostrar a los jugadores-->
-    <asp:GridView ID="tbl_lista_jugadores" runat="server" AutoGenerateColumns="False" CssClass="mGrid">
+    <div id="cont">
+        <asp:GridView ID="tbl_lista_jugadores" runat="server" AutoGenerateColumns="False" CssClass="mGrid">
         <Columns>
             <asp:BoundField DataField="C_CEDULA" HeaderText="Número Cédula" />
             <asp:BoundField DataField="C_NOMBRE" HeaderText="Nombre" />
@@ -20,4 +21,5 @@
             <asp:BoundField DataField="DISTRITO" HeaderText="Distrito" />
         </Columns>
       </asp:GridView>
+    </div>
 </asp:Content>

@@ -13,10 +13,15 @@
 #txt_direccion{
     height:auto;
 }
+#cont{
+    margin-left:5%;
+    margin-right:5%;
+    width:15px auto;
+}
 
 .mGrid {
-    width: 100%;
-    background-color: #fff;
+    width:100%;
+    background-color: #ffffff;
     margin: 5px 0 10px 0;
     border: solid 1px #525252;
     border-collapse: collapse;
@@ -26,6 +31,7 @@
         padding: 2px;
         border: solid 1px #c1c1c1;
         color: #717171;
+        text-align:center;
     }
 
     .mGrid th {
@@ -34,4 +40,5 @@
         background: #424242 url(grd_head.png) repeat-x top;
         border-left: solid 1px #525252;
         font-size: 0.9em;
+        text-align:center;
     }

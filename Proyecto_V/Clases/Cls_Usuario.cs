@@ -77,7 +77,7 @@ namespace Proyecto_V
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                
             }
