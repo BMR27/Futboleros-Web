@@ -49,5 +49,10 @@ namespace Proyecto_V
         {
             Response.Redirect("frm_lista_jugadores.aspx");
         }
+
+        protected void btn_registrar_jugador_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_Registro de Jugadores.aspx");
+        }
     }
 }

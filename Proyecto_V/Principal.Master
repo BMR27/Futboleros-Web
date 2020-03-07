@@ -46,9 +46,9 @@
                      Torneos
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
-                          <a class="dropdown-item"  href="frm_Creacion_Torneos.aspx">Creacion de Torneos</a><br/>
-                          <a class="dropdown-item" href="frm_Registro de Encuentros.aspx">Registro de Encuentros</a><br/>
-                          <a class="dropdown-item" href="frm_Registro de Equipos.aspx">Registro de Equipos</a><br/>
+                          <a class="dropdown-item" id="btn_crear_torneo" runat="server" href="frm_Creacion_Torneos.aspx">Creacion de Torneos</a><br/>
+                          <a class="dropdown-item" id="btn_registro_encuentros" runat="server" href="frm_Registro de Encuentros.aspx">Registro de Encuentros</a><br/>
+                          <a class="dropdown-item" id="btn_registro_equipos" runat="server" href="frm_Registro de Equipos.aspx">Registro de Equipos</a><br/>
                           <a class="dropdown-item" href="frm_Tabla de Posiciones.aspx">Tabla de Posiciones</a>
                         </div>
                     </li>
@@ -57,9 +57,9 @@
                      Jugadores
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
-                          <a class="dropdown-item" href="frm_Registro de Jugadores.aspx">Registro de Jugadores</a><br/>
+                            <asp:LinkButton Text="Registrar Jugadores" ID="btn_registrar_jugador" OnClick="btn_registrar_jugador_Click" runat="server" /><br/>
                           <a class="dropdown-item" href="frm_Estadisticas Jugadores.aspx">Estadisticas Jugadores</a><br/>
-                            <asp:LinkButton Text="Ver lista jugadores" ID="btn_lista_jugadores" OnClick="btn_lista_jugadores_Click" runat="server" />
+                            <asp:LinkButton Text="Ver lista jugadores" ID="btn_lista_jugadores" OnClick="btn_lista_jugadores_Click" CausesValidation="false" runat="server" />
                           <a class="dropdown-item" href="frm_Goleadores.aspx">Goleadores</a><br/>
                           <a class="dropdown-item" href="frm_Asistidores.aspx">Asistidores</a>
                         </div>
