@@ -90,6 +90,7 @@ namespace Proyecto_V.Clases
         {
             //CAPTURAMOS LOS DATOS DEL JUGADOR
             Cls_Jugador datos = new Cls_Jugador();
+            datos.NumeroCedula = this.NumeroCedula;
             datos.Nombre = this.Nombre;
             datos.Apellido1 = this.Apellido1;
             datos.Apellido2 = this.Apellido2;

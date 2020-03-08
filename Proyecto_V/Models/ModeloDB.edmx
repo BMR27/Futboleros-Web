@@ -1434,10 +1434,10 @@
             <Parameter Name="ID_DISTRITO" Mode="In" Type="Int32" />
             <Parameter Name="DIRECCION" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_CONSULTAR_LISTA_JUGADORES" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result)" />
           <FunctionImport Name="SP_ELIMINAR_JUGADOR">
-            <Parameter Name="CEDULA" Mode="In" Type="String" />
+          <Parameter Name="CEDULA" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_LISTA_JUGADORES" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1556,6 +1556,7 @@
           <Property Type="String" Name="TELEFONO" Nullable="false" MaxLength="12" />
           <Property Type="String" Name="CORREO" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="GENERO" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="DIRECCION" Nullable="true" MaxLength="500" />
           <Property Type="String" Name="PROVINCIA" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="CANTON" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="DISTRITO" Nullable="false" MaxLength="100" />
@@ -1892,6 +1893,7 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRA_EQUIPO" FunctionName="programacion5Model.Store.SP_REGISTRA_EQUIPO" />
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_JUGADOR" FunctionName="programacion5Model.Store.SP_REGISTRAR_JUGADOR" />
+          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_JUGADOR" FunctionName="programacion5Model.Store.SP_ELIMINAR_JUGADOR" />
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_JUGADORES" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_JUGADORES">
             <ResultMapping>
               <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_Result">
@@ -1903,13 +1905,13 @@
                 <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
                 <ScalarProperty Name="CORREO" ColumnName="CORREO" />
                 <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
                 <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
                 <ScalarProperty Name="CANTON" ColumnName="CANTON" />
                 <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_JUGADOR" FunctionName="programacion5Model.Store.SP_ELIMINAR_JUGADOR" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

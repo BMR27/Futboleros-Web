@@ -373,11 +373,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_JUGADOR", cEDULAParameter, gENEROParameter, fECHA_NACIMIENTOParameter, nOMBREParameter, aPELLIDO1Parameter, aPELLIDO2Parameter, tELEFONOParameter, cORREOParameter, iD_PROVINCIAParameter, iD_CANTONParameter, iD_DISTRITOParameter, dIRECCIONParameter);
         }
     
-        public virtual ObjectResult<SP_CONSULTAR_LISTA_JUGADORES_Result> SP_CONSULTAR_LISTA_JUGADORES()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_Result>("SP_CONSULTAR_LISTA_JUGADORES");
-        }
-    
         public virtual int SP_ELIMINAR_JUGADOR(string cEDULA)
         {
             var cEDULAParameter = cEDULA != null ?
@@ -385,6 +380,11 @@ namespace Proyecto_V.Models
                 new ObjectParameter("CEDULA", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_JUGADOR", cEDULAParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_LISTA_JUGADORES_Result> SP_CONSULTAR_LISTA_JUGADORES()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_Result>("SP_CONSULTAR_LISTA_JUGADORES");
         }
     }
 }

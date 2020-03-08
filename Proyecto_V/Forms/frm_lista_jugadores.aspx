@@ -16,6 +16,7 @@
             <asp:BoundField DataField="TELEFONO" HeaderText="Télefono" />
             <asp:BoundField DataField="CORREO" HeaderText="Correo" />
             <asp:BoundField DataField="GENERO" HeaderText="Género" />
+            <asp:BoundField DataField="DIRECCION" HeaderText="Dirección" />
             <asp:BoundField DataField="PROVINCIA" HeaderText="Provincia " />
             <asp:BoundField DataField="CANTON" HeaderText="Cantón" />
             <asp:BoundField DataField="DISTRITO" HeaderText="Distrito" />
@@ -29,5 +30,7 @@
         <asp:Button ID="btn_cambiar" runat="server" Text="Cambiar Jugador" CssClass="btn btn-primary" OnClick="btn_cambiar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_eliminar" runat="server" Text="Eliminar Jugador" CssClass="btn btn-primary" OnClick="btn_eliminar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_actualizar" runat="server" Text="Actualizar Jugador" CssClass="btn btn-primary" OnClick="btn_actualizar_Click" />
+        <br />
+        <asp:Label Text="" ID="lbl_mensaje" runat="server" />
      </div>
 </asp:Content>

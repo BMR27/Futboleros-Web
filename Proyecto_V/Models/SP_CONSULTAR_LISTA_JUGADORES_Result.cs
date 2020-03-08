@@ -21,6 +21,7 @@ namespace Proyecto_V.Models
         public string TELEFONO { get; set; }
         public string CORREO { get; set; }
         public string GENERO { get; set; }
+        public string DIRECCION { get; set; }
         public string PROVINCIA { get; set; }
         public string CANTON { get; set; }
         public string DISTRITO { get; set; }

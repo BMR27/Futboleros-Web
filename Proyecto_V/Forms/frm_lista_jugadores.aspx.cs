@@ -33,12 +33,27 @@ namespace Proyecto_V.Forms
                 CheckBox check = (CheckBox)tbl_lista_jugadores.Rows[i].FindControl("ch_tbl_jugadores");
                 if (check.Checked == true)
                 {
+                    _jugador.NumeroCedula = tbl_lista_jugadores.Rows[i].Cells[0].Text;
                     _jugador.Nombre = tbl_lista_jugadores.Rows[i].Cells[1].Text;
+                    _jugador.Apellido1 = tbl_lista_jugadores.Rows[i].Cells[2].Text;
+                    _jugador.Apellido2 = tbl_lista_jugadores.Rows[i].Cells[3].Text;
+                    _jugador.NumeroTelefono = tbl_lista_jugadores.Rows[i].Cells[5].Text;
+                    _jugador.Correo = tbl_lista_jugadores.Rows[i].Cells[6].Text;
+                    _jugador.DireccionCasa = tbl_lista_jugadores.Rows[i].Cells[7].Text;
                     _jugador.pc_captura_datos();
+                    filas = 10;
                     break;
                 }
             }
-            Response.Redirect("frm_actualizar_jugador.aspx");
+            if (filas == 10)
+            {
+                Response.Redirect("frm_actualizar_jugador.aspx");
+            }
+            else
+            {
+                lbl_mensaje.Text = "Debe seleccionar un jugador";
+            }
+           
         }
 
         protected void btn_cambiar_Click(object sender, EventArgs e)
