@@ -86,5 +86,10 @@ namespace Proyecto_V.Forms
             txt_fundacion.Text = this.Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
         }
+
+        protected void btn_actualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
