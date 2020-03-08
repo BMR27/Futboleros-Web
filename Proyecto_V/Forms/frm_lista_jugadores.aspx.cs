@@ -10,6 +10,7 @@ namespace Proyecto_V.Forms
 {
     public partial class frm_lista_jugadores : System.Web.UI.Page
     {
+        Cls_Jugador _jugador = new Cls_Jugador();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -19,14 +20,25 @@ namespace Proyecto_V.Forms
         }
         void pc_cargar_tabla_jugadores()
         {
-            Cls_Jugador _jugador = new Cls_Jugador();
+            
             tbl_lista_jugadores.DataSource =  _jugador.pc_consultar_jugadores();
             tbl_lista_jugadores.DataBind();
         }
 
         protected void btn_actualizar_Click(object sender, EventArgs e)
         {
-            tbl_lista_jugadores.Enabled = false;
+            int filas = 0;
+            for (int i = 0; i < tbl_lista_jugadores.Rows.Count; i++)
+            {
+                CheckBox check = (CheckBox)tbl_lista_jugadores.Rows[i].FindControl("ch_tbl_jugadores");
+                if (check.Checked == true)
+                {
+                    _jugador.Nombre = tbl_lista_jugadores.Rows[i].Cells[1].Text;
+                    _jugador.pc_captura_datos();
+                    break;
+                }
+            }
+            Response.Redirect("frm_actualizar_jugador.aspx");
         }
 
         protected void btn_cambiar_Click(object sender, EventArgs e)
@@ -44,7 +56,7 @@ namespace Proyecto_V.Forms
             int filas = 0;
             for (int i = 0; i < tbl_lista_jugadores.Rows.Count; i++)
             {
-                Cls_Jugador _jugador = new Cls_Jugador();
+
                 CheckBox check = (CheckBox)tbl_lista_jugadores.Rows[i].FindControl("ch_tbl_jugadores");
                 if (check.Checked == true)
                 {

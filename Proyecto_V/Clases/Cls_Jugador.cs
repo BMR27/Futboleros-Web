@@ -26,6 +26,8 @@ namespace Proyecto_V.Clases
         public string Apellido2 { get; set; }
         public string DireccionCasa { get; set; }
         public string Activo { get; set; }
+
+        static List<Cls_Jugador> datos_jugador = new List<Cls_Jugador>();
         #endregion
 
         //CONSTRUCTORES DE CLASE
@@ -80,6 +82,28 @@ namespace Proyecto_V.Clases
             }
 
             return filas;
+        }
+
+        //METODO QUE CAPUTA LOS DATOS DEL JUGADOR
+        //PARA ACTUALZIARLO
+        public void pc_captura_datos()
+        {
+            //CAPTURAMOS LOS DATOS DEL JUGADOR
+            Cls_Jugador datos = new Cls_Jugador();
+            datos.Nombre = this.Nombre;
+            datos.Apellido1 = this.Apellido1;
+            datos.Apellido2 = this.Apellido2;
+            datos.NumeroTelefono = this.NumeroTelefono;
+            datos.Correo = this.Correo;
+            datos.DireccionCasa = this.DireccionCasa;
+            //AGREGAMOS LOS DATOS A UNA LISTA STATICA PARA RETORNALOS
+            datos_jugador.Add(datos);
+        }
+
+        //METODO QUE ME RETORNA LA LISTA CON LOS DATOS DEL JUGADOR A ACTUALIZAR
+        public List<Cls_Jugador> pc_retornar_lista_jugador()
+        {
+            return datos_jugador;
         }
         #endregion
     }

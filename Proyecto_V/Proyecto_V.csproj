@@ -116,6 +116,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Forms\frm_actualizar_jugador.aspx" />
     <Content Include="Forms\frm_Asistidores.aspx" />
     <Content Include="Forms\frm_Creacion_Torneos.aspx" />
     <Content Include="Forms\frm_Estadisticas Jugadores.aspx" />
@@ -140,6 +141,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Hoja Estilos\Estilos_Actualizar_jugador.css" />
     <Content Include="Hoja Estilos\Estilos_Reg_Jugadores.css" />
     <Content Include="Hoja Estilos\HojaEstilos.css" />
     <Content Include="Imagenes\icons8_Calendar_48px_1.png" />
@@ -203,6 +205,13 @@
     <Compile Include="Clases\Cls_Jugador.cs" />
     <Compile Include="Clases\Cls_Provincia.cs" />
     <Compile Include="Clases\Cls_Usuario.cs" />
+    <Compile Include="Forms\frm_actualizar_jugador.aspx.cs">
+      <DependentUpon>frm_actualizar_jugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_actualizar_jugador.aspx.designer.cs">
+      <DependentUpon>frm_actualizar_jugador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm_Asistidores.aspx.cs">
       <DependentUpon>frm_Asistidores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
