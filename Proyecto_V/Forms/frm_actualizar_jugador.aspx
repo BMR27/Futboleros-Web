@@ -14,6 +14,9 @@
         <input class="textos" type="text" id="txt_correo" runat="server" placeholder="Email" name="name" value="" />
         <input class="textos" type="text" id="txt_direccion" runat="server" placeholder="Dirección de casa" name="name" value="" />
         <br />  
-        <asp:Button Text="Actualizar Jugador" CssClass="btn btn-primary" runat="server" />
+        <asp:Button Text="Actualizar Jugador" CssClass="btn btn-primary" runat="server" ID="btn_actualizar" OnClick="btn_actualizar_Click"  />
+        <br />  
+        <br />  
+        <asp:Label Text="" ID="txt_mensaje" runat="server" />
     </section>
 </asp:Content>

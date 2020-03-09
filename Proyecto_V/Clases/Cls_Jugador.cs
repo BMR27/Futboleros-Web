@@ -88,6 +88,7 @@ namespace Proyecto_V.Clases
         //PARA ACTUALZIARLO
         public void pc_captura_datos()
         {
+            pc_limpiar_datos_jugador();
             //CAPTURAMOS LOS DATOS DEL JUGADOR
             Cls_Jugador datos = new Cls_Jugador();
             datos.NumeroCedula = this.NumeroCedula;
@@ -106,6 +107,30 @@ namespace Proyecto_V.Clases
         {
             return datos_jugador;
         }
+        //METDO PARA LIMPIAR LA TABLA
+        public void pc_limpiar_datos_jugador()
+        {
+            datos_jugador.Clear();
+        }
+
+        //METODO PARA ACTUALZIAR EL JUGADOR
+        public int pc_actualizar_jugador()
+        {
+            int filas = 0;
+            try
+            {
+                filas = this.ModeloDB.SP_ACTUALIZAR_JUGADOR(this.NumeroCedula, this.Nombre, this.Apellido1, this.Apellido2, this.NumeroTelefono,
+                    this.Correo, this.DireccionCasa);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return filas;
+        }
+        
         #endregion
     }
 }

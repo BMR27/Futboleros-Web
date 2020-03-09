@@ -386,5 +386,38 @@ namespace Proyecto_V.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_Result>("SP_CONSULTAR_LISTA_JUGADORES");
         }
+    
+        public virtual int SP_ACTUALIZAR_JUGADOR(string cEDULA, string nOMBRE, string aPELLIDO1, string aPELLIDO2, string tELEFONO, string cORREO, string dIRECCION)
+        {
+            var cEDULAParameter = cEDULA != null ?
+                new ObjectParameter("CEDULA", cEDULA) :
+                new ObjectParameter("CEDULA", typeof(string));
+    
+            var nOMBREParameter = nOMBRE != null ?
+                new ObjectParameter("NOMBRE", nOMBRE) :
+                new ObjectParameter("NOMBRE", typeof(string));
+    
+            var aPELLIDO1Parameter = aPELLIDO1 != null ?
+                new ObjectParameter("APELLIDO1", aPELLIDO1) :
+                new ObjectParameter("APELLIDO1", typeof(string));
+    
+            var aPELLIDO2Parameter = aPELLIDO2 != null ?
+                new ObjectParameter("APELLIDO2", aPELLIDO2) :
+                new ObjectParameter("APELLIDO2", typeof(string));
+    
+            var tELEFONOParameter = tELEFONO != null ?
+                new ObjectParameter("TELEFONO", tELEFONO) :
+                new ObjectParameter("TELEFONO", typeof(string));
+    
+            var cORREOParameter = cORREO != null ?
+                new ObjectParameter("CORREO", cORREO) :
+                new ObjectParameter("CORREO", typeof(string));
+    
+            var dIRECCIONParameter = dIRECCION != null ?
+                new ObjectParameter("DIRECCION", dIRECCION) :
+                new ObjectParameter("DIRECCION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_JUGADOR", cEDULAParameter, nOMBREParameter, aPELLIDO1Parameter, aPELLIDO2Parameter, tELEFONOParameter, cORREOParameter, dIRECCIONParameter);
+        }
     }
 }

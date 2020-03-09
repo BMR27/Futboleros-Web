@@ -17,6 +17,7 @@ namespace Proyecto_V.Forms
             {
                 pc_cargar_datos_jugador();
                 txt_cedula.Enabled = false;
+                _jugador.pc_limpiar_datos_jugador();
             }
         }
         void pc_cargar_datos_jugador()
@@ -30,6 +31,25 @@ namespace Proyecto_V.Forms
                 txt_telefono.Value = item.NumeroTelefono;
                 txt_correo.Value = item.Correo;
                 txt_direccion.Value = item.DireccionCasa;
+            }
+        }
+
+        protected void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            _jugador.NumeroCedula = txt_cedula.Text;
+            _jugador.Nombre = txt_nombre.Value;
+            _jugador.Apellido1 = txt_apellido1.Value;
+            _jugador.Apellido2 = txt_apellido2.Value;
+            _jugador.NumeroTelefono = txt_telefono.Value;
+            _jugador.Correo = txt_correo.Value;
+            _jugador.DireccionCasa = txt_direccion.Value;
+            if (_jugador.pc_actualizar_jugador() > 0)
+            {
+                Response.Redirect("frm_lista_jugadores.aspx");
+            }
+            else
+            {
+                txt_mensaje.Text = "No se actualizaron los datos del jugador";
             }
         }
     }

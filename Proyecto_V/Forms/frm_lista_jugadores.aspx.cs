@@ -39,7 +39,7 @@ namespace Proyecto_V.Forms
                     _jugador.Apellido2 = tbl_lista_jugadores.Rows[i].Cells[3].Text;
                     _jugador.NumeroTelefono = tbl_lista_jugadores.Rows[i].Cells[5].Text;
                     _jugador.Correo = tbl_lista_jugadores.Rows[i].Cells[6].Text;
-                    _jugador.DireccionCasa = tbl_lista_jugadores.Rows[i].Cells[7].Text;
+                    _jugador.DireccionCasa = tbl_lista_jugadores.Rows[i].Cells[8].Text;
                     _jugador.pc_captura_datos();
                     filas = 10;
                     break;
