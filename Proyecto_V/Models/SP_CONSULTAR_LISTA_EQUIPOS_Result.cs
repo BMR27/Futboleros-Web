@@ -14,28 +14,20 @@ namespace Proyecto_V.Models
 
 using System;
     
-public partial class RetornaCantones1_Result
+public partial class SP_CONSULTAR_LISTA_EQUIPOS_Result
 {
 
-    public int id_Canton { get; set; }
+    public int C_CONSECUTIVO { get; set; }
 
-    public int id_Provincia { get; set; }
+    public string C_NOMBRE_EQUIPO { get; set; }
 
-    public string nombre { get; set; }
+    public int C_FK_PROVINCIA { get; set; }
 
-    public string Provincia { get; set; }
+    public int C_FK_DISTRITO { get; set; }
 
-    public string usuarioCrea { get; set; }
+    public int C_FK_CANTON { get; set; }
 
-    public Nullable<System.DateTime> fechaCrea { get; set; }
-
-    public string usuarioModifica { get; set; }
-
-    public Nullable<System.DateTime> fechaModifica { get; set; }
-
-    public string vc_Estado { get; set; }
-
-    public int id_CantonInec { get; set; }
+    public string FUNDACION { get; set; }
 
 }
 

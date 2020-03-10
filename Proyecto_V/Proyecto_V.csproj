@@ -116,6 +116,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Forms\frm_actualizar_equipo.aspx" />
     <Content Include="Forms\frm_actualizar_jugador.aspx" />
     <Content Include="Forms\frm_Asistidores.aspx" />
     <Content Include="Forms\frm_Creacion_Torneos.aspx" />
@@ -125,6 +126,7 @@
     <Content Include="Forms\frm_entrada.aspx" />
     <Content Include="Forms\frm_ingreso_equipos.aspx" />
     <Content Include="Forms\frm_Inicio.aspx" />
+    <Content Include="Forms\frm_lista_equipos.aspx" />
     <Content Include="Forms\frm_lista_jugadores.aspx" />
     <Content Include="Forms\frm_Registro de Encuentros.aspx" />
     <Content Include="Forms\frm_Registro de Equipos.aspx" />
@@ -205,6 +207,13 @@
     <Compile Include="Clases\Cls_Jugador.cs" />
     <Compile Include="Clases\Cls_Provincia.cs" />
     <Compile Include="Clases\Cls_Usuario.cs" />
+    <Compile Include="Forms\frm_actualizar_equipo.aspx.cs">
+      <DependentUpon>frm_actualizar_equipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_actualizar_equipo.aspx.designer.cs">
+      <DependentUpon>frm_actualizar_equipo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm_actualizar_jugador.aspx.cs">
       <DependentUpon>frm_actualizar_jugador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +276,13 @@
     </Compile>
     <Compile Include="Forms\frm_Inicio.aspx.designer.cs">
       <DependentUpon>frm_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_lista_equipos.aspx.cs">
+      <DependentUpon>frm_lista_equipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_lista_equipos.aspx.designer.cs">
+      <DependentUpon>frm_lista_equipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_lista_jugadores.aspx.cs">
       <DependentUpon>frm_lista_jugadores.aspx</DependentUpon>
@@ -342,6 +358,9 @@
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RetornaProvincias_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_LISTA_EQUIPOS_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_Result.cs">
