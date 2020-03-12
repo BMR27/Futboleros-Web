@@ -49,7 +49,7 @@
                           <a class="dropdown-item" href="frm_Creacion_Torneos.aspx">Creacion de Torneos</a><br/>
                           <a class="dropdown-item" href="frm_Registro de Encuentros.aspx">Registro de Encuentros</a><br/>
                           <a class="dropdown-item" href="frm_Registro de Equipos.aspx">Registro de Equipos</a><br/>
-                          <a class="dropdown-item" href="frm_Tabla de Posiciones.aspx">Tabla de Posiciones</a>
+                          <a class="dropdown-item" href="frm_lista_equipos.aspx">Lista de Equipos</a>
                         </div>
                     </li>
                  <li class="nav-item dropdown">

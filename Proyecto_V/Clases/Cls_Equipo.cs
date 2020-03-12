@@ -88,9 +88,9 @@ namespace Proyecto_V.Clases
             //CAPTURAMOS LOS DATOS DEL EQUIPO
             Cls_Equipo datos = new Cls_Equipo();
             datos.NombreEquipo = this.NombreEquipo;
-            datos.NombreProvincia = this.NombreProvincia;
-            datos.NombreCanton = this.NombreCanton;
-            datos.NombreDistrito = this.NombreDistrito;
+           
+
+            
             datos.Fundacion = this.Fundacion;
             //AGREGAMOS LOS DATOS A UNA LISTA STATICA PARA RETORNARLOS
             datos_equipo.Add(datos);
@@ -114,7 +114,7 @@ namespace Proyecto_V.Clases
             int filas = 0;
             try
             {
-                filas = this.ModeloDB.SP_ACTUALIZAR_EQUIPO(this.NombreEquipo, this.NombreProvincia, this.NombreCanton, this.NombreDistrito, this.Fundacion);
+                filas = this.ModeloDB.SP_ACTUALIZAR_EQUIPO(IdProvincia, IdCanton, IdDistrito, NombreEquipo, Convert.ToDateTime(Fundacion));
 
             }
             catch

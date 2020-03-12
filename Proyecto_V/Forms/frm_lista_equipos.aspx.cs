@@ -28,7 +28,7 @@ namespace Proyecto_V.Forms
 
         protected void btn_cambiar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frm_lista_jugadores.aspx");
+            Response.Redirect("frm_lista_equipos.aspx");
         }
 
         protected void btn_eliminar_Click(object sender, EventArgs e)
@@ -61,7 +61,9 @@ namespace Proyecto_V.Forms
                 if (check.Checked == true)
                 {
                     _equipo.NombreEquipo = tbl_lista_equipos.Rows[i].Cells[0].Text;
-                    _equipo.Fundacion = tbl_lista_equipos.Rows[i].Cells[0].Text;
+                    _equipo.Fundacion = tbl_lista_equipos.Rows[i].Cells[1].Text;
+                    
+                    
                     _equipo.pc_captura_datos();
                     filas = 10;
                     break;
