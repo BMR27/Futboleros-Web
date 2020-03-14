@@ -45,11 +45,12 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Torneos
                     </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
-                          <a class="dropdown-item" href="frm_Creacion_Torneos.aspx">Creacion de Torneos</a><br/>
-                          <a class="dropdown-item" href="frm_Registro de Encuentros.aspx">Registro de Encuentros</a><br/>
-                          <a class="dropdown-item" href="frm_Registro de Equipos.aspx">Registro de Equipos</a><br/>
-                          <a class="dropdown-item" href="frm_lista_equipos.aspx">Lista de Equipos</a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
+                            <asp:LinkButton Text="Registrar Equipo" ID="btn_registrar_equipo" OnClick="btn_registrar_equipo_Click" runat="server" /><br/>
+                            <asp:LinkButton Text="Ver Lista de Equipos" ID="btn_lista_equipo" OnClick="btn_lista_equipo_Click" runat="server" /><br/>
+                          
+                          <a class="dropdown-item" href="frm_Goleadores.aspx">Proceso</a><br/>
+                          <a class="dropdown-item" href="frm_Asistidores.aspx">Proceso</a>
                         </div>
                     </li>
                  <li class="nav-item dropdown">
