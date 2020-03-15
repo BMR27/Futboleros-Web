@@ -14,6 +14,7 @@ namespace Proyecto_V
         {
             pc_validar_sesion();
             pc_mostrar_nombre_usuario();
+            pc_validar_tipo_usuario();
         }
         //METODOS DE LA CLASE
         #region METODOS
@@ -44,11 +45,16 @@ namespace Proyecto_V
         {
             foreach (var item in _datos_usuario.pc_retornar_lista())
             {
-                //switch (item.nom)
-                //{
-                //    default:
-                //        break;
-                //}
+                switch (item.NombreTipo)
+                {
+                    case "JUNIOR":
+                        btn_torneo.Visible = false;
+                        navbarDropdown2.Visible = false;
+                        navbarDropdown.Visible = false;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         #endregion

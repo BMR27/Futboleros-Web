@@ -42,7 +42,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="frm_entrada">Inicio</a></li>
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="btn_torneo" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Torneos
                     </a>
                          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
@@ -54,7 +54,7 @@
                         </div>
                     </li>
                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Jugadores
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
@@ -66,7 +66,7 @@
                         </div>
                    </li>
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Historial de Torneos
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
@@ -129,5 +129,6 @@
  
             </asp:ContentPlaceHolder>
     </form>
+
 </body>
 </html>
