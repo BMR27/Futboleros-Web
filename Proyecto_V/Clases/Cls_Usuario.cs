@@ -22,15 +22,15 @@ namespace Proyecto_V
 
         //ATRIBUTOS DE LA CLASE
         #region Atributos de la clase
-        int IdUsuario { get; set; }
-        string Nombre { get; set; }
-        string Apellido1 { get; set; }
-        string Apellido2 { get; set; }
-        string NombreUsuario { get; set; }
-        string Pass { get; set; }
-        string Activo { get; set; }
-        int TipoUsuario { get; set; }
-        string NombreTipo { get; set; }
+        public int IdUsuario { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido1 { get; set; }
+        public string Apellido2 { get; set; }
+        public string NombreUsuario { get; set; }
+        public string Pass { get; set; }
+        public string Activo { get; set; }
+        public int TipoUsuario { get; set; }
+        public string NombreTipo { get; set; }
         #endregion
 
         //CONSTRUCTORES DE CLASE
@@ -100,6 +100,12 @@ namespace Proyecto_V
         {
             return Lista_Datos_Usuario[0].IdUsuario;
         }
+
+        public List<Cls_Usuario> pc_retornar_lista()
+        {
+            return Lista_Datos_Usuario;
+        }
+
         #endregion
     }
 }

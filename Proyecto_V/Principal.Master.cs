@@ -38,6 +38,19 @@ namespace Proyecto_V
             Session.Clear();
             pc_validar_sesion();
         }
+
+        //METODO PARA VALIDAR LOS DERECHOS DE LOS USUARIOS
+        void pc_validar_tipo_usuario()
+        {
+            foreach (var item in _datos_usuario.pc_retornar_lista())
+            {
+                //switch (item.nom)
+                //{
+                //    default:
+                //        break;
+                //}
+            }
+        }
         #endregion
 
         protected void btn_cerrar_sesion_Click(object sender, EventArgs e)
