@@ -549,7 +549,7 @@
           <Parameter Name="id_Canton" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_ELIMINAR_EQUIPO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="NOMBRE_EQUIPO" Type="varchar" Mode="In" />
+          <Parameter Name="ID_EQUIPO" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_ELIMINAR_JUGADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDULA" Type="char" Mode="In" />
@@ -1474,10 +1474,10 @@
             <Parameter Name="NOMBRE_EQUIPO" Mode="In" Type="String" />
             <Parameter Name="FUNDACION" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="SP_ELIMINAR_EQUIPO">
-          <Parameter Name="NOMBRE_EQUIPO" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_LISTA_EQUIPOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_EQUIPOS_Result)" />
+          <FunctionImport Name="SP_ELIMINAR_EQUIPO">
+            <Parameter Name="ID_EQUIPO" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1962,7 +1962,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_JUGADOR" FunctionName="programacion5Model.Store.SP_ACTUALIZAR_JUGADOR" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_EQUIPO" FunctionName="programacion5Model.Store.SP_ACTUALIZAR_EQUIPO" />
-          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_EQUIPO" FunctionName="programacion5Model.Store.SP_ELIMINAR_EQUIPO" />
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_EQUIPOS" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_EQUIPOS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_EQUIPOS_Result">
@@ -1975,6 +1974,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_ELIMINAR_EQUIPO" FunctionName="programacion5Model.Store.SP_ELIMINAR_EQUIPO" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
