@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="frm_Registro de Jugadores.aspx.cs" Inherits="Proyecto_V.Forms.frm_Registro_de_Jugadores" %>
+﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile ="~/Principal.Master" AutoEventWireup="true" CodeBehind="frm_Registro de Jugadores.aspx.cs" Inherits="Proyecto_V.Forms.frm_Registro_de_Jugadores" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

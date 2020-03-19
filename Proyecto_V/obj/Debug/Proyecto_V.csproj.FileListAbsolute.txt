@@ -162,6 +162,60 @@ C:\Users\Laboratorio\Downloads\Proyecto-Final-master\Proyecto_V\obj\Debug\Proyec
 C:\Users\Laboratorio\Downloads\Proyecto-Final-master\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
 C:\Users\Laboratorio\Downloads\Proyecto-Final-master\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Laboratorio\Downloads\Proyecto-Final-master\Proyecto_V\obj\Debug\Proyecto_V.pdb
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.dll.config
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.pdb
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\csc.exe
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\csc.exe.config
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\csc.rsp
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\csi.exe
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\csi.rsp
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\System.AppContext.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\vbc.exe
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\vbc.exe.config
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\vbc.rsp
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\VBCSCompiler.exe
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Antlr3.Runtime.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\EntityFramework.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Newtonsoft.Json.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\System.Web.Optimization.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\WebGrease.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\EntityFramework.xml
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\System.Web.Optimization.xml
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Newtonsoft.Json.xml
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Antlr3.Runtime.pdb
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.pdb
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\bin\Proyecto_V.dll.config
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\bin\Proyecto_V.dll
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\bin\Proyecto_V.pdb
@@ -217,31 +271,3 @@ C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyec
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.pdb
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.dll.config
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.pdb
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Antlr3.Runtime.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\AspNet.ScriptManager.bootstrap.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\EntityFramework.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.FriendlyUrls.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.ScriptManager.MSAjax.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.ScriptManager.WebForms.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Newtonsoft.Json.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\System.Web.Optimization.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\WebGrease.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\EntityFramework.xml
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\System.Web.Optimization.xml
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Newtonsoft.Json.xml
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Antlr3.Runtime.pdb
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\es\System.Web.Optimization.resources.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.dll
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.pdb
