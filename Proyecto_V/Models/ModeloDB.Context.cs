@@ -445,18 +445,18 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_EQUIPO", iD_PROVINCIAParameter, iD_CANTONParameter, iD_DISTRITOParameter, nOMBRE_EQUIPOParameter, fUNDACIONParameter);
         }
     
-        public virtual int SP_ELIMINAR_EQUIPO(string nOMBRE_EQUIPO)
-        {
-            var nOMBRE_EQUIPOParameter = nOMBRE_EQUIPO != null ?
-                new ObjectParameter("NOMBRE_EQUIPO", nOMBRE_EQUIPO) :
-                new ObjectParameter("NOMBRE_EQUIPO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_EQUIPO", nOMBRE_EQUIPOParameter);
-        }
-    
         public virtual ObjectResult<SP_CONSULTAR_LISTA_EQUIPOS_Result> SP_CONSULTAR_LISTA_EQUIPOS()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_EQUIPOS_Result>("SP_CONSULTAR_LISTA_EQUIPOS");
+        }
+    
+        public virtual int SP_ELIMINAR_EQUIPO(Nullable<int> iD_EQUIPO)
+        {
+            var iD_EQUIPOParameter = iD_EQUIPO.HasValue ?
+                new ObjectParameter("ID_EQUIPO", iD_EQUIPO) :
+                new ObjectParameter("ID_EQUIPO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_EQUIPO", iD_EQUIPOParameter);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Proyecto_V.Forms
                 CheckBox check = (CheckBox)tbl_lista_equipos.Rows[i].FindControl("ch_tbl_equipos");
                 if (check.Checked == true)
                 {
-                    _equipo.NombreEquipo = tbl_lista_equipos.Rows[i].Cells[0].Text;
+                    _equipo.idConsecutivo = Convert.ToInt32( tbl_lista_equipos.Rows[i].Cells[0].Text);
                     filas = _equipo.pc_eliminar_equipo();
                     break;
                 }
@@ -49,6 +49,10 @@ namespace Proyecto_V.Forms
             if (filas > 0)
             {
                 Response.Redirect("frm_lista_equipos.aspx");
+            }
+            else
+            {
+                lbl_mensaje.Text = "No se elimino el equipo";
             }
         }
 
