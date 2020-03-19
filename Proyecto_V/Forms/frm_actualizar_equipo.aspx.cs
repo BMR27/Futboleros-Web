@@ -26,7 +26,9 @@ namespace Proyecto_V.Forms
             foreach(var item in _equipo.pc_retornar_lista_equipo())
             {
 
+               
                 txt_nombre.Value = item.NombreEquipo;
+                
                 txt_fundacion.Value = item.Fundacion;
                
             }
@@ -38,7 +40,7 @@ namespace Proyecto_V.Forms
             _equipo.Fundacion = txt_fundacion.Value;
             if (_equipo.pc_actualizar_equipo() > 0)
             {
-                Response.Redirect("frm_lista_jugadores.aspx");
+                Response.Redirect("frm_lista_equipos.aspx");
             }
             else
             {
