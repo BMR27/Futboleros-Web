@@ -4,18 +4,24 @@
     box-sizing:border-box;
 }
 .frm_actualizar{
-    width:500px;
+    width:380px;
     background-color:#ffffff;
     padding:30px;
     margin:auto;
     margin-top:auto;
     border-radius:4px;
 }
-
+.container {
+    text-align:center;
+}
 .textos{
-    width:100%;
+    width:70%;
     padding:10px;
     border-radius:4px;
     margin-bottom:16px;
     border: 1px solid #4800ff; 
+}
+h4 {
+    text-align: center;
+    color: #ff0000;
 }
