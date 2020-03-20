@@ -10,7 +10,7 @@
         <input class="textos" type="text" id="txt_nombre" runat="server" placeholder="Nombre Equipo" name="name" value="" />
         <input class="textos" type="text" id="txt_provincia" runat="server" placeholder="Provincia" name="name" value="" />
         <input class="textos" type="text" id="txt_canton" runat="server" placeholder="Canton" name="name" value="" />
-        <input class="textos" type="text" id="txt_distrito" runat="server" placeholder="Distrito" name="name" value="" />
+        <input class="textos" type="text" id="txt_distrito" runat="server" placeholder="Distrito Télefono" name="name" value="" />
         <input class="textos" type="text" id="txt_fundacion" runat="server" placeholder="Fundacion" name="name" value="" />
        
         <br />  

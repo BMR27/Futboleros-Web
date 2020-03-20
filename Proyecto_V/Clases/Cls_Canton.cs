@@ -14,8 +14,8 @@ namespace Proyecto_V.Clases
 
         //ATRUBUTOS DE CLASE
         #region ATRIBUTOS DE CLASE
-        protected int IdCanton { get; set; }
-        protected string NombreCanton { get; set; }
+        public int IdCanton { get; set; }
+        public string NombreCanton { get; set; }
         static List<RetornaCantones1_Result> lista_canton = new List<RetornaCantones1_Result>();
         #endregion
 

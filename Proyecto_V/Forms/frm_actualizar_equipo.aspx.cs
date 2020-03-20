@@ -17,21 +17,23 @@ namespace Proyecto_V.Forms
             {
                 pc_cargar_datos_equipo();
                 txt_consecutivo.Enabled = false;
-                _equipo.pc_limpiar_datos_equipo();
             }
         }
 
         void pc_cargar_datos_equipo()
         {
-            foreach(var item in _equipo.pc_retornar_lista_equipo())
+            foreach (var item in _equipo.pc_retornar_datos_equipo())
             {
-
-               
+                //MOSTRAMOS LOS DATOS DE LA LISTA
+                txt_consecutivo.Text = Convert.ToString(item.idConsecutivo);
                 txt_nombre.Value = item.NombreEquipo;
-                
+                txt_provincia.Value = item.NombreProvincia;
+                txt_canton.Value = item.NombreCanton;
+                txt_distrito.Value = item.NombreDistrito;
                 txt_fundacion.Value = item.Fundacion;
-               
             }
+            //HACEMOS LA LIMPIEZA DE LA VARIABLE ESTATICA
+            _equipo.pc_limpiar_datos_equipo();
         }
 
         protected void btn_actualizar_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Proyecto_V.Forms
             _equipo.Fundacion = txt_fundacion.Value;
             if (_equipo.pc_actualizar_equipo() > 0)
             {
-                Response.Redirect("frm_lista_equipos.aspx");
+                Response.Redirect("frm_lista_jugadores.aspx");
             }
             else
             {

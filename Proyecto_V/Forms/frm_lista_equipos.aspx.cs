@@ -64,10 +64,14 @@ namespace Proyecto_V.Forms
                 CheckBox check = (CheckBox)tbl_lista_equipos.Rows[i].FindControl("ch_tbl_equipos");
                 if (check.Checked == true)
                 {
-                    _equipo.NombreEquipo = tbl_lista_equipos.Rows[i].Cells[0].Text;
-                    _equipo.Fundacion = tbl_lista_equipos.Rows[i].Cells[1].Text;
-                    
-                    
+                    //CAPTURAMOS LOS DATOS DE LA TABLA
+                    _equipo.idConsecutivo = Convert.ToInt32(tbl_lista_equipos.Rows[i].Cells[0].Text);
+                    _equipo.NombreEquipo = tbl_lista_equipos.Rows[i].Cells[1].Text;
+                    _equipo.NombreProvincia = tbl_lista_equipos.Rows[i].Cells[2].Text;
+                    _equipo.NombreCanton = tbl_lista_equipos.Rows[i].Cells[3].Text;
+                    _equipo.NombreDistrito = tbl_lista_equipos.Rows[i].Cells[4].Text;
+                    _equipo.Fundacion = tbl_lista_equipos.Rows[i].Cells[5].Text;
+                    //EJECUTAMOS EL METODO DE GUARDARLO EN MEMORIA
                     _equipo.pc_captura_datos();
                     filas = 10;
                     break;

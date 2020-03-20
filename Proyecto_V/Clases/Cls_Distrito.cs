@@ -16,8 +16,8 @@ namespace Proyecto_V.Clases
 
         //ATRIBUTOS DE CLASE
         #region ATRIBUTOS DE LA CLASE
-        protected int IdDistrito { get; set; }
-        protected string NombreDistrito { get; set; }
+        public int IdDistrito { get; set; }
+        public string NombreDistrito { get; set; }
         #endregion
 
         //CONSTRUCTORES DE CLASE

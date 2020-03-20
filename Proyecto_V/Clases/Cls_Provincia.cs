@@ -11,9 +11,9 @@ namespace Proyecto_V.Clases
         programacion5Entities ModeloDB = new programacion5Entities();
         //ATRIBUTOS DE CLASE
         #region ATRIBUTOS DE LA CLASE
-        protected int IdProvincia { get; set; }
-        protected string NombreProvincia { get; set; }
-        protected string Error { get; set; }
+        public int IdProvincia { get; set; }
+        public string NombreProvincia { get; set; }
+        public string Error { get; set; }
         #endregion
 
         //CONSTRUCTORES DE CLASE

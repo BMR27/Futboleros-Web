@@ -87,10 +87,11 @@ namespace Proyecto_V.Clases
             pc_limpiar_datos_equipo();
             //CAPTURAMOS LOS DATOS DEL EQUIPO
             Cls_Equipo datos = new Cls_Equipo();
+            datos.idConsecutivo = this.idConsecutivo;
             datos.NombreEquipo = this.NombreEquipo;
-           
-
-            
+            datos.NombreProvincia = this.NombreProvincia;
+            datos.NombreCanton = this.NombreCanton;
+            datos.NombreDistrito = this.NombreDistrito;                   
             datos.Fundacion = this.Fundacion;
             //AGREGAMOS LOS DATOS A UNA LISTA STATICA PARA RETORNARLOS
             datos_equipo.Add(datos);
@@ -98,7 +99,7 @@ namespace Proyecto_V.Clases
 
 
         //METODO QUE RETORNA LA LISTA CON LOS DATOS DE LOS EQUIPOS A ACTUALIZAR
-        public List<Cls_Equipo> pc_retornar_lista_equipo()
+        public List<Cls_Equipo> pc_retornar_datos_equipo()
         {
             return datos_equipo;
         }

@@ -458,31 +458,5 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_EQUIPO", iD_EQUIPOParameter);
         }
-    
-        public virtual int SP_AGREGAR_JUGADOR_X_EQUIPO(string cEDULA, string nOMBRE_EQUIPO)
-        {
-            var cEDULAParameter = cEDULA != null ?
-                new ObjectParameter("CEDULA", cEDULA) :
-                new ObjectParameter("CEDULA", typeof(string));
-    
-            var nOMBRE_EQUIPOParameter = nOMBRE_EQUIPO != null ?
-                new ObjectParameter("NOMBRE_EQUIPO", nOMBRE_EQUIPO) :
-                new ObjectParameter("NOMBRE_EQUIPO", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AGREGAR_JUGADOR_X_EQUIPO", cEDULAParameter, nOMBRE_EQUIPOParameter);
-        }
-    
-        public virtual ObjectResult<SP_ROTORNAR_CANTON_Result> SP_ROTORNAR_CANTON(string nombre, Nullable<int> id_Provincia)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("nombre", nombre) :
-                new ObjectParameter("nombre", typeof(string));
-    
-            var id_ProvinciaParameter = id_Provincia.HasValue ?
-                new ObjectParameter("id_Provincia", id_Provincia) :
-                new ObjectParameter("id_Provincia", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_ROTORNAR_CANTON_Result>("SP_ROTORNAR_CANTON", nombreParameter, id_ProvinciaParameter);
-        }
     }
 }

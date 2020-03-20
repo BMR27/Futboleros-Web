@@ -28,8 +28,6 @@ namespace Proyecto_V.Forms
         {
             dl_lista_provincia.DataSource = _provincia.pc_consultar_provincias();
             dl_lista_provincia.DataBind();
-            dl_lista_provincia.Items.Insert(0, new ListItem("Seleccione una Provincia", ""));
-            dl_lista_provincia.SelectedValue = "";
         }
 
         protected void dl_lista_provincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,8 +37,6 @@ namespace Proyecto_V.Forms
             {
                 dl_lista_cantones.DataSource = _Canton.pc_retornar_lista();
                 dl_lista_cantones.DataBind();
-                dl_lista_cantones.Items.Insert(0, new ListItem("Seleccione un Cantón", ""));
-                dl_lista_cantones.SelectedValue = "";
                 _Canton.pc_limpiar_lista_canton();
             }
         }
@@ -50,18 +46,14 @@ namespace Proyecto_V.Forms
             Cls_Distrito _distrito = new Cls_Distrito(0, Convert.ToInt32(dl_lista_cantones.SelectedValue));
             dl_lista_distritos.DataSource = _distrito.pc_retornar_distrito();
             dl_lista_distritos.DataBind();
-            dl_lista_distritos.Items.Insert(0, new ListItem("Seleccione un Distrito", ""));
-            dl_lista_distritos.SelectedValue = "";
         }
 
         protected void btn_agregar_Click(object sender, EventArgs e)
         {
             Cls_Equipo _equipo = new Cls_Equipo(Convert.ToInt32(dl_lista_provincia.SelectedValue),
                     Convert.ToInt32(dl_lista_cantones.SelectedValue), Convert.ToInt32(dl_lista_distritos.SelectedValue));
-           
             _equipo.NombreEquipo = TxtNombreEquipo.Text;
             _equipo.Fundacion = txt_fundacion.Text;
-            
 
 
             //VALIDACION DE REGISTRO DEL EQUIPO

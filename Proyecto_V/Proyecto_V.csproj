@@ -378,9 +378,6 @@
     <Compile Include="Models\SP_RETORNAR_DISTRITO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SP_ROTORNAR_CANTON_Result.cs">
-      <DependentUpon>ModeloDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SP_VALIDAR_INICIO_SESION_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
