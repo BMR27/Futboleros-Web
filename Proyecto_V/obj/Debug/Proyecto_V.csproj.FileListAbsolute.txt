@@ -244,4 +244,3 @@ C:\Users\Andrey Azofeifa\source\repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyec
 C:\Users\Andrey Azofeifa\source\repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
 C:\Users\Andrey Azofeifa\source\repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Andrey Azofeifa\source\repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.pdb
-C:\Users\Andrey Azofeifa\source\repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache

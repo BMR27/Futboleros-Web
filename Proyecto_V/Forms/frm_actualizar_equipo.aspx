@@ -59,7 +59,7 @@
                 <br />
                 <br />
                 <p>Cambio de Distrito</p>
-                <asp:DropDownList ID="dl_distrito" runat="server" AutoPostBack="True" DataTextField="nombre" DataValueField="id_Distrito"></asp:DropDownList>
+                <asp:DropDownList ID="dl_distrito" runat="server" AutoPostBack="True" DataTextField="nombre" DataValueField="id_Distrito" OnSelectedIndexChanged="dl_distrito_SelectedIndexChanged"></asp:DropDownList>
             </div>
         </div>
     </div>

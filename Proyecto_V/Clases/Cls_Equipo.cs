@@ -115,7 +115,7 @@ namespace Proyecto_V.Clases
             int filas = 0;
             try
             {
-                
+                filas = this.ModeloDB.SP_ACTUALIZAR_EQUIPO(this.idConsecutivo, this.IdProvincia, this.IdCanton, this.IdDistrito, this.NombreEquipo, Convert.ToDateTime(this.Fundacion));
 
             }
             catch

@@ -78,6 +78,7 @@ namespace Proyecto_V.Forms
             else
             {
                 _equipo.idConsecutivo = Convert.ToInt32(txt_consecutivo.Text);
+                _equipo.IdProvincia = -1;
                 _equipo.NombreEquipo = txt_nombre.Text;
                 _equipo.Fundacion = txt_fundacion.Text;
                 //EJECUTAMOS EL SP
@@ -113,7 +114,7 @@ namespace Proyecto_V.Forms
 
         protected void dl_provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dl_provincia.SelectedValue != " ")
+            if (dl_provincia.SelectedValue != "")
             {
                 Cls_Canton _Canton = new Cls_Canton(Convert.ToInt32(dl_provincia.SelectedValue));
                 if (_Canton.pc_consultar_cantones() != "")
@@ -136,6 +137,18 @@ namespace Proyecto_V.Forms
                 dl_distrito.DataBind();
                 dl_distrito.Items.Insert(0, new ListItem("Seleccione un Distrito",""));
                 dl_distrito.SelectedValue = "";
+            }
+        }
+
+        protected void dl_distrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dl_distrito.SelectedValue != "")
+            {
+                btn_actualizar.Enabled = true;
+            }
+            else
+            {
+                btn_actualizar.Enabled = false;
             }
         }
     }
