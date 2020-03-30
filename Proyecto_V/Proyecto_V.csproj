@@ -126,6 +126,7 @@
     <Content Include="Forms\frm_entrada.aspx" />
     <Content Include="Forms\frm_ingreso_equipos.aspx" />
     <Content Include="Forms\frm_Inicio.aspx" />
+    <Content Include="Forms\frm_jug_x_equipo.aspx" />
     <Content Include="Forms\frm_lista_equipos.aspx" />
     <Content Include="Forms\frm_lista_jugadores.aspx" />
     <Content Include="Forms\frm_Registro de Encuentros.aspx" />
@@ -144,6 +145,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Hoja Estilos\EstilosActualizarEquipos.css" />
+    <Content Include="Hoja Estilos\EstilosJugEquipos.css" />
     <Content Include="Hoja Estilos\Estilos_Actualizar_jugador.css" />
     <Content Include="Hoja Estilos\Estilos_Reg_Jugadores.css" />
     <Content Include="Hoja Estilos\HojaEstilos.css" />
@@ -277,6 +279,13 @@
     </Compile>
     <Compile Include="Forms\frm_Inicio.aspx.designer.cs">
       <DependentUpon>frm_Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_jug_x_equipo.aspx.cs">
+      <DependentUpon>frm_jug_x_equipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_jug_x_equipo.aspx.designer.cs">
+      <DependentUpon>frm_jug_x_equipo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_lista_equipos.aspx.cs">
       <DependentUpon>frm_lista_equipos.aspx</DependentUpon>

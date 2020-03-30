@@ -43,13 +43,13 @@
                     <li class="active"><a href="frm_entrada">Inicio</a></li>
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="btn_torneo" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Torneos
+                     Equipos
                     </a>
                          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                             <asp:LinkButton Text="Registrar Equipo" ID="btn_registrar_equipo" OnClick="btn_registrar_equipo_Click" runat="server" /><br/>
                             <asp:LinkButton Text="Ver Lista de Equipos" ID="btn_lista_equipo" OnClick="btn_lista_equipo_Click" runat="server" /><br/>
                           
-                          <a class="dropdown-item" href="frm_Goleadores.aspx">Proceso</a><br/>
+                          <a class="dropdown-item" id="btn_jug_x_equipo" href="frm_jug_x_equipo">Asignar Jugadores</a><br/>
                           <a class="dropdown-item" href="frm_Asistidores.aspx">Proceso</a>
                         </div>
                     </li>
