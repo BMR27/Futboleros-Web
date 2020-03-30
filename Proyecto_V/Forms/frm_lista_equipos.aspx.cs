@@ -72,7 +72,7 @@ namespace Proyecto_V.Forms
                     _equipo.NombreDistrito = tbl_lista_equipos.Rows[i].Cells[4].Text;
                     _equipo.Fundacion = tbl_lista_equipos.Rows[i].Cells[5].Text;
                     //EJECUTAMOS EL METODO DE GUARDARLO EN MEMORIA
-                    _equipo.pc_captura_datos();
+                    _equipo.pc_captura_datos_equipo();
                     filas = 10;
                     break;
                 }

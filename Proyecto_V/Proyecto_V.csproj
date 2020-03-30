@@ -373,6 +373,9 @@
     <Compile Include="Models\SP_CONSULTAR_LISTA_EQUIPOS_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>

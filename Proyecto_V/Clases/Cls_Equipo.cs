@@ -82,7 +82,7 @@ namespace Proyecto_V.Clases
 
 
         //METODO QUE CAPTURA LOS DATOS DE LOS EQUIPOS Y LOS ACTUALIZA
-        public void pc_captura_datos()
+        public void pc_captura_datos_equipo()
         {
             pc_limpiar_datos_equipo();
             //CAPTURAMOS LOS DATOS DEL EQUIPO

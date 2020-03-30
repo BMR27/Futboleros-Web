@@ -27,7 +27,22 @@
             <div class="col-sm-4" id="IdContenido3">
                 <h3>Jugadores sin equipo</h3>
                 <br />
-                <asp:GridView ID="tbl_jugadores" CssClass="mGrid" runat="server"></asp:GridView>
+                <asp:GridView ID="tbl_jugadores" CssClass="mGrid" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="C_CEDULA" HeaderText="Cédula" />
+                        <asp:BoundField DataField="C_NOMBRE" HeaderText="Nombre" />
+                        <asp:BoundField DataField="C_APELLIDO1" HeaderText="Apellido 1" />
+                        <asp:BoundField DataField="C_APELLIDO2" HeaderText="Apellido 2" />
+                        <asp:TemplateField HeaderText="Seleccionar">
+                            <ItemTemplate>
+                                <asp:CheckBox ID="ch_seleccionar" runat="server" AutoPostBack="True" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+                <br />
+                <br />
+                <asp:Button Text="Agregar" ID="btn_agregar_jugador" CssClass="btn btn-primary" Width="200px" runat="server" OnClick="btn_agregar_jugador_Click" />
             </div>
         </div>
     </div>

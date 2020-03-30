@@ -462,5 +462,23 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_EQUIPO", iD_EQUIPOParameter, iD_PROVINCIAParameter, iD_CANTONParameter, iD_DISTRITOParameter, nOMBRE_EQUIPOParameter, fUNDACIONParameter);
         }
+    
+        public virtual int SP_AGREGAR_JUGADOR_X_EQUIPO(string cEDULA, Nullable<int> iD_EQUIPO)
+        {
+            var cEDULAParameter = cEDULA != null ?
+                new ObjectParameter("CEDULA", cEDULA) :
+                new ObjectParameter("CEDULA", typeof(string));
+    
+            var iD_EQUIPOParameter = iD_EQUIPO.HasValue ?
+                new ObjectParameter("ID_EQUIPO", iD_EQUIPO) :
+                new ObjectParameter("ID_EQUIPO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_AGREGAR_JUGADOR_X_EQUIPO", cEDULAParameter, iD_EQUIPOParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result> SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result>("SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS");
+        }
     }
 }

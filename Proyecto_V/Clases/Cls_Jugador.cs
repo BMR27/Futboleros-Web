@@ -6,7 +6,7 @@ using Proyecto_V.Models;
 
 namespace Proyecto_V.Clases
 {
-    public class Cls_Jugador:Cls_Distrito
+    public class Cls_Jugador:Cls_Equipo
     {
         //INSTANCIA DE CLASE
         #region INSTANCIA
@@ -15,7 +15,7 @@ namespace Proyecto_V.Clases
 
         //ATRIBUTOS DE CLASE
         #region ATRIBUTOS DE CLASE
-        public int idConsecutivo { get; set; }
+        public int idConsecutivo_jugador { get; set; }
         public string NumeroCedula { get; set; }
         public string Genero { get; set; }
         public string FechaNacimiento { get; set; }
@@ -65,6 +65,13 @@ namespace Proyecto_V.Clases
         public List<SP_CONSULTAR_LISTA_JUGADORES_Result> pc_consultar_jugadores()
         {
             List<SP_CONSULTAR_LISTA_JUGADORES_Result> lista_jugadores = this.ModeloDB.SP_CONSULTAR_LISTA_JUGADORES().ToList();
+            return lista_jugadores;
+        }
+
+        ////METODO CONSULTA LOS JUGADORES
+        public List<SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result> pc_consultar_jugadores_activos()
+        {
+            List<SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result> lista_jugadores = this.ModeloDB.SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS().ToList();
             return lista_jugadores;
         }
 
@@ -130,7 +137,18 @@ namespace Proyecto_V.Clases
 
             return filas;
         }
-        
+
+        //METODO REGISTRA JUGADORES POR EQUIPO
+
+        public int pc_jug_x_equipo(List<Cls_Jugador> datos)
+        {
+            int filas = 0;
+            foreach (var item in datos)
+            {
+                filas = this.ModeloDB.SP_AGREGAR_JUGADOR_X_EQUIPO(item.NumeroCedula,item.idConsecutivo);
+            }
+            return filas;
+        }
         #endregion
     }
 }
