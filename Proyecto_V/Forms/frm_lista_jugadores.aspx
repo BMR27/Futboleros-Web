@@ -32,4 +32,16 @@
         <br />
         <asp:Label Text="" ID="lbl_mensaje" runat="server" />
      </div>
+    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 </asp:Content>
