@@ -77,16 +77,16 @@ namespace Proyecto_V.Forms
             _torneo.id_Usuario = txtUsuario.Text;
 
            
-            //HACEMOS LA VALIDACION SI SE REGISTRP EL TORNEO
-            switch (_torneo.pc_registrar_torneo())
-            {
-                case -100:
-                    lbl_mensaje.Text = "Ocurrio un error";
-                    break;
-                default:
-                    lbl_mensaje.Text = "Torneo registrado";
-                    break;
-            }
+            ////HACEMOS LA VALIDACION SI SE REGISTRP EL TORNEO
+            //switch (_torneo.pc_registrar_torneo())
+            //{
+            //    case -100:
+            //        lbl_mensaje.Text = "Ocurrio un error";
+            //        break;
+            //    default:
+            //        lbl_mensaje.Text = "Torneo registrado";
+            //        break;
+            //}
         }
         
     }

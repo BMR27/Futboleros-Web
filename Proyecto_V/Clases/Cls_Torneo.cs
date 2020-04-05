@@ -32,26 +32,33 @@ namespace Proyecto_V.Clases
         {
 
         }
-       
+
         #endregion
 
-        //METODOS
-        #region METODOS DE LA CLASES
-        //METODO QUE HACE EL INSERT DE LOS JUGADORES
-        public int pc_registrar_torneo()
+        #region METODOS DE CLASE
+
+        //REGISTRAR TORNEOS
+
+        public string  pc_registrar_torneos()
         {
+            string mensaje = "";
             int filas = 0;
             try
             {
-                filas = this.ModeloDB.SP_REGISTRAR_TORNEO(Convert.ToInt32(id_Usuario), Convert.ToDateTime(Fecha_Inicio), Convert.ToDateTime(Fecha_Final), NombreTorneo,
-                   );
+                
             }
             catch (Exception)
             {
 
-                filas = -100;
+                throw;
             }
-            return filas;
+
+
+            return mensaje;
         }
+
+
+        #endregion
+
     }
 }
