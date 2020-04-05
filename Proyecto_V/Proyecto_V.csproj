@@ -132,6 +132,7 @@
     <Content Include="Forms\frm_Registro de Encuentros.aspx" />
     <Content Include="Forms\frm_Registro de Equipos.aspx" />
     <Content Include="Forms\frm_Registro de Jugadores.aspx" />
+    <Content Include="Forms\frm_Registro_Torneos.aspx" />
     <Content Include="Forms\frm_Tabla Acumulada.aspx" />
     <Content Include="Forms\frm_Tabla de Posiciones.aspx" />
     <Content Include="Forms\frm_Ultimos Campeones.aspx" />
@@ -209,6 +210,7 @@
     <Compile Include="Clases\Cls_Equipo.cs" />
     <Compile Include="Clases\Cls_Jugador.cs" />
     <Compile Include="Clases\Cls_Provincia.cs" />
+    <Compile Include="Clases\Cls_Torneo.cs" />
     <Compile Include="Clases\Cls_Usuario.cs" />
     <Compile Include="Forms\frm_actualizar_equipo.aspx.cs">
       <DependentUpon>frm_actualizar_equipo.aspx</DependentUpon>
@@ -321,6 +323,13 @@
     </Compile>
     <Compile Include="Forms\frm_Registro de Jugadores.aspx.designer.cs">
       <DependentUpon>frm_Registro de Jugadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Registro_Torneos.aspx.cs">
+      <DependentUpon>frm_Registro_Torneos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Registro_Torneos.aspx.designer.cs">
+      <DependentUpon>frm_Registro_Torneos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_Tabla Acumulada.aspx.cs">
       <DependentUpon>frm_Tabla Acumulada.aspx</DependentUpon>

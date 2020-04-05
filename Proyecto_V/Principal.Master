@@ -67,9 +67,10 @@
                    </li>
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" runat="server" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Historial de Torneos
+                     Torneos
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
+                            <asp:LinkButton Text="Registrar Torneo" ID="btn_registrar_torneo" OnClick="btn_registrar_torneo_Click" runat="server" /><br/>
                           <a class="dropdown-item" href="frm_Tabla Acumulada.aspx">Tabla Acumulada</a><br />
                           <a class="dropdown-item" href="frm_Ultimos Campeones.aspx">Ultimos Campeones</a><br/>
                           <a class="dropdown-item" href="frm_Estado del Torneo.aspx">Estado del Torneo</a>

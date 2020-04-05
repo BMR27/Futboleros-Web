@@ -600,6 +600,14 @@
           <Parameter Name="ID_DISTRITO" Type="int" Mode="In" />
           <Parameter Name="DIRECCION" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_REGISTRAR_TORNEO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+          <Parameter Name="FECHA_INICIAL" Type="date" Mode="In" />
+          <Parameter Name="FECHA_FINAL" Type="date" Mode="In" />
+          <Parameter Name="NOMBRE_TORNEO" Type="varchar" Mode="In" />
+          <Parameter Name="CANTIDAD_EQUIPOS" Type="smallint" Mode="In" />
+          <Parameter Name="ESTADO" Type="bit" Mode="In" />
+        </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1490,6 +1498,14 @@
             <Parameter Name="ID_EQUIPO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result)" />
+          <FunctionImport Name="SP_REGISTRAR_TORNEO">
+            <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+            <Parameter Name="FECHA_INICIAL" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHA_FINAL" Mode="In" Type="DateTime" />
+            <Parameter Name="NOMBRE_TORNEO" Mode="In" Type="String" />
+            <Parameter Name="CANTIDAD_EQUIPOS" Mode="In" Type="Int16" />
+            <Parameter Name="ESTADO" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -2020,6 +2036,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_REGISTRAR_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_TORNEO" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
