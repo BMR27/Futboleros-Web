@@ -6,7 +6,7 @@ using Proyecto_V.Models;
 
 namespace Proyecto_V.Clases
 {
-    public class Cls_Torneo
+    public class Cls_Torneo:Cls_Usuario
     {
         //INSTANCIA DE LA CLASE
         #region INSTANCIA
@@ -16,11 +16,10 @@ namespace Proyecto_V.Clases
         //ATRIBUTOS DE LA CLASE
         #region ATRIBUTOS DE LA CLASE
         public int idConsecutivo_Torneo { get; set; }
-        public string id_Usuario { get; set; }
-        public string Fecha_Inicio { get; set; }
-        public string Fecha_Final { get; set; }
+        public DateTime Fecha_Inicio { get; set; }
+        public DateTime Fecha_Final { get; set; }
         public string NombreTorneo { get; set; }
-        public string CantidadEquipos { get; set; }
+        public int CantidadEquipos { get; set; }
         public string Estado { get; set; }
 
         static List<Cls_Torneo> datos_torneo = new List<Cls_Torneo>();
@@ -45,7 +44,7 @@ namespace Proyecto_V.Clases
             int filas = 0;
             try
             {
-                
+                filas = this.ModeloDB.SP_REGISTRAR_TORNEO(1,this.Fecha_Inicio,this.Fecha_Final,this.NombreTorneo,Convert.ToInt16(this.CantidadEquipos));
             }
             catch (Exception)
             {

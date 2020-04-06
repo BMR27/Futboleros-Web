@@ -606,7 +606,6 @@
           <Parameter Name="FECHA_FINAL" Type="date" Mode="In" />
           <Parameter Name="NOMBRE_TORNEO" Type="varchar" Mode="In" />
           <Parameter Name="CANTIDAD_EQUIPOS" Type="smallint" Mode="In" />
-          <Parameter Name="ESTADO" Type="bit" Mode="In" />
         </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1504,7 +1503,6 @@
             <Parameter Name="FECHA_FINAL" Mode="In" Type="DateTime" />
             <Parameter Name="NOMBRE_TORNEO" Mode="In" Type="String" />
             <Parameter Name="CANTIDAD_EQUIPOS" Mode="In" Type="Int16" />
-            <Parameter Name="ESTADO" Mode="In" Type="Boolean" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">

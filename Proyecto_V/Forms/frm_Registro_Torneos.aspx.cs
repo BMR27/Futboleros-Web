@@ -71,23 +71,23 @@ namespace Proyecto_V.Forms
             {
                 _torneo.Estado = "I";
             }
-            _torneo.Fecha_Inicio = txt_fecha_Inicio.Text;
-            _torneo.Fecha_Final = txt_fecha_Final.Text;
-            _torneo.CantidadEquipos = txt_Cantidad_Equipos.Text;
-            _torneo.id_Usuario = txtUsuario.Text;
+            _torneo.Fecha_Inicio = Convert.ToDateTime(txt_fecha_Inicio.Text);
+            _torneo.Fecha_Final = Convert.ToDateTime(txt_fecha_Final.Text);
+            _torneo.CantidadEquipos = Convert.ToInt16(txt_Cantidad_Equipos.Text);
+            _torneo.Nombre = txtUsuario.Text;
 
-           
-            ////HACEMOS LA VALIDACION SI SE REGISTRP EL TORNEO
-            //switch (_torneo.pc_registrar_torneo())
-            //{
-            //    case -100:
-            //        lbl_mensaje.Text = "Ocurrio un error";
-            //        break;
-            //    default:
-            //        lbl_mensaje.Text = "Torneo registrado";
-            //        break;
-            //}
+
+            //HACEMOS LA VALIDACION SI SE REGISTRP EL TORNEO
+            switch (_torneo.pc_registrar_torneos())
+            {
+                case "":
+                    lbl_mensaje.Text = "Ocurrio un error";
+                    break;
+                default:
+                    lbl_mensaje.Text = "Torneo registrado";
+                    break;
+            }
         }
-        
+
     }
 }

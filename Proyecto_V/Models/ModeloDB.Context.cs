@@ -481,7 +481,7 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS_Result>("SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS");
         }
     
-        public virtual int SP_REGISTRAR_TORNEO(Nullable<int> iD_USUARIO, Nullable<System.DateTime> fECHA_INICIAL, Nullable<System.DateTime> fECHA_FINAL, string nOMBRE_TORNEO, Nullable<short> cANTIDAD_EQUIPOS, Nullable<bool> eSTADO)
+        public virtual int SP_REGISTRAR_TORNEO(Nullable<int> iD_USUARIO, Nullable<System.DateTime> fECHA_INICIAL, Nullable<System.DateTime> fECHA_FINAL, string nOMBRE_TORNEO, Nullable<short> cANTIDAD_EQUIPOS)
         {
             var iD_USUARIOParameter = iD_USUARIO.HasValue ?
                 new ObjectParameter("ID_USUARIO", iD_USUARIO) :
@@ -503,11 +503,7 @@ namespace Proyecto_V.Models
                 new ObjectParameter("CANTIDAD_EQUIPOS", cANTIDAD_EQUIPOS) :
                 new ObjectParameter("CANTIDAD_EQUIPOS", typeof(short));
     
-            var eSTADOParameter = eSTADO.HasValue ?
-                new ObjectParameter("ESTADO", eSTADO) :
-                new ObjectParameter("ESTADO", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_TORNEO", iD_USUARIOParameter, fECHA_INICIALParameter, fECHA_FINALParameter, nOMBRE_TORNEOParameter, cANTIDAD_EQUIPOSParameter, eSTADOParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_TORNEO", iD_USUARIOParameter, fECHA_INICIALParameter, fECHA_FINALParameter, nOMBRE_TORNEOParameter, cANTIDAD_EQUIPOSParameter);
         }
     }
 }
