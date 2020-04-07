@@ -118,6 +118,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Forms\frm_actualizar_equipo.aspx" />
     <Content Include="Forms\frm_actualizar_jugador.aspx" />
+    <Content Include="Forms\frm_actualizar_torneo.aspx" />
     <Content Include="Forms\frm_Asistidores.aspx" />
     <Content Include="Forms\frm_Creacion_Torneos.aspx" />
     <Content Include="Forms\frm_Estadisticas Jugadores.aspx" />
@@ -129,6 +130,7 @@
     <Content Include="Forms\frm_jug_x_equipo.aspx" />
     <Content Include="Forms\frm_lista_equipos.aspx" />
     <Content Include="Forms\frm_lista_jugadores.aspx" />
+    <Content Include="Forms\frm_lista_torneos.aspx" />
     <Content Include="Forms\frm_Registro de Encuentros.aspx" />
     <Content Include="Forms\frm_Registro de Equipos.aspx" />
     <Content Include="Forms\frm_Registro de Jugadores.aspx" />
@@ -226,6 +228,13 @@
     <Compile Include="Forms\frm_actualizar_jugador.aspx.designer.cs">
       <DependentUpon>frm_actualizar_jugador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm_actualizar_torneo.aspx.cs">
+      <DependentUpon>frm_actualizar_torneo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_actualizar_torneo.aspx.designer.cs">
+      <DependentUpon>frm_actualizar_torneo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm_Asistidores.aspx.cs">
       <DependentUpon>frm_Asistidores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +311,13 @@
     </Compile>
     <Compile Include="Forms\frm_lista_jugadores.aspx.designer.cs">
       <DependentUpon>frm_lista_jugadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_lista_torneos.aspx.cs">
+      <DependentUpon>frm_lista_torneos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_lista_torneos.aspx.designer.cs">
+      <DependentUpon>frm_lista_torneos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_Registro de Encuentros.aspx.cs">
       <DependentUpon>frm_Registro de Encuentros.aspx</DependentUpon>
@@ -386,6 +402,9 @@
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_CONSULTAR_LISTA_JUGADORES_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_LISTA_TORNEOS_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_CONSULTAR_PROVINCIAS_Result.cs">
