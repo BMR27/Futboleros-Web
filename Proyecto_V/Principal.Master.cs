@@ -94,5 +94,10 @@ namespace Proyecto_V
         {
             Response.Redirect("frm_lista_torneos.aspx");
         }
+
+        protected void btn_encuentros_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_Registro de Encuentros.aspx");
+        }
     }
 }
