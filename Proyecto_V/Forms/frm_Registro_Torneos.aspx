@@ -21,14 +21,7 @@
                 <asp:TextBox runat="server" ID="TxtNombreTorneo" CssClass="form-control" />
             </div>
 
-            <!---USUARIO-->
-            <div class="form-group">
-                <asp:Label Text="Usuario" runat="server" />  
-                <asp:RequiredFieldValidator ID="rq_Txt_Usuario" runat="server" ErrorMessage="* Debe ingresar su usuario" ControlToValidate="txtUsuario" ForeColor="Red"></asp:RequiredFieldValidator>             
-                <asp:RegularExpressionValidator ID="rgvtxtUsuario" runat="server" ErrorMessage="El usuario solo puede llevar letras" ControlToValidate="txtUsuario" ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
-                <asp:TextBox runat="server" ID="txtUsuario" CssClass="form-control" />
-            </div>
-
+           
             <!---FECHA DE INICIO DEL TORNEO-->
             <div class="form-group">
                 <asp:Label Text="Fecha de Inicio" runat="server" />
@@ -65,31 +58,19 @@
              <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
              <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
             </asp:Calendar>
-            <br />
+        
             <!---CANIDAD DE EQUIPOS-->
               <div class="form-group">
                 <div class="col">
                     <asp:Label Text="Cantidad de Equipos" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:RequiredFieldValidator ID="rq_Txt_Cantidad_Equipos" runat="server" ErrorMessage="Debe ingresar la cantidad de equipos" ControlToValidate="txt_Cantidad_Equipos" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:RegularExpressionValidator ID="rgvTxt_Cantidad_Equipos" runat="server" ErrorMessage="Debe ingresar la cantidad de equipos" ControlToValidate="txt_Cantidad_Equipos" ForeColor="Red" ValidationExpression="([0-3]|-)*"></asp:RegularExpressionValidator>
-                    <asp:TextBox runat="server" ID="txt_Cantidad_Equipos" CssClass="form-control" MaxLength="9" />
+                    <asp:RegularExpressionValidator ID="rgvTxt_Cantidad_Equipos" runat="server" ErrorMessage="Debe ingresar la cantidad de equipos" ControlToValidate="txt_Cantidad_Equipos" ForeColor="Red" ValidationExpression="([0-9]|-)*"></asp:RegularExpressionValidator>
+                    <asp:TextBox runat="server" ID="txt_Cantidad_Equipos" type="number" min="1" max="20"  CausesValidation="true" ValidationGroup="okButton" Width="132px"></asp:TextBox> 
                 </div>
             </div>
 
-            <!---ESTADO DEL TORNEO-->
-             <asp:Label Text="Estado del Torneo" runat="server" />
-            <div class="custom-control custom-radio custom-control-inline">
-                <input runat="server" type="radio" id="rb_activo" name="estado" class="custom-control-input">
-                <label class="custom-control-label" for="customRadioInline1">Activo</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-                <input runat="server" type="radio" id="rb_inactivo" name="estado" class="custom-control-input">
-                <label class="custom-control-label" for="rb_femenino">Inactivo</label>
-            </div>
-            
            <!---BOTON-->
             <asp:Button Text="Agregar Torneo" ID="btn_agregar_Torneo" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Torneo_Click" />
             <br />

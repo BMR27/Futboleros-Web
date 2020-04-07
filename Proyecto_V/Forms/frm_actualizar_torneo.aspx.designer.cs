@@ -11,44 +11,53 @@ namespace Proyecto_V.Forms
 {
 
 
-    public partial class frm_Registro_Torneos
+    public partial class frm_actualizar_torneo
     {
 
         /// <summary>
-        /// Control rq_Txt_NombreTorneo.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_Txt_NombreTorneo;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control rgvTxtNombreTorneo.
+        /// Control txt_consecutivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxtNombreTorneo;
+        protected global::System.Web.UI.WebControls.TextBox txt_consecutivo;
 
         /// <summary>
-        /// Control TxtNombreTorneo.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombreTorneo;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control btn_imagen_calendar.
+        /// Control txt_nombre_torneo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btn_imagen_calendar;
+        protected global::System.Web.UI.WebControls.TextBox txt_nombre_torneo;
+
+        /// <summary>
+        /// Control Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// Control txt_fecha_Inicio.
@@ -60,22 +69,13 @@ namespace Proyecto_V.Forms
         protected global::System.Web.UI.WebControls.TextBox txt_fecha_Inicio;
 
         /// <summary>
-        /// Control dt_Fecha_Inicio.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dt_Fecha_Inicio;
-
-        /// <summary>
-        /// Control btn_imagen_calendar1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btn_imagen_calendar1;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// Control txt_fecha_Final.
@@ -87,57 +87,39 @@ namespace Proyecto_V.Forms
         protected global::System.Web.UI.WebControls.TextBox txt_fecha_Final;
 
         /// <summary>
-        /// Control dt_Fecha_Final.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dt_Fecha_Final;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control rq_Txt_Cantidad_Equipos.
+        /// Control txtCantidad_Equipos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_Txt_Cantidad_Equipos;
+        protected global::System.Web.UI.WebControls.TextBox txtCantidad_Equipos;
 
         /// <summary>
-        /// Control rgvTxt_Cantidad_Equipos.
+        /// Control btn_actualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxt_Cantidad_Equipos;
+        protected global::System.Web.UI.WebControls.Button btn_actualizar;
 
         /// <summary>
-        /// Control txt_Cantidad_Equipos.
+        /// Control txt_mensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Cantidad_Equipos;
-
-        /// <summary>
-        /// Control btn_agregar_Torneo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregar_Torneo;
-
-        /// <summary>
-        /// Control lbl_mensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_mensaje;
+        protected global::System.Web.UI.WebControls.Label txt_mensaje;
     }
 }

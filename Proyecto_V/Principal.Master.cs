@@ -89,5 +89,10 @@ namespace Proyecto_V
         {
             Response.Redirect("frm_Registro_Torneos.aspx");
         }
+
+        protected void btn_lista_torneos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_lista_torneos.aspx");
+        }
     }
 }

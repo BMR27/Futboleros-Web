@@ -63,28 +63,20 @@ namespace Proyecto_V.Forms
         {
             Cls_Torneo _torneo = new Cls_Torneo();
             _torneo.NombreTorneo = TxtNombreTorneo.Text;
-            if (rb_activo.Checked == true)
-            {
-                _torneo.Estado = "A";
-            }
-            else
-            {
-                _torneo.Estado = "I";
-            }
             _torneo.Fecha_Inicio = Convert.ToDateTime(txt_fecha_Inicio.Text);
             _torneo.Fecha_Final = Convert.ToDateTime(txt_fecha_Final.Text);
             _torneo.CantidadEquipos = Convert.ToInt16(txt_Cantidad_Equipos.Text);
-            _torneo.Nombre = txtUsuario.Text;
+           
 
 
             //HACEMOS LA VALIDACION SI SE REGISTRP EL TORNEO
             switch (_torneo.pc_registrar_torneos())
             {
                 case "":
-                    lbl_mensaje.Text = "Ocurrio un error";
+                    lbl_mensaje.Text = "Torneo registrado";
                     break;
                 default:
-                    lbl_mensaje.Text = "Torneo registrado";
+                    lbl_mensaje.Text = "Ocurrio un error, al registrar";
                     break;
             }
         }
