@@ -31,6 +31,7 @@ namespace Proyecto_V
         public string Activo { get; set; }
         public int TipoUsuario { get; set; }
         public string NombreTipo { get; set; }
+        public DateTime UltimaConexion { get; set; }
         #endregion
 
         //CONSTRUCTORES DE CLASE
@@ -72,6 +73,7 @@ namespace Proyecto_V
                         datos.NombreUsuario = item.C_NOM_USUARIO;
                         datos.Activo = Convert.ToString(item.C_ACTIVO);
                         datos.NombreTipo = item.C_NOM_TIPO;
+                        datos.UltimaConexion = item.C_INGRESO;
                         Lista_Datos_Usuario.Add(datos);
                     }
                 }

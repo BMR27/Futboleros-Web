@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
- <div id="contenedor" style="width:1400px; background:#0094ff">
-     <h2>Bienvenido Usuario</h2>
- </div>
+    <div class="jumbotron text-center">
+           <h2><asp:Label Text="" ID="lbl_mensaje" runat="server" /></h2>
+    </div>
 </asp:Content>

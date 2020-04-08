@@ -1425,10 +1425,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="SP_VALIDAR_INICIO_SESION" ReturnType="Collection(programacion5Model.SP_VALIDAR_INICIO_SESION_Result)">
-            <Parameter Name="USUARIO" Mode="In" Type="String" />
-            <Parameter Name="PASS" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_PROVINCIAS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_PROVINCIAS_Result)">
           <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
@@ -1524,7 +1520,11 @@
           </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_LISTA_TORNEOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result)" />
           <FunctionImport Name="SP_ELIMINAR_TORNEOS">
-            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+          <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_VALIDAR_INICIO_SESION" ReturnType="Collection(programacion5Model.SP_VALIDAR_INICIO_SESION_Result)">
+            <Parameter Name="USUARIO" Mode="In" Type="String" />
+            <Parameter Name="PASS" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1537,15 +1537,6 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="SP_VALIDAR_INICIO_SESION_Result">
-          <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
-          <Property Type="String" Name="C_NOMBRE" Nullable="false" MaxLength="60" />
-          <Property Type="String" Name="C_APELLIDO1" Nullable="false" MaxLength="60" />
-          <Property Type="String" Name="C_APELLIDO2" Nullable="false" MaxLength="60" />
-          <Property Type="String" Name="C_NOM_USUARIO" Nullable="false" MaxLength="25" />
-          <Property Type="Boolean" Name="C_ACTIVO" Nullable="true" />
-          <Property Type="String" Name="C_NOM_TIPO" Nullable="false" MaxLength="60" />
         </ComplexType>
         <ComplexType Name="SP_CONSULTAR_PROVINCIAS_Result">
           <Property Type="Int32" Name="id_Provincia" Nullable="false" />
@@ -1679,6 +1670,16 @@
           <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
           <Property Type="Int16" Name="C_CANT_EQUIPOS" Nullable="false" />
           <Property Type="Boolean" Name="C_ESTADO" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_VALIDAR_INICIO_SESION_Result">
+          <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
+          <Property Type="String" Name="C_NOMBRE" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="C_APELLIDO1" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="C_APELLIDO2" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="C_NOM_USUARIO" Nullable="false" MaxLength="25" />
+          <Property Type="Boolean" Name="C_ACTIVO" Nullable="true" />
+          <Property Type="String" Name="C_NOM_TIPO" Nullable="false" MaxLength="60" />
+          <Property Type="DateTime" Name="C_INGRESO" Nullable="false" Precision="23" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1914,19 +1915,6 @@
           <FunctionImportMapping FunctionImportName="sp_ModificaCanton" FunctionName="programacion5Model.Store.sp_ModificaCanton" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="programacion5Model.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="programacion5Model.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="SP_VALIDAR_INICIO_SESION" FunctionName="programacion5Model.Store.SP_VALIDAR_INICIO_SESION">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="programacion5Model.SP_VALIDAR_INICIO_SESION_Result">
-                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
-                <ScalarProperty Name="C_NOMBRE" ColumnName="C_NOMBRE" />
-                <ScalarProperty Name="C_APELLIDO1" ColumnName="C_APELLIDO1" />
-                <ScalarProperty Name="C_APELLIDO2" ColumnName="C_APELLIDO2" />
-                <ScalarProperty Name="C_NOM_USUARIO" ColumnName="C_NOM_USUARIO" />
-                <ScalarProperty Name="C_ACTIVO" ColumnName="C_ACTIVO" />
-                <ScalarProperty Name="C_NOM_TIPO" ColumnName="C_NOM_TIPO" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_PROVINCIAS" FunctionName="programacion5Model.Store.SP_CONSULTAR_PROVINCIAS">
             <ResultMapping>
               <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_PROVINCIAS_Result">
@@ -2081,6 +2069,20 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_TORNEOS" FunctionName="programacion5Model.Store.SP_ELIMINAR_TORNEOS" />
+          <FunctionImportMapping FunctionImportName="SP_VALIDAR_INICIO_SESION" FunctionName="programacion5Model.Store.SP_VALIDAR_INICIO_SESION">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_VALIDAR_INICIO_SESION_Result">
+                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
+                <ScalarProperty Name="C_NOMBRE" ColumnName="C_NOMBRE" />
+                <ScalarProperty Name="C_APELLIDO1" ColumnName="C_APELLIDO1" />
+                <ScalarProperty Name="C_APELLIDO2" ColumnName="C_APELLIDO2" />
+                <ScalarProperty Name="C_NOM_USUARIO" ColumnName="C_NOM_USUARIO" />
+                <ScalarProperty Name="C_ACTIVO" ColumnName="C_ACTIVO" />
+                <ScalarProperty Name="C_NOM_TIPO" ColumnName="C_NOM_TIPO" />
+                <ScalarProperty Name="C_INGRESO" ColumnName="C_INGRESO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

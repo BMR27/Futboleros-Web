@@ -219,19 +219,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual ObjectResult<SP_VALIDAR_INICIO_SESION_Result> SP_VALIDAR_INICIO_SESION(string uSUARIO, string pASS)
-        {
-            var uSUARIOParameter = uSUARIO != null ?
-                new ObjectParameter("USUARIO", uSUARIO) :
-                new ObjectParameter("USUARIO", typeof(string));
-    
-            var pASSParameter = pASS != null ?
-                new ObjectParameter("PASS", pASS) :
-                new ObjectParameter("PASS", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VALIDAR_INICIO_SESION_Result>("SP_VALIDAR_INICIO_SESION", uSUARIOParameter, pASSParameter);
-        }
-    
         public virtual ObjectResult<SP_CONSULTAR_PROVINCIAS_Result> SP_CONSULTAR_PROVINCIAS(string nombre)
         {
             var nombreParameter = nombre != null ?
@@ -543,6 +530,19 @@ namespace Proyecto_V.Models
                 new ObjectParameter("ID_TORNEO", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_TORNEOS", iD_TORNEOParameter);
+        }
+    
+        public virtual ObjectResult<SP_VALIDAR_INICIO_SESION_Result> SP_VALIDAR_INICIO_SESION(string uSUARIO, string pASS)
+        {
+            var uSUARIOParameter = uSUARIO != null ?
+                new ObjectParameter("USUARIO", uSUARIO) :
+                new ObjectParameter("USUARIO", typeof(string));
+    
+            var pASSParameter = pASS != null ?
+                new ObjectParameter("PASS", pASS) :
+                new ObjectParameter("PASS", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VALIDAR_INICIO_SESION_Result>("SP_VALIDAR_INICIO_SESION", uSUARIOParameter, pASSParameter);
         }
     }
 }

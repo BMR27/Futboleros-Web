@@ -20,5 +20,6 @@ namespace Proyecto_V.Models
         public string C_NOM_USUARIO { get; set; }
         public Nullable<bool> C_ACTIVO { get; set; }
         public string C_NOM_TIPO { get; set; }
+        public System.DateTime C_INGRESO { get; set; }
     }
 }
