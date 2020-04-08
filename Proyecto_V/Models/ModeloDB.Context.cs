@@ -518,11 +518,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_TORNEO", iD_TORNEOParameter, fECHA_INICIALParameter, fECHA_FINALParameter, nOMBRE_TORNEOParameter, cANTIDAD_EQUIPOSParameter);
         }
     
-        public virtual ObjectResult<SP_CONSULTAR_LISTA_TORNEOS_Result> SP_CONSULTAR_LISTA_TORNEOS()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_TORNEOS_Result>("SP_CONSULTAR_LISTA_TORNEOS");
-        }
-    
         public virtual int SP_ELIMINAR_TORNEOS(Nullable<int> iD_TORNEO)
         {
             var iD_TORNEOParameter = iD_TORNEO.HasValue ?
@@ -543,6 +538,11 @@ namespace Proyecto_V.Models
                 new ObjectParameter("PASS", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VALIDAR_INICIO_SESION_Result>("SP_VALIDAR_INICIO_SESION", uSUARIOParameter, pASSParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_LISTA_TORNEOS_Result> SP_CONSULTAR_LISTA_TORNEOS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_TORNEOS_Result>("SP_CONSULTAR_LISTA_TORNEOS");
         }
     }
 }

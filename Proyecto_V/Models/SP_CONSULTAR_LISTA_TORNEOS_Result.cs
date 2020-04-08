@@ -19,6 +19,5 @@ namespace Proyecto_V.Models
         public string FECHA_FINAL { get; set; }
         public string C_NOMBRE_TORNEO { get; set; }
         public short C_CANT_EQUIPOS { get; set; }
-        public bool C_ESTADO { get; set; }
     }
 }

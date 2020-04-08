@@ -216,6 +216,7 @@ C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyec
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.pdb
+C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.dll.config
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.dll
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Proyecto_V.pdb
@@ -266,8 +267,7 @@ C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Antlr3.Run
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.pdb
-C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
-C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache

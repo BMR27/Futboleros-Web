@@ -1518,7 +1518,6 @@
             <Parameter Name="NOMBRE_TORNEO" Mode="In" Type="String" />
             <Parameter Name="CANTIDAD_EQUIPOS" Mode="In" Type="Int16" />
           </FunctionImport>
-          <FunctionImport Name="SP_CONSULTAR_LISTA_TORNEOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result)" />
           <FunctionImport Name="SP_ELIMINAR_TORNEOS">
           <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -1526,6 +1525,7 @@
             <Parameter Name="USUARIO" Mode="In" Type="String" />
             <Parameter Name="PASS" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_LISTA_TORNEOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1662,15 +1662,6 @@
           <Property Type="String" Name="CANTON" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="DISTRITO" Nullable="false" MaxLength="100" />
         </ComplexType>
-        <ComplexType Name="SP_CONSULTAR_LISTA_TORNEOS_Result">
-          <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
-          <Property Type="Int32" Name="C_FK_USUARIO" Nullable="false" />
-          <Property Type="String" Name="FECHA_INICIAL" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="FECHA_FINAL" Nullable="true" MaxLength="4000" />
-          <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
-          <Property Type="Int16" Name="C_CANT_EQUIPOS" Nullable="false" />
-          <Property Type="Boolean" Name="C_ESTADO" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="SP_VALIDAR_INICIO_SESION_Result">
           <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
           <Property Type="String" Name="C_NOMBRE" Nullable="false" MaxLength="60" />
@@ -1680,6 +1671,14 @@
           <Property Type="Boolean" Name="C_ACTIVO" Nullable="true" />
           <Property Type="String" Name="C_NOM_TIPO" Nullable="false" MaxLength="60" />
           <Property Type="DateTime" Name="C_INGRESO" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SP_CONSULTAR_LISTA_TORNEOS_Result">
+          <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
+          <Property Type="Int32" Name="C_FK_USUARIO" Nullable="false" />
+          <Property Type="String" Name="FECHA_INICIAL" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="FECHA_FINAL" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
+          <Property Type="Int16" Name="C_CANT_EQUIPOS" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2055,19 +2054,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_TORNEO" />
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_TORNEO" FunctionName="programacion5Model.Store.SP_ACTUALIZAR_TORNEO" />
-          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_TORNEOS" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_TORNEOS">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result">
-                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
-                <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
-                <ScalarProperty Name="FECHA_INICIAL" ColumnName="FECHA INICIAL" />
-                <ScalarProperty Name="FECHA_FINAL" ColumnName="FECHA FINAL" />
-                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
-                <ScalarProperty Name="C_CANT_EQUIPOS" ColumnName="C_CANT_EQUIPOS" />
-                <ScalarProperty Name="C_ESTADO" ColumnName="C_ESTADO" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_TORNEOS" FunctionName="programacion5Model.Store.SP_ELIMINAR_TORNEOS" />
           <FunctionImportMapping FunctionImportName="SP_VALIDAR_INICIO_SESION" FunctionName="programacion5Model.Store.SP_VALIDAR_INICIO_SESION">
             <ResultMapping>
@@ -2080,6 +2066,18 @@
                 <ScalarProperty Name="C_ACTIVO" ColumnName="C_ACTIVO" />
                 <ScalarProperty Name="C_NOM_TIPO" ColumnName="C_NOM_TIPO" />
                 <ScalarProperty Name="C_INGRESO" ColumnName="C_INGRESO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_TORNEOS" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_TORNEOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result">
+                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
+                <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
+                <ScalarProperty Name="FECHA_INICIAL" ColumnName="FECHA INICIAL" />
+                <ScalarProperty Name="FECHA_FINAL" ColumnName="FECHA FINAL" />
+                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
+                <ScalarProperty Name="C_CANT_EQUIPOS" ColumnName="C_CANT_EQUIPOS" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

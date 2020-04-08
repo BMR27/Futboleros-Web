@@ -20,7 +20,7 @@ namespace Proyecto_V.Clases
         public DateTime Fecha_Final { get; set; }
         public string NombreTorneo { get; set; }
         public int CantidadEquipos { get; set; }
-        public string Estado { get; set; }
+        
 
         static List<Cls_Torneo> datos_torneo = new List<Cls_Torneo>();
         #endregion

@@ -11,9 +11,9 @@
         <Columns>
             <asp:BoundField DataField="C_CONSECUTIVO" HeaderText="Codigo" />
             <asp:BoundField DataField="C_NOMBRE_TORNEO" HeaderText="Nombre del Torneo" />
-            <asp:BoundField DataField="USUARIO" HeaderText="Usuario" />
-            <asp:BoundField DataField="C_FECHA_INICIAL" HeaderText="Fecha Inicial" />
-            <asp:BoundField DataField="C_FECHA_FINAL" HeaderText="Fecha Final" />
+            <asp:BoundField DataField="C_FK_USUARIO" HeaderText="Usuario" />
+            <asp:BoundField DataField="FECHA_INICIAL" HeaderText="Fecha Inicial" />
+            <asp:BoundField DataField="FECHA_FINAL" HeaderText="Fecha Final" />
             <asp:BoundField DataField="C_CANT_EQUIPOS" HeaderText="Cantidad de Equipo" />
             <asp:TemplateField HeaderText="Seleccionar">
                 <ItemTemplate>

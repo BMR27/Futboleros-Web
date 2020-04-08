@@ -66,7 +66,7 @@ namespace Proyecto_V.Forms
                 {
                     //CAPTURAMOS LOS DATOS DE LA TABLA
                     _torneo.idConsecutivo_Torneo = Convert.ToInt32(tbl_lista_torneos.Rows[i].Cells[0].Text);
-                    _torneo.IdUsuario = Convert.ToInt32(tbl_lista_torneos.Rows[i].Cells[1].Text);
+                    _torneo.IdUsuario = Convert.ToInt16(tbl_lista_torneos.Rows[i].Cells[1].Text);
                     _torneo.Fecha_Inicio = Convert.ToDateTime(tbl_lista_torneos.Rows[i].Cells[2].Text);
                     _torneo.Fecha_Final = Convert.ToDateTime(tbl_lista_torneos.Rows[i].Cells[3].Text);
                     _torneo.NombreTorneo = tbl_lista_torneos.Rows[i].Cells[4].Text;
