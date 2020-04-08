@@ -85,7 +85,6 @@ namespace Proyecto_V.Clases
             //CAPTURAMOS LOS DATOS DEL TORNEO
             Cls_Torneo datos = new Cls_Torneo();
             datos.idConsecutivo_Torneo = this.idConsecutivo_Torneo;
-            datos.IdUsuario = this.IdUsuario;
             datos.NombreTorneo = this.NombreTorneo;
             datos.Fecha_Inicio = this.Fecha_Inicio;
             datos.Fecha_Final = this.Fecha_Final;

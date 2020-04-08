@@ -14,7 +14,6 @@ namespace Proyecto_V.Models
     public partial class SP_CONSULTAR_LISTA_TORNEOS_Result
     {
         public int C_CONSECUTIVO { get; set; }
-        public int C_FK_USUARIO { get; set; }
         public string FECHA_INICIAL { get; set; }
         public string FECHA_FINAL { get; set; }
         public string C_NOMBRE_TORNEO { get; set; }

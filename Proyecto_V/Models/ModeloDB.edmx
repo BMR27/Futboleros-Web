@@ -1674,7 +1674,6 @@
         </ComplexType>
         <ComplexType Name="SP_CONSULTAR_LISTA_TORNEOS_Result">
           <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
-          <Property Type="Int32" Name="C_FK_USUARIO" Nullable="false" />
           <Property Type="String" Name="FECHA_INICIAL" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="FECHA_FINAL" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
@@ -2073,7 +2072,6 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result">
                 <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
-                <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
                 <ScalarProperty Name="FECHA_INICIAL" ColumnName="FECHA INICIAL" />
                 <ScalarProperty Name="FECHA_FINAL" ColumnName="FECHA FINAL" />
                 <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
