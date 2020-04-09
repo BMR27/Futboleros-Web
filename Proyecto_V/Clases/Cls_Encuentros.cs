@@ -67,6 +67,12 @@ namespace Proyecto_V.Clases
             }
             return mensaje;
         }
+
+        //METODO CONSULTA LOS PARTIDOS
+        public List<SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result> pc_consultar_partidos()
+        {
+            return this._modeloDB.SP_CONSULTAR_PARTIDOS_POR_TORNEO(this.idConsecutivo_Torneo).ToList();
+        }
         #endregion
     }
 }

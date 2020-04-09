@@ -550,6 +550,9 @@
         <Function Name="SP_CONSULTAR_LISTA_JUGADORES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_LISTA_TORNEOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_CONSULTAR_PARTIDOS_POR_TORNEO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_CONSULTAR_PROVINCIAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
         </Function>
@@ -1554,6 +1557,9 @@
             <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
             <Parameter Name="FECHA" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_PARTIDOS_POR_TORNEO" ReturnType="Collection(programacion5Model.SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result)">
+            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1710,6 +1716,15 @@
         <ComplexType Name="SP_CONSULTAR_EQUIPOS_ECUENTRO_Result">
           <Property Type="Int32" Name="C_FK_EQUIPOS" Nullable="true" />
           <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result">
+          <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
+          <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="FECHA" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="CASA" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="VISITA" Nullable="false" MaxLength="60" />
+          <Property Type="Int16" Name="C_GOL_CASA" Nullable="false" />
+          <Property Type="Int16" Name="C_GOL_VISITA" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2121,6 +2136,19 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_EQUIPOS_A_TORNEOS" FunctionName="programacion5Model.Store.SP_REGISTRAR_EQUIPOS_A_TORNEOS" />
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_ENCUENTRO_X_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_ENCUENTRO_X_TORNEO" />
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_PARTIDOS_POR_TORNEO" FunctionName="programacion5Model.Store.SP_CONSULTAR_PARTIDOS_POR_TORNEO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result">
+                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
+                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="CASA" ColumnName="CASA" />
+                <ScalarProperty Name="VISITA" ColumnName="VISITA" />
+                <ScalarProperty Name="C_GOL_CASA" ColumnName="C_GOL_CASA" />
+                <ScalarProperty Name="C_GOL_VISITA" ColumnName="C_GOL_VISITA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
