@@ -11,6 +11,7 @@ namespace Proyecto_V.Forms
     {
         #region INSTANCIAS
         Cls_Torneo _Torneo = new Cls_Torneo();
+        Cls_Encuentros _Encuentros = new Cls_Encuentros();
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,6 +19,7 @@ namespace Proyecto_V.Forms
             {
                 pc_mostrar_torneos_lista();
                 //pc_mostrar_listas();
+                pc_mostrar_torneos_lista2();
             }
         }
         //METODOS
@@ -29,6 +31,15 @@ namespace Proyecto_V.Forms
             dl_lista_torneos.DataBind();
             dl_lista_torneos.Items.Insert(0,new ListItem("Seleccione un torneo",""));
             dl_lista_torneos.SelectedValue = "";
+        }
+
+        //METODO CONSULTA EN UNA LISTA LOS TORNEOS ACTIVOS
+        void pc_mostrar_torneos_lista2()
+        {
+            dl_lista_torneo2.DataSource = _Torneo.pc_consultar_torneos();
+            dl_lista_torneo2.DataBind();
+            dl_lista_torneo2.Items.Insert(0, new ListItem("Todos","-1"));
+            dl_lista_torneo2.SelectedValue = "-1";
         }
 
         //METODO OCULTA LAS LISTAS DE CASA Y VISITA
@@ -81,6 +92,14 @@ namespace Proyecto_V.Forms
 
             lbl_mensaje.Text = _Encuentros.pc_registrar_encuentro();
         }
+
+        //CONSULTAR_PARTIDOS
+        void pc_consultar_partidos()
+        {
+            _Encuentros.idConsecutivo_Torneo = Convert.ToInt32(dl_lista_torneo2.SelectedValue);
+            tbl_lista_partidos.DataSource = _Encuentros.pc_consultar_partidos();
+            tbl_lista_partidos.DataBind();
+        }
         #endregion
 
         protected void dl_lista_torneos_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +124,19 @@ namespace Proyecto_V.Forms
         protected void btn_agregar_encuentro_Click(object sender, EventArgs e)
         {
             pc_registrar_partido();
+        }
+
+        protected void btn_buscar_partido_Click(object sender, EventArgs e)
+        {
+            pc_consultar_partidos();
+        }
+
+        protected void tbl_lista_partidos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ///asignar el nuevo índice
+            this.tbl_lista_partidos.PageIndex = e.NewPageIndex;
+            ///volver a cargar el grid
+            this.pc_consultar_partidos();
         }
     }
 }

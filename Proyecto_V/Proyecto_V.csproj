@@ -420,6 +420,9 @@
     <Compile Include="Models\SP_CONSULTAR_LISTA_TORNEOS_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_CONSULTAR_PROVINCIAS_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
