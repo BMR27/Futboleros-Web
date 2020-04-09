@@ -18,7 +18,7 @@
                 <br />
             </div>
             <div class="col-sm-4" id="IdContenido3">
-
+              
             </div>
         </div>
     </div>
@@ -40,9 +40,24 @@
                 <asp:DropDownList ID="dl_lista_visita" runat="server" AutoPostBack="True" DataTextField="C_NOMBRE_EQUIPO" DataValueField="C_FK_EQUIPOS"></asp:DropDownList>
             </div>
             <div class="col-sm-4" id="conatenido3">
-
+                  <h3>Fecha del partido</h3>
+                <br />
+                <asp:Calendar ID="id_fecha" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="152px" ShowGridLines="True" Width="197px">
+                    <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+                    <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                    <OtherMonthDayStyle ForeColor="#CC9966" />
+                    <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                    <SelectorStyle BackColor="#FFCC66" />
+                    <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+                    <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                </asp:Calendar>
             </div>
         </div>
     </div>
-
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <asp:Button Text="Agregar encuentro" ID="btn_agregar_encuentro" CssClass="btn btn-primary" runat="server" />
+    </div>
 </asp:Content>
