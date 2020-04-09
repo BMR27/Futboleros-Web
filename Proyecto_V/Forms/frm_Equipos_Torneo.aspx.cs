@@ -20,7 +20,7 @@ namespace Proyecto_V.Forms
         {
             if (!this.IsPostBack)
             {
-                //pc_consultar_equipos();
+                pc_consultar_equipos();
                 pc_consultar_torneos();
             }
 
@@ -49,12 +49,12 @@ namespace Proyecto_V.Forms
         void pc_capturar_datos_equipo()
         {
             //LISTA MANTIENE LOS DATOS
-            List<Cls_Equipo> lista_datos_equipo = new List<Cls_Equipo>();
+            List<Cls_Torneo> lista_datos_equipo = new List<Cls_Torneo>();
             //VARIABLE CHECK
             CheckBox ch;
             foreach (GridViewRow item in tbl_equipos.Rows)
             {
-                Cls_Equipo _datos = new Cls_Equipo();
+                Cls_Torneo _datos = new Cls_Torneo();
                 ch = (CheckBox)item.Cells[1].FindControl("ch_seleccionar");
                 if (ch.Checked == true)
                 {
@@ -71,6 +71,17 @@ namespace Proyecto_V.Forms
             //{
             //    pc_capturar_datos_equipo();
             //}
+
+
+            ////ENVIAMOS LOS DATOS
+            if (_equipos.pc_equipo_x_torneo(lista_datos_equipo) > 0)
+            {
+                pc_capturar_datos_equipo();
+            }
+
+
+
+
         }
 
         #endregion

@@ -122,7 +122,18 @@ namespace Proyecto_V.Clases
             return filas;
         }
 
-      
+
+        public int pc_torneo_x_equipo(List<Cls_Torneo> datos)
+        {
+            int filas = 0;
+            foreach (var item in datos)
+            {
+                filas = this.ModeloDB.SP_REGISTRAR_EQUIPOS_A_TORNEOS(Convert.ToInt32(item.NombreEquipo), item.idConsecutivo_Torneo);
+            }
+            return filas;
+        }
+
+
         #endregion
     }
 }

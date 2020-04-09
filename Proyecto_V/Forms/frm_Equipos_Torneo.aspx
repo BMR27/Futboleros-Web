@@ -28,11 +28,11 @@
             <div class="col-sm-4" id="IdContenido3">
                 <h3>Equipos a Elegir</h3>
                 <br />
-                <asp:GridView ID="tbl_equipos" CssClass="mGrid" runat="server" AutoGenerateColumns="False">
+                <asp:GridView ID="tbl_equipos" CssClass="mGrid" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="8">
                     <Columns>
                         <asp:BoundField DataField="C_CONSECUTIVO" HeaderText="Consecutivo" />
                         <asp:BoundField DataField="C_NOMBRE_EQUIPO" HeaderText="Nombre Equipo" />
-                        <asp:BoundField DataField="C_FUNDACION" HeaderText="Fundacion" />
+                        <asp:BoundField DataField="FUNDACION" HeaderText="Fundacion" />
                         <asp:TemplateField HeaderText="Seleccionar">
                             <ItemTemplate>
                                 <asp:CheckBox ID="ch_seleccionar" runat="server" AutoPostBack="True" />
