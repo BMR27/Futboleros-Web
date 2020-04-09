@@ -15,13 +15,13 @@ namespace Proyecto_V.Forms
     {
 
         /// <summary>
-        /// Control dl_lista_equipos.
+        /// Control dl_lista_torneos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dl_lista_equipos;
+        protected global::System.Web.UI.WebControls.DropDownList dl_lista_torneos;
 
         /// <summary>
         /// Control btn_cambiar_seleccion.
@@ -33,21 +33,21 @@ namespace Proyecto_V.Forms
         protected global::System.Web.UI.WebControls.Button btn_cambiar_seleccion;
 
         /// <summary>
-        /// Control tbl_jugadores.
+        /// Control tbl_equipos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView tbl_jugadores;
+        protected global::System.Web.UI.WebControls.GridView tbl_equipos;
 
         /// <summary>
-        /// Control btn_agregar_jugador.
+        /// Control btn_agregar_equipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregar_jugador;
+        protected global::System.Web.UI.WebControls.Button btn_agregar_equipo;
     }
 }
