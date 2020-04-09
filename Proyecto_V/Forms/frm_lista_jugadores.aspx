@@ -5,7 +5,7 @@
       <h2 id="Titulo">Jugadores del torneo</h2>
     <!----Hacemos una lista para mostrar a los jugadores-->
     <div id="cont">
-        <asp:GridView ID="tbl_lista_jugadores" runat="server" AutoGenerateColumns="False" CssClass="mGrid">
+        <asp:GridView ID="tbl_lista_jugadores" runat="server" AutoGenerateColumns="False" CssClass="mGrid" AllowPaging="True" OnPageIndexChanging="tbl_lista_jugadores_PageIndexChanging" PageSize="5">
         <Columns>
             <asp:BoundField DataField="C_CEDULA" HeaderText="Número Cédula" />
             <asp:BoundField DataField="C_NOMBRE" HeaderText="Nombre" />

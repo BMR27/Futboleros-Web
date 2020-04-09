@@ -2,11 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <link href="../Hoja%20Estilos/Estilos_Reg_Jugadores.css" rel="stylesheet" />
+    <link href="../Hoja%20Estilos/Estilos_Reg_Jugadores.css" rel="stylesheet" />
       <h2 id="Titulo">Lista de Equipos Registrados</h2>
     <!----Hacemos una lista para mostrar los equipos registrados-->
     <div id="cont">
-        <asp:GridView ID="tbl_lista_equipos" runat="server" AutoGenerateColumns="False" CssClass="mGrid" OnSelectedIndexChanged="ch_tbl_equipos_CheckedChanged">
+        <asp:GridView ID="tbl_lista_equipos" runat="server" AutoGenerateColumns="False" CssClass="mGrid" OnSelectedIndexChanged="ch_tbl_equipos_CheckedChanged" AllowPaging="True" OnPageIndexChanging="tbl_lista_equipos_PageIndexChanging" PageSize="6">
         <Columns>
             <asp:BoundField DataField="C_CONSECUTIVO" HeaderText="Codigo" />
             <asp:BoundField DataField="C_NOMBRE_EQUIPO" HeaderText="Nombre del Equipo" />

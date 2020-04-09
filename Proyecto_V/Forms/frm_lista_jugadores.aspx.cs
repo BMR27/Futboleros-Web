@@ -86,5 +86,13 @@ namespace Proyecto_V.Forms
                 Response.Redirect("frm_lista_jugadores.aspx");
             }
         }
+
+        protected void tbl_lista_jugadores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ///asignar el nuevo índice
+            this.tbl_lista_jugadores.PageIndex = e.NewPageIndex;
+            ///volver a cargar el grid
+            this.pc_cargar_tabla_jugadores();
+        }
     }
 }

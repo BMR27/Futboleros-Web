@@ -91,6 +91,14 @@ namespace Proyecto_V.Forms
         {
             tbl_lista_equipos.Enabled = false;
         }
+
+        protected void tbl_lista_equipos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ///asignar el nuevo índice
+            this.tbl_lista_equipos.PageIndex = e.NewPageIndex;
+            ///volver a cargar el grid
+            this.pc_cargar_tabla_equipo();
+        }
     }
 }
 
