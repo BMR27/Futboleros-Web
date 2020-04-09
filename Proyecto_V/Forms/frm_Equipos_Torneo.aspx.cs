@@ -66,11 +66,11 @@ namespace Proyecto_V.Forms
                 }
             }
 
-            //ENVIAMOS LOS DATOS
-            if (_equipos.pc_equipo_x_torneo(lista_datos_equipo) > 0)
-            {
-                pc_capturar_datos_equipo();
-            }
+            ////ENVIAMOS LOS DATOS
+            //if (_equipos.pc_equipo_x_torneo(lista_datos_equipo) > 0)
+            //{
+            //    pc_capturar_datos_equipo();
+            //}
         }
 
         #endregion

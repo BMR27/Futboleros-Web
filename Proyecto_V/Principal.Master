@@ -6,6 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Proyecto Programación</title>
+    <link href="Hoja%20Estilos/EstilosFooter.css" rel="stylesheet" />
     <link href="Hoja Estilos/HojaEstilos.css" rel="stylesheet"/>
     <link href="Hoja%20Estilos/Estilos_Reg_Jugadores.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -132,6 +133,9 @@
  
             </asp:ContentPlaceHolder>
     </form>
+     <footer>
+        © 2020 Copyright: Universidad Castro Carazo, Ing. Andrey Azofeifa Alvarado & Ing. Bryan Mejias
+    </footer>
 
 </body>
 </html>

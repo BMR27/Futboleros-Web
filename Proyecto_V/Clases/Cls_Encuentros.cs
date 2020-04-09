@@ -16,6 +16,8 @@ namespace Proyecto_V.Clases
         //ATRIBUTOS
         #region ATRIBUTOS
         public DateTime FechaEncuentro { get; set; }
+        public int IdCasa { get; set; }
+        public int IdVisita { get; set; }
         public int GolCasa { get; set; }
         public int GolVisita { get; set; }
         public Boolean Estado { get; set; }
@@ -43,6 +45,27 @@ namespace Proyecto_V.Clases
         public List<SP_CONSULTAR_EQUIPOS_ECUENTRO_Result> pc_cosultar_equipos_visita_x_torneo()
         {
             return this._modeloDB.SP_CONSULTAR_EQUIPOS_ECUENTRO(this.idConsecutivo_Torneo,this.idConsecutivo).ToList();
+        }
+
+        //METODO REGISTRA UN ENCUENTRO
+
+        public string pc_registrar_encuentro()
+        {
+            string mensaje = "";
+            int filas = 0;
+            try
+            {
+                filas = this._modeloDB.SP_REGISTRAR_ENCUENTRO_X_TORNEO(this.IdCasa, this.IdVisita, this.idConsecutivo_Torneo, this.FechaEncuentro);
+            }
+            catch (Exception ex)
+            {
+                mensaje = ex.Message;
+            }
+            if (filas > 0)
+            {
+                mensaje = "Exito al registrar el partido";
+            }
+            return mensaje;
         }
         #endregion
     }

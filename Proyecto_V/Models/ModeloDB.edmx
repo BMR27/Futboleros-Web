@@ -601,6 +601,12 @@
           <Parameter Name="NOMBRE_EQUIPO" Type="varchar" Mode="In" />
           <Parameter Name="FUNDACION" Type="date" Mode="In" />
         </Function>
+        <Function Name="SP_REGISTRAR_ENCUENTRO_X_TORNEO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_CASA" Type="int" Mode="In" />
+          <Parameter Name="ID_VISITA" Type="int" Mode="In" />
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+          <Parameter Name="FECHA" Type="date" Mode="In" />
+        </Function>
         <Function Name="SP_REGISTRAR_EQUIPOS_A_TORNEOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
           <Parameter Name="ID_EQUIPO" Type="int" Mode="In" />
@@ -1542,6 +1548,12 @@
             <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
             <Parameter Name="ID_EQUIPO" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="SP_REGISTRAR_ENCUENTRO_X_TORNEO">
+            <Parameter Name="ID_CASA" Mode="In" Type="Int32" />
+            <Parameter Name="ID_VISITA" Mode="In" Type="Int32" />
+            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+            <Parameter Name="FECHA" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -2108,6 +2120,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_EQUIPOS_A_TORNEOS" FunctionName="programacion5Model.Store.SP_REGISTRAR_EQUIPOS_A_TORNEOS" />
+          <FunctionImportMapping FunctionImportName="SP_REGISTRAR_ENCUENTRO_X_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_ENCUENTRO_X_TORNEO" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="frm_Registro de Encuentros.aspx.cs" Inherits="Proyecto_V.Forms.frm_Registro_de_Encuentros" %>
+﻿<%@ Page Title="" Language="C#" MaintainScrollPositionOnPostback="true" MasterPageFile="~/Principal.Master" AutoEventWireup="true" CodeBehind="frm_Registro de Encuentros.aspx.cs" Inherits="Proyecto_V.Forms.frm_Registro_de_Encuentros" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -58,6 +58,34 @@
     <br />
     <br />
     <div class="container">
-        <asp:Button Text="Agregar encuentro" ID="btn_agregar_encuentro" CssClass="btn btn-primary" runat="server" />
+        <asp:Button Text="Agregar encuentro" ID="btn_agregar_encuentro" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_encuentro_Click" />
+        <br />
+        <br />
+        <br />
+        <asp:Label Text="" ID="lbl_mensaje" ForeColor="Red" runat="server" />
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="jumbotron text-center" id="Titulo2">
+        <h2>Mantenimiento de encuentros</h2>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container" id="Idcontenedor_mantenimiento">
+        <div class="row" id="id_row_mantenimiento">
+            <div class="col-sm-4" id="conte_1_mantenimiento">
+
+            </div>
+            <div class="col-sm-4" id="conte_2_mantenimiento">
+
+            </div>
+            <div class="col-sm-4" id="conte_3_mantenimiento">
+
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

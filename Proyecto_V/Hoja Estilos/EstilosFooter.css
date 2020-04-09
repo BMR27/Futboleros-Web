@@ -1,0 +1,12 @@
+﻿body {
+}
+
+footer {
+    background-color: #000000;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    color: white;
+    height: 20px;
+}

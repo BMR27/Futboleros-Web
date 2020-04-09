@@ -66,6 +66,21 @@ namespace Proyecto_V.Forms
             dl_lista_visita.Items.Insert(0, new ListItem("--Seleccione un equipo Visita--", ""));
             dl_lista_visita.SelectedValue = "";
         }
+
+        //METODO REGISTRA EL PARTIDO
+        void pc_registrar_partido()
+        {
+            //CAPTURAMOS LOS DATOS
+            Cls_Encuentros _Encuentros = new Cls_Encuentros();
+            _Encuentros.idConsecutivo_Torneo = Convert.ToInt32(dl_lista_torneos.SelectedValue);
+            _Encuentros.IdCasa = Convert.ToInt32(dl_lista_casa.SelectedValue);
+            _Encuentros.IdVisita = Convert.ToInt32(dl_lista_visita.SelectedValue);
+            _Encuentros.FechaEncuentro = Convert.ToDateTime(id_fecha.SelectedDate.ToShortDateString());
+
+            //EJECUTAMOS EL PROCEDIMIENTO
+
+            lbl_mensaje.Text = _Encuentros.pc_registrar_encuentro();
+        }
         #endregion
 
         protected void dl_lista_torneos_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +100,11 @@ namespace Proyecto_V.Forms
         protected void dl_lista_casa_SelectedIndexChanged(object sender, EventArgs e)
         {
             pc_consultar_VISITA();
+        }
+
+        protected void btn_agregar_encuentro_Click(object sender, EventArgs e)
+        {
+            pc_registrar_partido();
         }
     }
 }

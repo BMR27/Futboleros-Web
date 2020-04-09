@@ -149,6 +149,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Hoja Estilos\EstilosActualizarEquipos.css" />
+    <Content Include="Hoja Estilos\EstilosFooter.css" />
     <Content Include="Hoja Estilos\EstilosJugEquipos.css" />
     <Content Include="Hoja Estilos\Estilos_Actualizar_jugador.css" />
     <Content Include="Hoja Estilos\Estilos_Reg_Jugadores.css" />
