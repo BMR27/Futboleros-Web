@@ -601,10 +601,6 @@
           <Parameter Name="NOMBRE_EQUIPO" Type="varchar" Mode="In" />
           <Parameter Name="FUNDACION" Type="date" Mode="In" />
         </Function>
-        <Function Name="SP_REGISTRAR_EQUIPOS_A_TORNEOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
-          <Parameter Name="ID_EQUIPO" Type="int" Mode="In" />
-        </Function>
         <Function Name="SP_REGISTRAR_JUGADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDULA" Type="char" Mode="In" />
           <Parameter Name="GENERO" Type="char" Mode="In" />
@@ -1538,10 +1534,6 @@
             <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
             <Parameter Name="ID_CASA" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_REGISTRAR_EQUIPOS_A_TORNEOS">
-            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
-            <Parameter Name="ID_EQUIPO" Mode="In" Type="Int32" />
-          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -2107,7 +2099,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SP_REGISTRAR_EQUIPOS_A_TORNEOS" FunctionName="programacion5Model.Store.SP_REGISTRAR_EQUIPOS_A_TORNEOS" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

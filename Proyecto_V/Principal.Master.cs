@@ -43,7 +43,7 @@ namespace Proyecto_V
         //METODO PARA VALIDAR LOS DERECHOS DE LOS USUARIOS
         void pc_validar_tipo_usuario()
         {
-            foreach (var item in _datos_usuario.pc_retornar_lista())
+            foreach (var item in _datos_usuario.pc_retornar_lista_usuario())
             {
                 switch (item.NombreTipo)
                 {
