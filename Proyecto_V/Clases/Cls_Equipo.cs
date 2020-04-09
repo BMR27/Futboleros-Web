@@ -125,6 +125,22 @@ namespace Proyecto_V.Clases
 
             return filas;
         }
+       
+
+        //METODO REGISTRA EQUIPOS AL TORNEO
+
+        public int pc_equipo_x_torneo(List<Cls_Jugador> datos)
+        {
+            int filas = 0;
+            foreach (var item in datos)
+            {
+                filas = this.ModeloDB.SP_AGREGAR_JUGADOR_X_EQUIPO(item.NumeroCedula, item.idConsecutivo);
+            }
+            return filas;
+        }
         #endregion
+
+
     }
+
 }

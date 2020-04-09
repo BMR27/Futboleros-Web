@@ -94,5 +94,7 @@ namespace Proyecto_V.Forms
             ///volver a cargar el grid
             this.pc_cargar_tabla_jugadores();
         }
+
+       
     }
 }

@@ -91,5 +91,13 @@ namespace Proyecto_V.Forms
         {
             tbl_lista_torneos.Enabled = false;
         }
+
+        protected void tbl_lista_jugadores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ///asignar el nuevo índice
+            this.tbl_lista_torneos.PageIndex = e.NewPageIndex;
+            ///volver a cargar el grid
+            this.pc_cargar_tabla_torneo();
+        }
     }
 }

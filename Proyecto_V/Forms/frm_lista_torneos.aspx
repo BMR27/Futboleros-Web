@@ -7,7 +7,7 @@
       <h2 id="Titulo">Lista de Torneos Registrados</h2>
     <!----Hacemos una lista para mostrar los torneos registrados-->
     <div id="cont">
-        <asp:GridView ID="tbl_lista_torneos" runat="server" AutoGenerateColumns="False" CssClass="mGrid" OnSelectedIndexChanged="ch_tbl_torneos_CheckedChanged">
+        <asp:GridView ID="tbl_lista_torneos" runat="server" AutoGenerateColumns="False" CssClass="mGrid" OnSelectedIndexChanged="ch_tbl_torneos_CheckedChanged" AllowPaging="True" PageSize="5" OnPageIndexChanging="tbl_lista_jugadores_PageIndexChanging">
         <Columns>
             <asp:BoundField DataField="C_CONSECUTIVO" HeaderText="Codigo" />
             <asp:BoundField DataField="C_NOMBRE_TORNEO" HeaderText="Nombre del Torneo" />

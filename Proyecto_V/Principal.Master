@@ -72,9 +72,10 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                             <asp:LinkButton Text="Registrar Torneo" CausesValidation="false" ID="btn_registrar_torneo" OnClick="btn_registrar_torneo_Click" runat="server" /><br/>
                             <asp:LinkButton Text="Ver lista de torneos"  ID="btn_lista_torneos" OnClick="btn_lista_torneos_Click" CausesValidation="false" runat="server" />
-                             <asp:LinkButton Text="Registrar Encuentros"   ID="btn_encuentros" OnClick="btn_encuentros_Click" CausesValidation="false" runat="server" />
+                            <asp:LinkButton Text="Asignar Equipos"   ID="btn_asignar_equipo" OnClick="btn_asignar_equipo_Click" CausesValidation="false" runat="server" />
+                            <asp:LinkButton Text="Registrar Encuentros"   ID="btn_encuentros" OnClick="btn_encuentros_Click" CausesValidation="false" runat="server" />
                           <a class="dropdown-item" href="frm_Ultimos Campeones.aspx">Ultimos Campeones</a><br/>
-                          <a class="dropdown-item" href="frm_Tabla Acumulada.aspx">Estado del Torneo</a>
+                       
                         </div>
                    </li>
                     <li class="nav-item dropdown">

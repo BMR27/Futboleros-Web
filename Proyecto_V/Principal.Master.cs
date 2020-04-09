@@ -99,5 +99,10 @@ namespace Proyecto_V
         {
             Response.Redirect("frm_Registro de Encuentros.aspx");
         }
+
+        protected void btn_asignar_equipo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_Equipos_Torneo.aspx");
+        }
     }
 }

@@ -542,6 +542,10 @@
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="SP_CONSULTAR_EQUIPOS_ECUENTRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+          <Parameter Name="ID_CASA" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_CONSULTAR_LISTA_EQUIPOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_LISTA_JUGADORES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_LISTA_JUGADORES_ACTIVOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -596,6 +600,10 @@
           <Parameter Name="ID_DISTRITO" Type="int" Mode="In" />
           <Parameter Name="NOMBRE_EQUIPO" Type="varchar" Mode="In" />
           <Parameter Name="FUNDACION" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_REGISTRAR_EQUIPOS_A_TORNEOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+          <Parameter Name="ID_EQUIPO" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_REGISTRAR_JUGADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CEDULA" Type="char" Mode="In" />
@@ -1526,6 +1534,14 @@
             <Parameter Name="PASS" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_LISTA_TORNEOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_LISTA_TORNEOS_Result)" />
+          <FunctionImport Name="SP_CONSULTAR_EQUIPOS_ECUENTRO" ReturnType="Collection(programacion5Model.SP_CONSULTAR_EQUIPOS_ECUENTRO_Result)">
+            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_CASA" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_REGISTRAR_EQUIPOS_A_TORNEOS">
+            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_EQUIPO" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1678,6 +1694,10 @@
           <Property Type="String" Name="FECHA_FINAL" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
           <Property Type="Int16" Name="C_CANT_EQUIPOS" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_CONSULTAR_EQUIPOS_ECUENTRO_Result">
+          <Property Type="Int32" Name="C_FK_EQUIPOS" Nullable="true" />
+          <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2079,6 +2099,15 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_EQUIPOS_ECUENTRO" FunctionName="programacion5Model.Store.SP_CONSULTAR_EQUIPOS_ECUENTRO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_EQUIPOS_ECUENTRO_Result">
+                <ScalarProperty Name="C_FK_EQUIPOS" ColumnName="C_FK_EQUIPOS" />
+                <ScalarProperty Name="C_NOMBRE_EQUIPO" ColumnName="C_NOMBRE_EQUIPO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_REGISTRAR_EQUIPOS_A_TORNEOS" FunctionName="programacion5Model.Store.SP_REGISTRAR_EQUIPOS_A_TORNEOS" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
