@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using Proyecto_V.Clases;
 namespace Proyecto_V
 {
-    public class Cls_Usuario
+    public class Cls_Usuario:Cls_Equipo
     {
         //INSTANCIAS DE CLASE
         #region INSTANCIAS DE CLASE
@@ -103,7 +103,7 @@ namespace Proyecto_V
             return Lista_Datos_Usuario[0].IdUsuario;
         }
 
-        public List<Cls_Usuario> pc_retornar_lista()
+        public List<Cls_Usuario> pc_retornar_lista_usuario()
         {
             return Lista_Datos_Usuario;
         }

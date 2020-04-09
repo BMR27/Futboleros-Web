@@ -544,5 +544,18 @@ namespace Proyecto_V.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_TORNEOS_Result>("SP_CONSULTAR_LISTA_TORNEOS");
         }
+    
+        public virtual ObjectResult<SP_CONSULTAR_EQUIPOS_ECUENTRO_Result> SP_CONSULTAR_EQUIPOS_ECUENTRO(Nullable<int> iD_TORNEO, Nullable<int> iD_CASA)
+        {
+            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
+                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
+                new ObjectParameter("ID_TORNEO", typeof(int));
+    
+            var iD_CASAParameter = iD_CASA.HasValue ?
+                new ObjectParameter("ID_CASA", iD_CASA) :
+                new ObjectParameter("ID_CASA", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_EQUIPOS_ECUENTRO_Result>("SP_CONSULTAR_EQUIPOS_ECUENTRO", iD_TORNEOParameter, iD_CASAParameter);
+        }
     }
 }

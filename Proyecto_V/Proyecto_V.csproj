@@ -209,6 +209,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\Cls_Canton.cs" />
     <Compile Include="Clases\Cls_Distrito.cs" />
+    <Compile Include="Clases\Cls_Encuentros.cs" />
     <Compile Include="Clases\Cls_Equipo.cs" />
     <Compile Include="Clases\Cls_Jugador.cs" />
     <Compile Include="Clases\Cls_Provincia.cs" />
@@ -393,6 +394,9 @@
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RetornaProvincias_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_EQUIPOS_ECUENTRO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_CONSULTAR_LISTA_EQUIPOS_Result.cs">
