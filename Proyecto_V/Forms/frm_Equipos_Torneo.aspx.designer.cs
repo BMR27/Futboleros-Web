@@ -42,6 +42,15 @@ namespace Proyecto_V.Forms
         protected global::System.Web.UI.WebControls.GridView tbl_equipos;
 
         /// <summary>
+        /// Control btn_cambiar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cambiar;
+
+        /// <summary>
         /// Control btn_agregar_equipo.
         /// </summary>
         /// <remarks>
@@ -49,5 +58,14 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_agregar_equipo;
+
+        /// <summary>
+        /// Control lbl_mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_mensaje;
     }
 }
