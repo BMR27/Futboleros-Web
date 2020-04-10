@@ -134,7 +134,7 @@ namespace Proyecto_V.Clases
             int filas = 0;
             foreach (var item in datos)
             {
-                filas = this.ModeloDB.SP_REGISTRAR_EQUIPOS_A_TORNEOS(Convert.ToInt32(item.NombreEquipo), item.idConsecutivo_Torneo);
+                filas = this.ModeloDB.SP_REGISTRAR_EQUIPOS_A_TORNEOS(item.idConsecutivo_Torneo, item.idConsecutivo);
             }
             return filas;
         }
