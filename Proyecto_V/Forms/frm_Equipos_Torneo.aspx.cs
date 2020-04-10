@@ -79,10 +79,10 @@ namespace Proyecto_V.Forms
                 switch (_equipos.pc_registrar_equipo())
                 {
                     case -100:
-                        lbl_mensaje.Text = "Ocurrio un error";
+                        lbl_mensaje.Text = "Equipo agregado al torneo registrado";
                         break;
                     default:
-                        lbl_mensaje.Text = "Equipo agregado al torneo registrado";
+                        lbl_mensaje.Text = "Ocurrio un error";
                         break;
                 }
             }

@@ -57,12 +57,9 @@
             <!---BOTON-->
            <asp:Button Text="Agregar Equipo" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" Width="128px"/>
          
-           <asp:Button Text="Eliminar Equipo" ID="btn_eliminar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" Width="137px" style="margin-left: 1px"/>
-         
             <br />
             <br />
-           <asp:Button Text="Actualizar Equipo" ID="btn_actualizar" CssClass="btn btn-primary" runat="server" OnClick="btn_actualizar_Click" Width="262px"/>
-         
+           
             <br />
             <br />
             <asp:Label Text="" ID="lbl_mensaje" runat="server" />

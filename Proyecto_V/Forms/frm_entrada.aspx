@@ -6,4 +6,8 @@
     <div class="jumbotron text-center">
            <h2><asp:Label Text="" ID="lbl_mensaje" runat="server" /></h2>
     </div>
+
+      <asp:Image id="Image1" runat="server" Height="500px" ImageUrl="~/Imagenes/inicio.jpg" 
+      Width="1400px"  AlternateText="Imagen no disponible" ImageAlign="TextTop" />
+
 </asp:Content>
