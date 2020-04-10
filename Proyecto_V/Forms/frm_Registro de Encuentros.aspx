@@ -59,7 +59,7 @@
     <br />
     <br />
     <div class="container">
-        <asp:Button Text="Agregar encuentro" ID="btn_agregar_encuentro" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_encuentro_Click" />
+        <asp:Button Text="Agregar encuentro" CausesValidation="false" ID="btn_agregar_encuentro" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_encuentro_Click" />
         <br />
         <br />
         <br />
@@ -79,7 +79,7 @@
         <asp:DropDownList ID="dl_lista_torneo2"  runat="server" AutoPostBack="True" DataTextField="C_NOMBRE_TORNEO" DataValueField="C_CONSECUTIVO"></asp:DropDownList>
         <br />
         <br />
-        <asp:Button Text="Buscar partidos" CssClass="btn btn-primary" ID="btn_buscar_partido" runat="server" OnClick="btn_buscar_partido_Click" />
+        <asp:Button Text="Buscar partidos" CausesValidation="false" CssClass="btn btn-primary" ID="btn_buscar_partido" runat="server" OnClick="btn_buscar_partido_Click" />
         <br />
         <br />
         <br />
@@ -103,7 +103,73 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <br />
+        <br />
+        <asp:Button Text="Datos por equipo" ID="btn_actualizar" CausesValidation="false" CssClass="btn btn-primary" runat="server" OnClick="btn_actualizar_Click" />
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container" id="contenedor_actualizar">
+        <div class="row" id="idrowactualizar">
+            <div class="col-sm-4">
+                <h3>Jugadores casa</h3>
+                <br />
+                <asp:DropDownList ID="dl_lista_jugadores_casa" runat="server" DataTextField="NOMBRE" DataValueField="C_CONSECUTIVO"></asp:DropDownList>
+                <br />
+                <h3>Cantidad goles</h3>
+                <br />
+                <asp:TextBox ID="txt_cant_gol_casa" Text="" runat="server" CssClass="text-primary" />
+                <br />
+                <asp:RequiredFieldValidator ID="ev_validar_casa" runat="server" ForeColor="Red" ErrorMessage="Debe ingresar un marcador" ControlToValidate="txt_cant_gol_casa"></asp:RequiredFieldValidator>
+                <br />
+                <br />
+                <asp:RegularExpressionValidator ID="rev_txt_gol_casa" ForeColor="Red" runat="server" ErrorMessage="Debe ingresar solo numeros" ControlToValidate="txt_cant_gol_casa" ValidationExpression="([0-9]|-)*"></asp:RegularExpressionValidator>
+            </div>
+            <div class="col-sm-4">
+                 <h3>Jugadores Visita</h3>
+                <br />
+                <asp:DropDownList ID="dl_lista_jugadores_visita" runat="server" DataTextField="NOMBRE" DataValueField="C_CONSECUTIVO"></asp:DropDownList>
+                <br />
+                <h3>Cantidad goles</h3>
+                <br />
+                <asp:TextBox ID="txt_cant_gol_visita" Text="" runat="server" CssClass="text-primary" />
+                <br />
+                <asp:RequiredFieldValidator ID="rev_txt_gol_visita" runat="server" ForeColor="Red" ErrorMessage="Debe ingresar un marcador" ControlToValidate="txt_cant_gol_visita"></asp:RequiredFieldValidator>
+                <br />
+                <br />
+                <asp:RegularExpressionValidator ID="reg_txt_gol_visita" ForeColor="Red" runat="server" ErrorMessage="Debe ingresar solo numeros" ControlToValidate="txt_cant_gol_visita" ValidationExpression="([0-9]|-)*"></asp:RegularExpressionValidator>
+                <br />
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+        <br />
+        <asp:Button Text="Actualizar Partido" id="btn_actualizar_partido"  CssClass="btn btn-info" runat="server" OnClick="btn_actualizar_partido_Click" />
+        <br />
+        <br />
+
+        <asp:Label Text="" ForeColor="Red" ID="lbl_mensaje_erro" runat="server" />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <br />

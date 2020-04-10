@@ -100,6 +100,68 @@ namespace Proyecto_V.Forms
             tbl_lista_partidos.DataSource = _Encuentros.pc_consultar_partidos();
             tbl_lista_partidos.DataBind();
         }
+
+        //CONSULTAR JUGADORES POR EQUIPO
+        void pc_consultar_jugadores()
+        {
+            //verificamos la tabla
+            CheckBox ch;
+            foreach (GridViewRow item in tbl_lista_partidos.Rows)
+            {
+                ch = (CheckBox)item.Cells[7].FindControl("ch_seleccionar");
+                if (ch.Checked == true)
+                {
+                    _Encuentros.IdEncuentro = Convert.ToInt32(item.Cells[0].Text);
+                    break;
+                }
+            }
+            dl_lista_jugadores_casa.DataSource = _Encuentros.pc_jugadores_casa();
+            dl_lista_jugadores_casa.DataBind();
+            dl_lista_jugadores_casa.Items.Insert(0, new ListItem("--Ninguno--","-1"));
+            dl_lista_jugadores_casa.SelectedValue = "-1";
+            //MOSTRASMO LA VISITA
+            dl_lista_jugadores_visita.DataSource = _Encuentros.pc_jugadores_visita();
+            dl_lista_jugadores_visita.DataBind();
+            dl_lista_jugadores_visita.Items.Insert(0, new ListItem("--Ninguno--", "-1"));
+            dl_lista_jugadores_visita.SelectedValue = "-1";
+        }
+
+
+        //METODO ACTUALIZA EL PARTIDO
+        void pc_actualizar_partido()
+        {
+            //CAPTURAMOS LOS DATOS
+            //verificamos la tabla
+            CheckBox ch;
+            foreach (GridViewRow item in tbl_lista_partidos.Rows)
+            {
+                ch = (CheckBox)item.Cells[7].FindControl("ch_seleccionar");
+                if (ch.Checked == true)
+                {
+                    _Encuentros.IdEncuentro = Convert.ToInt32(item.Cells[0].Text);
+                    break;
+                }
+            }
+            _Encuentros.GolCasa = Convert.ToInt32(txt_cant_gol_casa.Text);
+            _Encuentros.GolVisita = Convert.ToInt32(txt_cant_gol_visita.Text);
+            _Encuentros.IdAnotadorCasa = Convert.ToInt32(dl_lista_jugadores_casa.SelectedValue);
+            _Encuentros.IdAnotadorVisita = Convert.ToInt32(dl_lista_jugadores_visita.SelectedValue);
+            if (_Encuentros.GolCasa == 0 && _Encuentros.IdAnotadorCasa != -1 ||
+                _Encuentros.GolVisita == 0 && _Encuentros.IdAnotadorVisita != -1)
+            {
+                lbl_mensaje_erro.Text = "Si el gol casa o visita es 0, no debe seleccionar un anotador, favor seleccionar ninguno";
+            }
+            else
+            if (_Encuentros.GolCasa > 0 && _Encuentros.IdAnotadorCasa == -1 ||
+                     _Encuentros.GolVisita > 0 && _Encuentros.IdAnotadorVisita == -1)
+            {
+                lbl_mensaje_erro.Text = "Si el gol casa o visita es mayor que 0, debe seleccionar un anotador, favor seleccionar un jugador";
+            }
+            else
+            {
+                _Encuentros.pc_actualizar_partidos();
+            }
+        }
         #endregion
 
         protected void dl_lista_torneos_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,6 +199,16 @@ namespace Proyecto_V.Forms
             this.tbl_lista_partidos.PageIndex = e.NewPageIndex;
             ///volver a cargar el grid
             this.pc_consultar_partidos();
+        }
+
+        protected void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            pc_consultar_jugadores();
+        }
+
+        protected void btn_actualizar_partido_Click(object sender, EventArgs e)
+        {
+            pc_actualizar_partido();
         }
     }
 }

@@ -408,6 +408,12 @@
     <Compile Include="Models\SP_CONSULTAR_EQUIPOS_ECUENTRO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SP_CONSULTAR_JUG_CASA_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_JUG_VISITA_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_CONSULTAR_LISTA_EQUIPOS_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
@@ -481,6 +487,9 @@
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_PROVINCIA.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_TABLA_POSICIONES.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_TELEFONOS.cs">

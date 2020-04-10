@@ -40,12 +40,13 @@ namespace Proyecto_V.Models
         public DbSet<TBL_GOLEADORES> TBL_GOLEADORES { get; set; }
         public DbSet<TBL_INGRESOS_X_USUARIO> TBL_INGRESOS_X_USUARIO { get; set; }
         public DbSet<TBL_JUGADORES> TBL_JUGADORES { get; set; }
-        public DbSet<TBL_POSICIONES> TBL_POSICIONES { get; set; }
         public DbSet<TBL_PROVINCIA> TBL_PROVINCIA { get; set; }
         public DbSet<TBL_TELEFONOS> TBL_TELEFONOS { get; set; }
         public DbSet<TBL_TIPO_USUARIO> TBL_TIPO_USUARIO { get; set; }
         public DbSet<TBL_USUARIOS_LOG> TBL_USUARIOS_LOG { get; set; }
         public DbSet<TBL_JUG_X_EQUIPO> TBL_JUG_X_EQUIPO { get; set; }
+        public DbSet<TBL_POSICIONES> TBL_POSICIONES { get; set; }
+        public DbSet<TBL_TABLA_POSICIONES> TBL_TABLA_POSICIONES { get; set; }
     
         public virtual int RetornaCantones(string nombre, Nullable<int> id_Provincia)
         {
@@ -599,6 +600,49 @@ namespace Proyecto_V.Models
                 new ObjectParameter("ID_TORNEO", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result>("SP_CONSULTAR_PARTIDOS_POR_TORNEO", iD_TORNEOParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_JUG_CASA_Result> SP_CONSULTAR_JUG_CASA(Nullable<int> iD_ENCUENTRO)
+        {
+            var iD_ENCUENTROParameter = iD_ENCUENTRO.HasValue ?
+                new ObjectParameter("ID_ENCUENTRO", iD_ENCUENTRO) :
+                new ObjectParameter("ID_ENCUENTRO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_JUG_CASA_Result>("SP_CONSULTAR_JUG_CASA", iD_ENCUENTROParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_JUG_VISITA_Result> SP_CONSULTAR_JUG_VISITA(Nullable<int> iD_ENCUENTRO)
+        {
+            var iD_ENCUENTROParameter = iD_ENCUENTRO.HasValue ?
+                new ObjectParameter("ID_ENCUENTRO", iD_ENCUENTRO) :
+                new ObjectParameter("ID_ENCUENTRO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_JUG_VISITA_Result>("SP_CONSULTAR_JUG_VISITA", iD_ENCUENTROParameter);
+        }
+    
+        public virtual int SP_ACTUALIZAR_RESULTADO_PARTIDO(Nullable<int> iD_PARTIDO, Nullable<int> gOL_CASA, Nullable<int> gOL_VISITA, Nullable<int> iD_ANOTADOR_CASA, Nullable<int> iD_ANOTADOR_VISITA)
+        {
+            var iD_PARTIDOParameter = iD_PARTIDO.HasValue ?
+                new ObjectParameter("ID_PARTIDO", iD_PARTIDO) :
+                new ObjectParameter("ID_PARTIDO", typeof(int));
+    
+            var gOL_CASAParameter = gOL_CASA.HasValue ?
+                new ObjectParameter("GOL_CASA", gOL_CASA) :
+                new ObjectParameter("GOL_CASA", typeof(int));
+    
+            var gOL_VISITAParameter = gOL_VISITA.HasValue ?
+                new ObjectParameter("GOL_VISITA", gOL_VISITA) :
+                new ObjectParameter("GOL_VISITA", typeof(int));
+    
+            var iD_ANOTADOR_CASAParameter = iD_ANOTADOR_CASA.HasValue ?
+                new ObjectParameter("ID_ANOTADOR_CASA", iD_ANOTADOR_CASA) :
+                new ObjectParameter("ID_ANOTADOR_CASA", typeof(int));
+    
+            var iD_ANOTADOR_VISITAParameter = iD_ANOTADOR_VISITA.HasValue ?
+                new ObjectParameter("ID_ANOTADOR_VISITA", iD_ANOTADOR_VISITA) :
+                new ObjectParameter("ID_ANOTADOR_VISITA", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_RESULTADO_PARTIDO", iD_PARTIDOParameter, gOL_CASAParameter, gOL_VISITAParameter, iD_ANOTADOR_CASAParameter, iD_ANOTADOR_VISITAParameter);
         }
     }
 }

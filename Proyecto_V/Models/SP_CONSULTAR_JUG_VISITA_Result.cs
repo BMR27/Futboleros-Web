@@ -10,18 +10,11 @@
 namespace Proyecto_V.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TBL_POSICIONES
+    public partial class SP_CONSULTAR_JUG_VISITA_Result
     {
         public int C_CONSECUTIVO { get; set; }
-        public Nullable<int> C_FK_ENC_TORNEO { get; set; }
-        public Nullable<int> C_FK_EQUIPO { get; set; }
-        public short C_PUNTO { get; set; }
-        public Nullable<int> C_FK_ENCUENTRO { get; set; }
-    
-        public virtual TBL_ENCUENTROS_X_TORNEO TBL_ENCUENTROS_X_TORNEO { get; set; }
-        public virtual TBL_ENCUENTROS_X_TORNEO TBL_ENCUENTROS_X_TORNEO1 { get; set; }
-        public virtual TBL_EQUIPO TBL_EQUIPO { get; set; }
+        public string NOMBRE { get; set; }
+        public Nullable<int> C_FK_VISITA { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace Proyecto_V.Models
         {
             this.TBL_GOLEADORES = new HashSet<TBL_GOLEADORES>();
             this.TBL_POSICIONES = new HashSet<TBL_POSICIONES>();
+            this.TBL_POSICIONES1 = new HashSet<TBL_POSICIONES>();
         }
     
         public int C_CONSECUTIVO { get; set; }
@@ -34,5 +35,6 @@ namespace Proyecto_V.Models
         public virtual TBL_EQUIPO TBL_EQUIPO1 { get; set; }
         public virtual ICollection<TBL_GOLEADORES> TBL_GOLEADORES { get; set; }
         public virtual ICollection<TBL_POSICIONES> TBL_POSICIONES { get; set; }
+        public virtual ICollection<TBL_POSICIONES> TBL_POSICIONES1 { get; set; }
     }
 }

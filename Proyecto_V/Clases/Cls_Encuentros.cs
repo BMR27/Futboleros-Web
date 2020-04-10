@@ -15,12 +15,15 @@ namespace Proyecto_V.Clases
 
         //ATRIBUTOS
         #region ATRIBUTOS
+        public int IdEncuentro { get; set; }
         public DateTime FechaEncuentro { get; set; }
         public int IdCasa { get; set; }
         public int IdVisita { get; set; }
         public int GolCasa { get; set; }
         public int GolVisita { get; set; }
         public Boolean Estado { get; set; }
+        public int IdAnotadorCasa { get; set; }
+        public int IdAnotadorVisita { get; set; }
         #endregion
 
 
@@ -72,6 +75,36 @@ namespace Proyecto_V.Clases
         public List<SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result> pc_consultar_partidos()
         {
             return this._modeloDB.SP_CONSULTAR_PARTIDOS_POR_TORNEO(this.idConsecutivo_Torneo).ToList();
+        }
+
+        //METODO CONSULTA JUGADORES CASA
+        public List<SP_CONSULTAR_JUG_CASA_Result> pc_jugadores_casa()
+        {
+            return this._modeloDB.SP_CONSULTAR_JUG_CASA(this.IdEncuentro).ToList();
+        }
+
+
+        //METODO CONSULTA JUGADORES VISITA
+        public List<SP_CONSULTAR_JUG_VISITA_Result> pc_jugadores_visita()
+        {
+            return this._modeloDB.SP_CONSULTAR_JUG_VISITA(this.IdEncuentro).ToList();
+        }
+
+        //METODO REGISTRA Y ACTUALIZA LOS DATOS DE LOS PARTIDOS
+        public string pc_actualizar_partidos()
+        {
+            string mensaje = "";
+            int filas = 0;
+            try
+            {
+                filas = this._modeloDB.SP_ACTUALIZAR_RESULTADO_PARTIDO(this.IdEncuentro, GolCasa, GolVisita, IdAnotadorCasa, IdAnotadorVisita);
+            }
+            catch (Exception ex)
+            {
+
+                mensaje = ex.Message;
+            }
+            return mensaje;
         }
         #endregion
     }

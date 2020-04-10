@@ -12,7 +12,7 @@ namespace Proyecto_V.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TBL_POSICIONES
+    public partial class TBL_TABLA_POSICIONES
     {
         public int C_CONSECUTIVO { get; set; }
         public Nullable<int> C_FK_ENC_TORNEO { get; set; }
@@ -20,8 +20,7 @@ namespace Proyecto_V.Models
         public short C_PUNTO { get; set; }
         public Nullable<int> C_FK_ENCUENTRO { get; set; }
     
-        public virtual TBL_ENCUENTROS_X_TORNEO TBL_ENCUENTROS_X_TORNEO { get; set; }
-        public virtual TBL_ENCUENTROS_X_TORNEO TBL_ENCUENTROS_X_TORNEO1 { get; set; }
+        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
         public virtual TBL_EQUIPO TBL_EQUIPO { get; set; }
     }
 }
