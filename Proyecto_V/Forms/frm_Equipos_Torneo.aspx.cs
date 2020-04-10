@@ -22,8 +22,16 @@ namespace Proyecto_V.Forms
             {
                 pc_consultar_equipos();
                 pc_consultar_torneos();
+                pc_cargar_tabla_equipos();
             }
 
+        }
+
+        void pc_cargar_tabla_equipos()
+        {
+
+            tbl_equipos.DataSource = _equipos.pc_consultar_equipos();
+            tbl_equipos.DataBind();
         }
 
         //METODOS DE CLASE
@@ -58,29 +66,26 @@ namespace Proyecto_V.Forms
                 ch = (CheckBox)item.Cells[1].FindControl("ch_seleccionar");
                 if (ch.Checked == true)
                 {
-                    _datos.NombreEquipo = item.Cells[1].Text;
-                    _datos.idConsecutivo = Convert.ToInt32(dl_lista_torneos.SelectedValue);
-
-
+                    _datos.idConsecutivo = Convert.ToInt32(item.Cells[0].Text);
+                    _datos.idConsecutivo_Torneo = Convert.ToInt32(dl_lista_torneos.SelectedValue);
                     lista_datos_equipo.Add(_datos);
                 }
             }
 
             ////ENVIAMOS LOS DATOS
-            //if (_equipos.pc_equipo_x_torneo(lista_datos_equipo) > 0)
-            //{
-            //    pc_capturar_datos_equipo();
-            //}
-
-
-            ////ENVIAMOS LOS DATOS
             if (_equipos.pc_equipo_x_torneo(lista_datos_equipo) > 0)
             {
                 pc_capturar_datos_equipo();
+                switch (_equipos.pc_registrar_equipo())
+                {
+                    case -100:
+                        lbl_mensaje.Text = "Ocurrio un error";
+                        break;
+                    default:
+                        lbl_mensaje.Text = "Equipo agregado al torneo registrado";
+                        break;
+                }
             }
-
-
-
 
         }
 
@@ -100,6 +105,26 @@ namespace Proyecto_V.Forms
         protected void btn_agregar_equipo_Click(object sender, EventArgs e)
         {
             pc_capturar_datos_equipo();
+
+        }
+
+        protected void tbl_equipos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ///asignar el nuevo índice
+            this.tbl_equipos.PageIndex = e.NewPageIndex;
+            ///volver a cargar el grid
+            this.pc_cargar_tabla_equipos();
+
+        }
+
+        protected void tbl_equipos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbl_equipos.Enabled = false;
+        }
+
+        protected void btn_cambiar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_Equipos_Torneo.aspx");
         }
     }
 }
