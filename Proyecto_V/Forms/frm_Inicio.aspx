@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Futboleros</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <link href="../Hoja%20Estilos/HojaEstilos.css" rel="stylesheet" />
+
 </head>
 <body>
     <div class="container well contenedor">
