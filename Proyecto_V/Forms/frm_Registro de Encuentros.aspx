@@ -105,7 +105,7 @@
         </asp:GridView>
         <br />
         <br />
-        <asp:Button Text="Datos por equipo" ID="btn_actualizar" CausesValidation="false" CssClass="btn btn-primary" runat="server" OnClick="btn_actualizar_Click" />
+        <asp:Button Text="Datos por equipo" ID="btn_ver_datos" CausesValidation="false" CssClass="btn btn-primary" runat="server" OnClick="btn_ver_datos_Click" />
     </div>
     <br />
     <br />

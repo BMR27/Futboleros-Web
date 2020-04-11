@@ -600,6 +600,7 @@
           <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
           <Parameter Name="ID_CASA" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_CONSULTAR_GOLEADORES_X_TORNEO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SP_CONSULTAR_JUG_CASA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_ENCUENTRO" Type="int" Mode="In" />
         </Function>
@@ -1627,6 +1628,7 @@
             <Parameter Name="ID_ANOTADOR_CASA" Mode="In" Type="Int32" />
             <Parameter Name="ID_ANOTADOR_VISITA" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_GOLEADORES_X_TORNEO" ReturnType="Collection(programacion5Model.SP_CONSULTAR_GOLEADORES_X_TORNEO_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1889,6 +1891,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="SP_CONSULTAR_GOLEADORES_X_TORNEO_Result">
+          <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="182" />
+          <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
+          <Property Type="Int32" Name="GOLES" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2344,6 +2352,16 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="SP_ACTUALIZAR_RESULTADO_PARTIDO" FunctionName="programacion5Model.Store.SP_ACTUALIZAR_RESULTADO_PARTIDO" />
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_GOLEADORES_X_TORNEO" FunctionName="programacion5Model.Store.SP_CONSULTAR_GOLEADORES_X_TORNEO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_GOLEADORES_X_TORNEO_Result">
+                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="C_NOMBRE_EQUIPO" ColumnName="C_NOMBRE_EQUIPO" />
+                <ScalarProperty Name="GOLES" ColumnName="GOLES" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

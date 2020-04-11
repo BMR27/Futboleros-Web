@@ -84,9 +84,7 @@
                      Reportes
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
-                          <a class="dropdown-item" href="#">Tabla de Posiciones</a><br/>
-                          <a class="dropdown-item" href="#">Tabla Goleadores Historicos</a><br/>
-                          <a class="dropdown-item" href="#">Tabla de Jugadores</a><br/>
+                          <a class="dropdown-item" href="frm_Reportes.aspx">Reportes de Futboleros</a><br/>
                         </div>
                    </li>
                 </ul>

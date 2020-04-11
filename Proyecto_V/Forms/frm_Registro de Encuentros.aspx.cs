@@ -29,7 +29,7 @@ namespace Proyecto_V.Forms
         {
             dl_lista_torneos.DataSource = _Torneo.pc_consultar_torneos();
             dl_lista_torneos.DataBind();
-            dl_lista_torneos.Items.Insert(0,new ListItem("Seleccione un torneo",""));
+            dl_lista_torneos.Items.Insert(0, new ListItem("Seleccione un torneo", ""));
             dl_lista_torneos.SelectedValue = "";
         }
 
@@ -38,7 +38,7 @@ namespace Proyecto_V.Forms
         {
             dl_lista_torneo2.DataSource = _Torneo.pc_consultar_torneos();
             dl_lista_torneo2.DataBind();
-            dl_lista_torneo2.Items.Insert(0, new ListItem("Todos","-1"));
+            dl_lista_torneo2.Items.Insert(0, new ListItem("Todos", "-1"));
             dl_lista_torneo2.SelectedValue = "-1";
         }
 
@@ -59,7 +59,7 @@ namespace Proyecto_V.Forms
             //EJECUTAMOS LA CONSULTA
             dl_lista_casa.DataSource = _Encuentros.pc_cosultar_equipos_casa_x_torneo();
             dl_lista_casa.DataBind();
-            dl_lista_casa.Items.Insert(0,new ListItem("--Seleccione un equipo casa--",""));
+            dl_lista_casa.Items.Insert(0, new ListItem("--Seleccione un equipo casa--", ""));
             dl_lista_casa.SelectedValue = "";
         }
 
@@ -117,7 +117,7 @@ namespace Proyecto_V.Forms
             }
             dl_lista_jugadores_casa.DataSource = _Encuentros.pc_jugadores_casa();
             dl_lista_jugadores_casa.DataBind();
-            dl_lista_jugadores_casa.Items.Insert(0, new ListItem("--Ninguno--","-1"));
+            dl_lista_jugadores_casa.Items.Insert(0, new ListItem("--Ninguno--", "-1"));
             dl_lista_jugadores_casa.SelectedValue = "-1";
             //MOSTRASMO LA VISITA
             dl_lista_jugadores_visita.DataSource = _Encuentros.pc_jugadores_visita();
@@ -201,14 +201,16 @@ namespace Proyecto_V.Forms
             this.pc_consultar_partidos();
         }
 
-        protected void btn_actualizar_Click(object sender, EventArgs e)
-        {
-            pc_consultar_jugadores();
-        }
 
         protected void btn_actualizar_partido_Click(object sender, EventArgs e)
         {
             pc_actualizar_partido();
+        }
+
+        protected void btn_ver_datos_Click(object sender, EventArgs e)
+        {
+
+            pc_consultar_jugadores();
         }
     }
 }

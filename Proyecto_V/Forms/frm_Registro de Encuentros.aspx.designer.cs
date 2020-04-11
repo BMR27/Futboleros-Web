@@ -94,13 +94,13 @@ namespace Proyecto_V.Forms {
         protected global::System.Web.UI.WebControls.GridView tbl_lista_partidos;
         
         /// <summary>
-        /// Control btn_actualizar.
+        /// Control btn_ver_datos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_actualizar;
+        protected global::System.Web.UI.WebControls.Button btn_ver_datos;
         
         /// <summary>
         /// Control dl_lista_jugadores_casa.

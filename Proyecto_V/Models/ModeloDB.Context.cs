@@ -644,5 +644,10 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_RESULTADO_PARTIDO", iD_PARTIDOParameter, gOL_CASAParameter, gOL_VISITAParameter, iD_ANOTADOR_CASAParameter, iD_ANOTADOR_VISITAParameter);
         }
+    
+        public virtual ObjectResult<SP_CONSULTAR_GOLEADORES_X_TORNEO_Result> SP_CONSULTAR_GOLEADORES_X_TORNEO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_GOLEADORES_X_TORNEO_Result>("SP_CONSULTAR_GOLEADORES_X_TORNEO");
+        }
     }
 }
