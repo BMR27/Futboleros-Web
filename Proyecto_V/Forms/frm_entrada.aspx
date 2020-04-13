@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    
 
-    <style>
+  <style>
         .carousel-inner .item img{
             width:auto;
             margin:auto;
@@ -64,11 +64,7 @@
 
     </div>
 
-      <%--<asp:Image id="Image1" runat="server" Height="500px" ImageUrl="~/Imagenes/inicio.jpg" 
+     <%-- <asp:Image id="Image1" runat="server" Height="500px" ImageUrl="~/Imagenes/inicio.jpg" 
       Width="1400px"  AlternateText="Imagen no disponible" ImageAlign="TextTop" />--%>
-
-    <script type="text/javascript" src="../Scripts/bootstrap.js"> </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </asp:Content>
