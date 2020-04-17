@@ -73,7 +73,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -180,6 +180,12 @@
     <Content Include="Hoja Estilos\Estilos_Reg_Jugadores.css" />
     <Content Include="Hoja Estilos\HojaEstilos.css" />
     <Content Include="Imagenes\icons8_Calendar_48px_1.png" />
+    <Content Include="Imagenes\imagen1.jpg" />
+    <Content Include="Imagenes\imagen3.jpg" />
+    <Content Include="Imagenes\images2.jpg" />
+    <Content Include="Imagenes\images4.jpg" />
+    <Content Include="Imagenes\images5.jpg" />
+    <Content Include="Imagenes\images6.jpg" />
     <Content Include="Imagenes\inicio.jpg" />
     <Content Include="Models\ModeloDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
