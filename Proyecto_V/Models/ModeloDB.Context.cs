@@ -649,5 +649,10 @@ namespace Proyecto_V.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_GOLEADORES_X_TORNEO_Result>("SP_CONSULTAR_GOLEADORES_X_TORNEO");
         }
+    
+        public virtual ObjectResult<SP_POSICIONES_X_TORNEO_Result> SP_POSICIONES_X_TORNEO()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_POSICIONES_X_TORNEO_Result>("SP_POSICIONES_X_TORNEO");
+        }
     }
 }

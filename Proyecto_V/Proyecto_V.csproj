@@ -216,6 +216,17 @@
     <Content Include="programacion5DataSet.xss">
       <DependentUpon>programacion5DataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="programacion5DataSetPosicion.xsc">
+      <DependentUpon>programacion5DataSetPosicion.xsd</DependentUpon>
+    </Content>
+    <None Include="programacion5DataSetPosicion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>programacion5DataSetPosicion.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="programacion5DataSetPosicion.xss">
+      <DependentUpon>programacion5DataSetPosicion.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -505,6 +516,9 @@
     <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SP_POSICIONES_X_TORNEO_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_RETORNAR_DISTRITO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
@@ -580,6 +594,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>programacion5DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="programacion5DataSetPosicion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>programacion5DataSetPosicion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
@@ -609,6 +628,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reporte\InformeGoleadores.rdlc" />
+    <EmbeddedResource Include="Reporte\InformePosiciones.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

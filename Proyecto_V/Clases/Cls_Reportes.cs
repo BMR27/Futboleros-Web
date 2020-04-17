@@ -32,7 +32,7 @@ namespace Proyecto_V.Clases
                     this.RutaReporte = "~/Reporte/InformeGoleadores.rdlc";
                     break;
                 case 2:
-                    this.RutaReporte = "";
+                    this.RutaReporte = "~/Reporte/InformePosiciones.rdlc";
                     break;
                 default:
                     break;
@@ -46,6 +46,12 @@ namespace Proyecto_V.Clases
         {
             return this.Modelodb.SP_CONSULTAR_GOLEADORES_X_TORNEO().ToList();
         }
+
+        public List<SP_POSICIONES_X_TORNEO_Result> pc_posiciones()
+        {
+            return this.Modelodb.SP_POSICIONES_X_TORNEO().ToList();
+        }
+
         #endregion
     }
 }

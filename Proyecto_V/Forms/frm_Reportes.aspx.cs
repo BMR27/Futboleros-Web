@@ -63,6 +63,10 @@ namespace Proyecto_V.Forms
                         fuenteDatos.Name = infoFuenteDatos[0];
                         fuenteDatos.Value = _Reporte.pc_Goleadores();
                         break;
+                    case 2:
+                        fuenteDatos.Name = infoFuenteDatos[0];
+                        fuenteDatos.Value = _Reporte.pc_posiciones();
+                        break;
                     default:
                         break;
                 }

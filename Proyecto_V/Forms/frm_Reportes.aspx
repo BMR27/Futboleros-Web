@@ -25,10 +25,8 @@
 
     </div>
     
-    <div class="container">
         <rsweb:ReportViewer ID="rpv_reportes" runat="server" Width="100%" Height="800px">
        
         </rsweb:ReportViewer>
-    </div>
 
 </asp:Content>
