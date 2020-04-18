@@ -494,15 +494,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ACTUALIZAR_TORNEO", iD_TORNEOParameter, fECHA_INICIALParameter, fECHA_FINALParameter, nOMBRE_TORNEOParameter, cANTIDAD_EQUIPOSParameter);
         }
     
-        public virtual int SP_ELIMINAR_TORNEOS(Nullable<int> iD_TORNEO)
-        {
-            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
-                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
-                new ObjectParameter("ID_TORNEO", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_TORNEOS", iD_TORNEOParameter);
-        }
-    
         public virtual ObjectResult<SP_VALIDAR_INICIO_SESION_Result> SP_VALIDAR_INICIO_SESION(string uSUARIO, string pASS)
         {
             var uSUARIOParameter = uSUARIO != null ?
@@ -514,11 +505,6 @@ namespace Proyecto_V.Models
                 new ObjectParameter("PASS", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_VALIDAR_INICIO_SESION_Result>("SP_VALIDAR_INICIO_SESION", uSUARIOParameter, pASSParameter);
-        }
-    
-        public virtual ObjectResult<SP_CONSULTAR_LISTA_TORNEOS_Result> SP_CONSULTAR_LISTA_TORNEOS()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_TORNEOS_Result>("SP_CONSULTAR_LISTA_TORNEOS");
         }
     
         public virtual ObjectResult<SP_CONSULTAR_EQUIPOS_ECUENTRO_Result> SP_CONSULTAR_EQUIPOS_ECUENTRO(Nullable<int> iD_TORNEO, Nullable<int> iD_CASA)
@@ -630,6 +616,15 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_POSICIONES_X_TORNEO_Result>("SP_POSICIONES_X_TORNEO");
         }
     
+        public virtual int SP_ELIMINAR_TORNEOS(Nullable<int> iD_TORNEO)
+        {
+            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
+                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
+                new ObjectParameter("ID_TORNEO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_ELIMINAR_TORNEOS", iD_TORNEOParameter);
+        }
+    
         public virtual int SP_REGISTRAR_TORNEO(Nullable<int> iD_USUARIO, Nullable<System.DateTime> fECHA_INICIAL, Nullable<System.DateTime> fECHA_FINAL, string nOMBRE_TORNEO, Nullable<short> cANTIDAD_EQUIPOS)
         {
             var iD_USUARIOParameter = iD_USUARIO.HasValue ?
@@ -653,6 +648,28 @@ namespace Proyecto_V.Models
                 new ObjectParameter("CANTIDAD_EQUIPOS", typeof(short));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_TORNEO", iD_USUARIOParameter, fECHA_INICIALParameter, fECHA_FINALParameter, nOMBRE_TORNEOParameter, cANTIDAD_EQUIPOSParameter);
+        }
+    
+        public virtual int SP_INICIAR_TORNEO(Nullable<int> iD_TORNEO)
+        {
+            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
+                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
+                new ObjectParameter("ID_TORNEO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_INICIAR_TORNEO", iD_TORNEOParameter);
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_LISTA_TORNEOS_Result> SP_CONSULTAR_LISTA_TORNEOS(Nullable<System.DateTime> fECHA_INICIAL, Nullable<System.DateTime> fECHA_FINAL)
+        {
+            var fECHA_INICIALParameter = fECHA_INICIAL.HasValue ?
+                new ObjectParameter("FECHA_INICIAL", fECHA_INICIAL) :
+                new ObjectParameter("FECHA_INICIAL", typeof(System.DateTime));
+    
+            var fECHA_FINALParameter = fECHA_FINAL.HasValue ?
+                new ObjectParameter("FECHA_FINAL", fECHA_FINAL) :
+                new ObjectParameter("FECHA_FINAL", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_TORNEOS_Result>("SP_CONSULTAR_LISTA_TORNEOS", fECHA_INICIALParameter, fECHA_FINALParameter);
         }
     }
 }

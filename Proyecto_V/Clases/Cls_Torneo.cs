@@ -57,26 +57,9 @@ namespace Proyecto_V.Clases
         //METODO CONSULTA LOS TORNEOS
         public List<SP_CONSULTAR_LISTA_TORNEOS_Result> pc_consultar_torneos()
         {
-            List<SP_CONSULTAR_LISTA_TORNEOS_Result> lista_torneos = this.ModeloDB.SP_CONSULTAR_LISTA_TORNEOS().ToList();
+            List<SP_CONSULTAR_LISTA_TORNEOS_Result> lista_torneos = this.ModeloDB.SP_CONSULTAR_LISTA_TORNEOS(this.Fecha_Inicio,this.Fecha_Final).ToList();
             return lista_torneos;
         }
-
-        //METODO PARA ELIMINAR UN TORNEO
-        public int pc_eliminar_torneo()
-        {
-            int filas = 0;
-            try
-            {
-                filas = this.ModeloDB.SP_ELIMINAR_TORNEOS(idConsecutivo_Torneo);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return filas;
-        }
-
 
         //METODO QUE CAPTURA LOS DATOS DEL TORNEO Y LOS ACTUALIZA
         public void pc_captura_datos_torneos()
@@ -133,7 +116,59 @@ namespace Proyecto_V.Clases
             return filas;
         }
 
+        //ELIMINAR UN TORNEO
+        public string pc_eliminar_torneo()
+        {
+            string mensaje = "";
+            int filas = 0;
+            try
+            {
+                filas = this.ModeloDB.SP_ELIMINAR_TORNEOS(this.idConsecutivo_Torneo);
+            }
+            catch (Exception ex)
+            {
 
+                mensaje = ex.Message;
+            }
+
+            if (filas > 0)
+            {
+                mensaje = "El torneo fue eliminado de la base datos";
+            }
+            else
+            {
+                mensaje = "No se elimino el torneo ya que tiene partidos disputados";
+            }
+
+            return mensaje;
+        }
+
+        //INICIAR UN TORNEO 
+        public string pc_iniciar_torneo()
+        {
+            string mensaje = "";
+            int filas = 0;
+            try
+            {
+                filas = this.ModeloDB.SP_INICIAR_TORNEO(this.idConsecutivo_Torneo);
+            }
+            catch (Exception ex)
+            {
+
+                mensaje = ex.Message;
+            }
+
+            if (filas > 0)
+            {
+                mensaje = "El torneo se ha iniciado, visite registro por encuentros y agregue los partidos";
+            }
+            else
+            {
+                mensaje = "No puede inicar requiere equipos";
+            }
+
+            return mensaje;
+        }
         #endregion
     }
 }

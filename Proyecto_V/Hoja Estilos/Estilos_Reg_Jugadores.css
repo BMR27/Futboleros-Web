@@ -1,4 +1,7 @@
 ﻿
+.container {
+    text-align: center;
+}
 #contenedor{
     top:10%;
     width:60%;

@@ -19,7 +19,59 @@ namespace Proyecto_V.Forms
                 pc_cargar_tabla_torneo();
             }
         }
+        //METODOS
+        #region METODOS
+        //ELIMINA UN TORNEO
+        void pc_eliminar()
+        {
+            for (int i = 0; i < tbl_lista_torneos.Rows.Count; i++)
+            {
+                CheckBox check = (CheckBox)tbl_lista_torneos.Rows[i].FindControl("ch_tbl_torneos");
+                if (check.Checked == true)
+                {
+                    _torneo.idConsecutivo_Torneo = Convert.ToInt32(tbl_lista_torneos.Rows[i].Cells[0].Text);
+                    break;
+                }
+            }
+            //EJECUTAMOS EL METODO
+            lbl_mensaje.Text = _torneo.pc_eliminar_torneo();
+            switch (lbl_mensaje.Text)
+            {
+                case "El torneo fue eliminado de la base datos":
+                    pc_cargar_tabla_torneo();
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        //inicia torneo
+        void pc_iniciar()
+        {
+            for (int i = 0; i < tbl_lista_torneos.Rows.Count; i++)
+            {
+                CheckBox check = (CheckBox)tbl_lista_torneos.Rows[i].FindControl("ch_tbl_torneos");
+                if (check.Checked == true)
+                {
+                    _torneo.idConsecutivo_Torneo = Convert.ToInt32(tbl_lista_torneos.Rows[i].Cells[0].Text);
+                    break;
+                }
+            }
+            //EJECUTAMOS EL METODO
+            lbl_mensaje.Text = _torneo.pc_iniciar_torneo();
+        }
+        //CONUSLTA POR FECHA
+        void pc_consulta_por_fecha()
+        {
+            //CAPTURAMOS LA FECHA
+            _torneo.Fecha_Inicio = Convert.ToDateTime(c_fecha_inicial.SelectedDate.ToShortDateString());
+            _torneo.Fecha_Final = Convert.ToDateTime(c_fecha_final.SelectedDate.ToShortDateString());
+
+            //EJECUTAMOS LA CONSULTA
+            tbl_lista_torneos.DataSource = _torneo.pc_consultar_torneos();
+            tbl_lista_torneos.DataBind();
+        }
+        #endregion
         void pc_cargar_tabla_torneo()
         {
             tbl_lista_torneos.DataSource = _torneo.pc_consultar_torneos();
@@ -33,27 +85,7 @@ namespace Proyecto_V.Forms
 
         protected void btn_eliminar_Click(object sender, EventArgs e)
         {
-            int filas = 0;
-            for (int i = 0; i < tbl_lista_torneos.Rows.Count; i++)
-            {
-
-                CheckBox check = (CheckBox)tbl_lista_torneos.Rows[i].FindControl("ch_tbl_torneos");
-                if (check.Checked == true)
-                {
-                    _torneo.idConsecutivo_Torneo = Convert.ToInt32(tbl_lista_torneos.Rows[i].Cells[0].Text);
-                    filas = _torneo.pc_eliminar_torneo();
-                    break;
-                }
-            }
-
-            if (filas > 0)
-            {
-                Response.Redirect("frm_lista_torneos.aspx");
-            }
-            else
-            {
-                lbl_mensaje.Text = "No se elimino el torneo";
-            }
+            pc_eliminar();
         }
 
         protected void btn_actualizar_Click(object sender, EventArgs e)
@@ -98,6 +130,16 @@ namespace Proyecto_V.Forms
             this.tbl_lista_torneos.PageIndex = e.NewPageIndex;
             ///volver a cargar el grid
             this.pc_cargar_tabla_torneo();
+        }
+
+        protected void btn_buscar_Click(object sender, EventArgs e)
+        {
+            pc_consulta_por_fecha();
+        }
+
+        protected void btn_iniciar_Click(object sender, EventArgs e)
+        {
+            pc_iniciar();   
         }
     }
 }
