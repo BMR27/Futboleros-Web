@@ -51,7 +51,6 @@
                             <asp:LinkButton Text="Ver Lista de Equipos" CausesValidation="false"  ID="btn_lista_equipo" OnClick="btn_lista_equipo_Click" runat="server" /><br/>
                           
                           <a class="dropdown-item" id="btn_jug_x_equipo" href="frm_jug_x_equipo">Asignar Jugadores</a><br/>
-                          <a class="dropdown-item" href="frm_Asistidores.aspx">Proceso</a>
                         </div>
                     </li>
                  <li class="nav-item dropdown">
@@ -62,8 +61,6 @@
                             <asp:LinkButton Text="Registrar Jugadores"   CausesValidation="false" ID="btn_registrar_jugador" OnClick="btn_registrar_jugador_Click" runat="server" /><br/>
                           <a class="dropdown-item" href="frm_Estadisticas Jugadores.aspx">Estadisticas Jugadores</a><br/>
                             <asp:LinkButton Text="Ver lista jugadores" ID="btn_lista_jugadores" OnClick="btn_lista_jugadores_Click" CausesValidation="false" runat="server" />
-                          <a class="dropdown-item" href="frm_Goleadores.aspx">Goleadores</a><br/>
-                          <a class="dropdown-item" href="frm_Asistidores.aspx">Asistidores</a>
                         </div>
                    </li>
                     <li class="nav-item dropdown">
@@ -75,7 +72,6 @@
                             <asp:LinkButton Text="Ver lista de torneos"  ID="btn_lista_torneos" OnClick="btn_lista_torneos_Click" CausesValidation="false" runat="server" />
                             <asp:LinkButton Text="Asignar Equipos"   ID="btn_asignar_equipo" OnClick="btn_asignar_equipo_Click" CausesValidation="false" runat="server" />
                             <asp:LinkButton Text="Registrar Encuentros"   ID="btn_encuentros" OnClick="btn_encuentros_Click" CausesValidation="false" runat="server" />
-                          <a class="dropdown-item" href="frm_Ultimos Campeones.aspx">Ultimos Campeones</a><br/>
                        
                         </div>
                    </li>
