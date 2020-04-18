@@ -533,27 +533,6 @@ namespace Proyecto_V.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_EQUIPOS_A_TORNEOS", iD_TORNEOParameter, iD_EQUIPOParameter);
         }
     
-        public virtual int SP_REGISTRAR_ENCUENTRO_X_TORNEO(Nullable<int> iD_CASA, Nullable<int> iD_VISITA, Nullable<int> iD_TORNEO, Nullable<System.DateTime> fECHA)
-        {
-            var iD_CASAParameter = iD_CASA.HasValue ?
-                new ObjectParameter("ID_CASA", iD_CASA) :
-                new ObjectParameter("ID_CASA", typeof(int));
-    
-            var iD_VISITAParameter = iD_VISITA.HasValue ?
-                new ObjectParameter("ID_VISITA", iD_VISITA) :
-                new ObjectParameter("ID_VISITA", typeof(int));
-    
-            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
-                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
-                new ObjectParameter("ID_TORNEO", typeof(int));
-    
-            var fECHAParameter = fECHA.HasValue ?
-                new ObjectParameter("FECHA", fECHA) :
-                new ObjectParameter("FECHA", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_ENCUENTRO_X_TORNEO", iD_CASAParameter, iD_VISITAParameter, iD_TORNEOParameter, fECHAParameter);
-        }
-    
         public virtual ObjectResult<SP_CONSULTAR_PARTIDOS_POR_TORNEO_Result> SP_CONSULTAR_PARTIDOS_POR_TORNEO(Nullable<int> iD_TORNEO)
         {
             var iD_TORNEOParameter = iD_TORNEO.HasValue ?
@@ -670,6 +649,27 @@ namespace Proyecto_V.Models
                 new ObjectParameter("FECHA_FINAL", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_LISTA_TORNEOS_Result>("SP_CONSULTAR_LISTA_TORNEOS", fECHA_INICIALParameter, fECHA_FINALParameter);
+        }
+    
+        public virtual int SP_REGISTRAR_ENCUENTRO_X_TORNEO(Nullable<int> iD_CASA, Nullable<int> iD_VISITA, Nullable<int> iD_TORNEO, Nullable<System.DateTime> fECHA)
+        {
+            var iD_CASAParameter = iD_CASA.HasValue ?
+                new ObjectParameter("ID_CASA", iD_CASA) :
+                new ObjectParameter("ID_CASA", typeof(int));
+    
+            var iD_VISITAParameter = iD_VISITA.HasValue ?
+                new ObjectParameter("ID_VISITA", iD_VISITA) :
+                new ObjectParameter("ID_VISITA", typeof(int));
+    
+            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
+                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
+                new ObjectParameter("ID_TORNEO", typeof(int));
+    
+            var fECHAParameter = fECHA.HasValue ?
+                new ObjectParameter("FECHA", fECHA) :
+                new ObjectParameter("FECHA", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_REGISTRAR_ENCUENTRO_X_TORNEO", iD_CASAParameter, iD_VISITAParameter, iD_TORNEOParameter, fECHAParameter);
         }
     }
 }

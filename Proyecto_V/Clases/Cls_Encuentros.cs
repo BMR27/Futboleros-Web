@@ -68,6 +68,10 @@ namespace Proyecto_V.Clases
             {
                 mensaje = "Exito al registrar el partido";
             }
+            else
+            {
+                mensaje = "El partido no se registro verifique que el torneo ya este iniciado";
+            }
             return mensaje;
         }
 
