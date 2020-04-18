@@ -32,6 +32,7 @@ namespace Proyecto_V
         public int TipoUsuario { get; set; }
         public string NombreTipo { get; set; }
         public DateTime UltimaConexion { get; set; }
+        public String n;
         #endregion
 
         //CONSTRUCTORES DE CLASE
