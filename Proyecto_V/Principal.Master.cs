@@ -104,5 +104,10 @@ namespace Proyecto_V
         {
             Response.Redirect("frm_Equipos_Torneo.aspx");
         }
+
+        protected void Label1_DataBinding(object sender, EventArgs e)
+        {
+            Label1.Text = DateTime.Now.ToString();
+        }
     }
 }

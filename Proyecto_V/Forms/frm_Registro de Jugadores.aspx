@@ -5,6 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!---HOJA DE ESTILOS-->
     <link href="../Hoja%20Estilos/Estilos_Reg_Jugadores.css" rel="stylesheet" />
+    <script src ="../Scripts/WebForms/Validacion_Jugadores.js"></script>
+    
+  
+
+
+
     <div>
         <h2>Registro de Jugadores</h2>
     </div>
@@ -20,8 +26,8 @@
                     <asp:RequiredFieldValidator ID="rq_txt_cedula" runat="server" ErrorMessage="* Debe indicar el número de Cédula" ControlToValidate="txt_cedula" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:RegularExpressionValidator ID="rgvTxt_Cedula" runat="server" ErrorMessage="Debe ingresar la cédula en el formato (000000000)" ControlToValidate="txt_cedula" ForeColor="Red" ValidationExpression="([0-9]|-)*"></asp:RegularExpressionValidator>
-                    <asp:TextBox runat="server" ID="txt_cedula" CssClass="form-control" MaxLength="9" />
+                    <asp:RegularExpressionValidator ID="rgvTxt_Cedula" runat="server" ErrorMessage="Debe ingresar la cédula en el formato (000000000)"  ControlToValidate="txt_cedula" ForeColor="Red" ValidationExpression="^([d]{0,10})$" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:TextBox runat="server" ID="txt_cedula" CssClass="form-control" MaxLength="9"/>
                 </div>
             </div>
             <!---NOMBRE-->
@@ -34,7 +40,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RegularExpressionValidator ID="rgvTxtNombre" runat="server" ErrorMessage="El nombre solo puede llevar letras" ControlToValidate="txt_nombre" ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
-                <asp:TextBox runat="server" ID="txt_nombre" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_nombre" CssClass="form-control" MaxLength="60" />
             </div>
             <!---APELLIDO 1-->
             <div class="form-group">
@@ -46,7 +52,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RegularExpressionValidator ID="rgvTxt_Apellido1" runat="server" ErrorMessage="El apellido solo debe llevar letras" ControlToValidate="txt_apellido1" ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
-                <asp:TextBox runat="server" ID="txt_apellido1" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_apellido1" CssClass="form-control" MaxLength="60" />
             </div>
             <!---APELLIDO2-->
             <div class="form-group">
@@ -58,7 +64,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="El apellido debe llevar solo letras" ControlToValidate="txt_apellido2" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
-                <asp:TextBox runat="server" ID="txt_apellido2" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_apellido2" CssClass="form-control" MaxLength="60" />
             </div>
             <div class="form-group">
                 <asp:Label Text="Fecha Nacimiento" runat="server" />
@@ -93,7 +99,7 @@
                 <asp:Label Text="Teléfono" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rq_txt_telefono" runat="server" ErrorMessage="* Debe ingresar un número teléfono" ControlToValidate="txt_telefono" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:TextBox runat="server" ID="txt_telefono" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_telefono" CssClass="form-control" MaxLength="12" />
             </div>
             <!---CORREO-->
               <div class="form-group">
@@ -103,7 +109,7 @@
                   <br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <asp:RegularExpressionValidator ID="rgvTxt_Correo" runat="server" ErrorMessage="Debe ingresar un correo valido" ControlToValidate="txt_correo" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                <asp:TextBox runat="server" ID="txt_correo" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txt_correo" CssClass="form-control" MaxLength="30" />
               </div>
             <!---PROVINCIA,CANTON,DISTRITO-->
             <div class="form-group">
@@ -123,8 +129,9 @@
                   <asp:Label Text="Dirección" runat="server" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rqtxt_direccion" runat="server" ErrorMessage="* Debe ingresar la dirección de la vivienda" ControlToValidate="txt_direccion" ForeColor="Red"></asp:RequiredFieldValidator>
-                  <textarea id="txt_direccion" class="form-control" runat="server" ></textarea>
+                  <textarea id="txt_direccion" class="form-control" runat="server" MaxLength="500" ></textarea>
               </div>
+             <script src="../Scripts/WebForms/Validacion_Jugadores.js"></script>
             <!---BOTON-->
             <asp:Button Text="Agregar Jugador" ID="btn_agregar" CssClass="btn btn-primary" runat="server" OnClick="btn_agregar_Click" />
             <br />
