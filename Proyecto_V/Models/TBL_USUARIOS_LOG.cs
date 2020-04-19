@@ -16,8 +16,8 @@ namespace Proyecto_V.Models
     {
         public TBL_USUARIOS_LOG()
         {
-            this.TBL_ENC_TORNEOS = new HashSet<TBL_ENC_TORNEOS>();
             this.TBL_INGRESOS_X_USUARIO = new HashSet<TBL_INGRESOS_X_USUARIO>();
+            this.TBL_ENC_TORNEOS = new HashSet<TBL_ENC_TORNEOS>();
         }
     
         public int C_CONSECUTIVO { get; set; }
@@ -29,8 +29,8 @@ namespace Proyecto_V.Models
         public Nullable<bool> C_ACTIVO { get; set; }
         public Nullable<int> C_TIPO { get; set; }
     
-        public virtual ICollection<TBL_ENC_TORNEOS> TBL_ENC_TORNEOS { get; set; }
         public virtual ICollection<TBL_INGRESOS_X_USUARIO> TBL_INGRESOS_X_USUARIO { get; set; }
         public virtual TBL_TIPO_USUARIO TBL_TIPO_USUARIO { get; set; }
+        public virtual ICollection<TBL_ENC_TORNEOS> TBL_ENC_TORNEOS { get; set; }
     }
 }

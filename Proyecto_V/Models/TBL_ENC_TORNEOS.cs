@@ -29,6 +29,7 @@ namespace Proyecto_V.Models
         public string C_NOMBRE_TORNEO { get; set; }
         public short C_CANT_EQUIPOS { get; set; }
         public bool C_ESTADO { get; set; }
+        public Nullable<bool> C_FINALIZADO { get; set; }
     
         public virtual ICollection<TBL_DETALLE_TORNEO> TBL_DETALLE_TORNEO { get; set; }
         public virtual TBL_USUARIOS_LOG TBL_USUARIOS_LOG { get; set; }

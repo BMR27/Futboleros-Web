@@ -20,8 +20,8 @@ namespace Proyecto_V.Models
         public Nullable<int> C_FK_ENCUENTRO { get; set; }
         public short C_CANT_GOLES { get; set; }
     
-        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
         public virtual TBL_ENCUENTROS_X_TORNEO TBL_ENCUENTROS_X_TORNEO { get; set; }
         public virtual TBL_JUGADORES TBL_JUGADORES { get; set; }
+        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
     }
 }

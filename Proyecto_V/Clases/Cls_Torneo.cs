@@ -169,6 +169,31 @@ namespace Proyecto_V.Clases
 
             return mensaje;
         }
+
+
+        public string pc_validar_cant_juegos()
+        {
+            string mensaje = "";
+            int cont = 0;
+            //consultamos  LOS JUEGOS 
+            List<SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result> lista_partidos =
+                this.ModeloDB.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO(this.idConsecutivo_Torneo).ToList();
+            foreach (var item in lista_partidos)
+            {
+                cont = Convert.ToInt32(item.JUEGOS);
+                for (int i = 1; i < lista_partidos.Count; i++)
+                {
+                    if (cont != lista_partidos[i].JUEGOS)
+                    {
+                        mensaje = "El torneo no se puede cerrar faltan equipos de jugar";
+                        break;
+                    }
+                }
+                break;
+            }
+
+            return mensaje;
+        }
         #endregion
     }
 }

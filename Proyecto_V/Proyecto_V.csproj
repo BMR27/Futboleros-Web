@@ -481,6 +481,9 @@
     <Compile Include="Models\RetornaProvincias_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_CONSULTAR_EQUIPOS_ECUENTRO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>

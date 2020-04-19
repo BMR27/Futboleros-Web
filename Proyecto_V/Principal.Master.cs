@@ -107,7 +107,7 @@ namespace Proyecto_V
 
         protected void Label1_DataBinding(object sender, EventArgs e)
         {
-            Label1.Text = DateTime.Now.ToString();
+           // Label1.Text = DateTime.Now.ToString();
         }
     }
 }

@@ -80,6 +80,7 @@
           <Property Name="C_NOMBRE_TORNEO" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="C_CANT_EQUIPOS" Type="smallint" Nullable="false" />
           <Property Name="C_ESTADO" Type="bit" Nullable="false" />
+          <Property Name="C_FINALIZADO" Type="bit" />
         </EntityType>
         <EntityType Name="TBL_ENCUENTROS_X_TORNEO">
           <Key>
@@ -544,6 +545,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FN_CONSULTAR_PARTIDOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+          <Parameter Name="ID_EQUIPO" Type="int" Mode="In" />
+        </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="RetornaCantones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -595,6 +600,9 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
         </Function>
         <Function Name="SP_CONSULTAR_EQUIPOS_ECUENTRO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
@@ -908,8 +916,8 @@
           <Property Name="C_CONSECUTIVO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="C_FK_CONS_TORNEO" Type="Int32" />
           <Property Name="C_FK_EQUIPOS" Type="Int32" />
-          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="Self.FK__TBL_DETAL__C_FK___01142BA1" FromRole="TBL_DETALLE_TORNEO" ToRole="TBL_ENC_TORNEOS" />
           <NavigationProperty Name="TBL_EQUIPO" Relationship="Self.FK__TBL_DETAL__C_FK___02084FDA" FromRole="TBL_DETALLE_TORNEO" ToRole="TBL_EQUIPO" />
+          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="programacion5Model.FK__TBL_DETAL__C_FK___01142BA1" FromRole="TBL_DETALLE_TORNEO" ToRole="TBL_ENC_TORNEOS" />
         </EntityType>
         <EntityType Name="TBL_DISTRITO">
           <Key>
@@ -928,23 +936,6 @@
           <NavigationProperty Name="TBL_EQUIPO" Relationship="Self.FK__TBL_EQUIP__C_FK___6E01572D" FromRole="TBL_DISTRITO" ToRole="TBL_EQUIPO" />
           <NavigationProperty Name="TBL_JUGADORES" Relationship="Self.FK__TBL_JUGAD__C_FK___5FB337D6" FromRole="TBL_DISTRITO" ToRole="TBL_JUGADORES" />
         </EntityType>
-        <EntityType Name="TBL_ENC_TORNEOS">
-          <Key>
-            <PropertyRef Name="C_CONSECUTIVO" />
-          </Key>
-          <Property Name="C_CONSECUTIVO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="C_FK_USUARIO" Type="Int32" Nullable="false" />
-          <Property Name="C_FECHA_INICIAL" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="C_FECHA_FINAL" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="C_NOMBRE_TORNEO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="C_CANT_EQUIPOS" Type="Int16" Nullable="false" />
-          <Property Name="C_ESTADO" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="TBL_DETALLE_TORNEO" Relationship="Self.FK__TBL_DETAL__C_FK___01142BA1" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_DETALLE_TORNEO" />
-          <NavigationProperty Name="TBL_USUARIOS_LOG" Relationship="Self.FK__TBL_ENC_T__C_FK___7E37BEF6" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_USUARIOS_LOG" />
-          <NavigationProperty Name="TBL_ENCUENTROS_X_TORNEO" Relationship="Self.FK__TBL_ENCUE__C_FK___04E4BC85" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_ENCUENTROS_X_TORNEO" />
-          <NavigationProperty Name="TBL_GOLEADORES" Relationship="Self.FK__TBL_GOLEA__C_FK___09A971A2" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_GOLEADORES" />
-          <NavigationProperty Name="TBL_TABLA_POSICIONES" Relationship="programacion5Model.FK__TBL_TABLA__C_FK___6AEFE058" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_TABLA_POSICIONES" />
-        </EntityType>
         <EntityType Name="TBL_ENCUENTROS_X_TORNEO">
           <Key>
             <PropertyRef Name="C_CONSECUTIVO" />
@@ -957,12 +948,12 @@
           <Property Name="C_GOL_CASA" Type="Int16" Nullable="false" />
           <Property Name="C_GOL_VISITA" Type="Int16" Nullable="false" />
           <Property Name="C_ESTADO" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="Self.FK__TBL_ENCUE__C_FK___04E4BC85" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_ENC_TORNEOS" />
           <NavigationProperty Name="TBL_EQUIPO" Relationship="Self.FK__TBL_ENCUE__C_FK___05D8E0BE" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_EQUIPO" />
           <NavigationProperty Name="TBL_EQUIPO1" Relationship="Self.FK__TBL_ENCUE__C_FK___06CD04F7" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_EQUIPO" />
           <NavigationProperty Name="TBL_GOLEADORES" Relationship="Self.FK__TBL_GOLEA__C_FK___0B91BA14" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_GOLEADORES" />
           <NavigationProperty Name="TBL_POSICIONES" Relationship="programacion5Model.FK__TBL_POSIC__C_FK___0E6E26BF" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_POSICIONES" />
           <NavigationProperty Name="TBL_POSICIONES1" Relationship="programacion5Model.FK__TBL_POSIC__C_FK___634EBE90" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_POSICIONES" />
+          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="programacion5Model.FK__TBL_ENCUE__C_FK___04E4BC85" FromRole="TBL_ENCUENTROS_X_TORNEO" ToRole="TBL_ENC_TORNEOS" />
           </EntityType>
         <EntityType Name="TBL_EQUIPO">
           <Key>
@@ -993,9 +984,9 @@
           <Property Name="C_FK_JUGADOR" Type="Int32" />
           <Property Name="C_FK_ENCUENTRO" Type="Int32" />
           <Property Name="C_CANT_GOLES" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="Self.FK__TBL_GOLEA__C_FK___09A971A2" FromRole="TBL_GOLEADORES" ToRole="TBL_ENC_TORNEOS" />
           <NavigationProperty Name="TBL_ENCUENTROS_X_TORNEO" Relationship="Self.FK__TBL_GOLEA__C_FK___0B91BA14" FromRole="TBL_GOLEADORES" ToRole="TBL_ENCUENTROS_X_TORNEO" />
           <NavigationProperty Name="TBL_JUGADORES" Relationship="Self.FK__TBL_GOLEA__C_FK___0A9D95DB" FromRole="TBL_GOLEADORES" ToRole="TBL_JUGADORES" />
+          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="programacion5Model.FK__TBL_GOLEA__C_FK___46B27FE2" FromRole="TBL_GOLEADORES" ToRole="TBL_ENC_TORNEOS" />
         </EntityType>
         <EntityType Name="TBL_INGRESOS_X_USUARIO">
           <Key>
@@ -1074,9 +1065,9 @@
           <Property Name="C_PASS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="C_ACTIVO" Type="Boolean" />
           <Property Name="C_TIPO" Type="Int32" />
-          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="Self.FK__TBL_ENC_T__C_FK___7E37BEF6" FromRole="TBL_USUARIOS_LOG" ToRole="TBL_ENC_TORNEOS" />
           <NavigationProperty Name="TBL_INGRESOS_X_USUARIO" Relationship="Self.FK__TBL_INGRE__C_FK___151B244E" FromRole="TBL_USUARIOS_LOG" ToRole="TBL_INGRESOS_X_USUARIO" />
           <NavigationProperty Name="TBL_TIPO_USUARIO" Relationship="Self.FK__TBL_USUAR__C_TIP__10566F31" FromRole="TBL_USUARIOS_LOG" ToRole="TBL_TIPO_USUARIO" />
+          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="programacion5Model.FK__TBL_ENC_T__C_FK___7E37BEF6" FromRole="TBL_USUARIOS_LOG" ToRole="TBL_ENC_TORNEOS" />
         </EntityType>
         <Association Name="Canton_ref_Provincia">
           <End Role="TBL_PROVINCIA" Type="Self.TBL_PROVINCIA" Multiplicity="1" />
@@ -1138,18 +1129,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TBL_DETAL__C_FK___01142BA1">
-          <End Role="TBL_ENC_TORNEOS" Type="Self.TBL_ENC_TORNEOS" Multiplicity="0..1" />
-          <End Role="TBL_DETALLE_TORNEO" Type="Self.TBL_DETALLE_TORNEO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ENC_TORNEOS">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_DETALLE_TORNEO">
-              <PropertyRef Name="C_FK_CONS_TORNEO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TBL_DETAL__C_FK___02084FDA">
           <End Role="TBL_EQUIPO" Type="Self.TBL_EQUIPO" Multiplicity="0..1" />
           <End Role="TBL_DETALLE_TORNEO" Type="Self.TBL_DETALLE_TORNEO" Multiplicity="*" />
@@ -1183,42 +1162,6 @@
             </Principal>
             <Dependent Role="TBL_JUGADORES">
               <PropertyRef Name="C_FK_DISTRITO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__TBL_ENC_T__C_FK___7E37BEF6">
-          <End Role="TBL_USUARIOS_LOG" Type="Self.TBL_USUARIOS_LOG" Multiplicity="1" />
-          <End Role="TBL_ENC_TORNEOS" Type="Self.TBL_ENC_TORNEOS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_USUARIOS_LOG">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_ENC_TORNEOS">
-              <PropertyRef Name="C_FK_USUARIO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__TBL_ENCUE__C_FK___04E4BC85">
-          <End Role="TBL_ENC_TORNEOS" Type="Self.TBL_ENC_TORNEOS" Multiplicity="0..1" />
-          <End Role="TBL_ENCUENTROS_X_TORNEO" Type="Self.TBL_ENCUENTROS_X_TORNEO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ENC_TORNEOS">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_ENCUENTROS_X_TORNEO">
-              <PropertyRef Name="C_FK_ENC_TORNEO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__TBL_GOLEA__C_FK___09A971A2">
-          <End Role="TBL_ENC_TORNEOS" Type="Self.TBL_ENC_TORNEOS" Multiplicity="0..1" />
-          <End Role="TBL_GOLEADORES" Type="Self.TBL_GOLEADORES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ENC_TORNEOS">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_GOLEADORES">
-              <PropertyRef Name="C_FK_ENC_TORNEO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1337,7 +1280,6 @@
           <EntitySet Name="TBL_CORREOS" EntityType="Self.TBL_CORREOS" />
           <EntitySet Name="TBL_DETALLE_TORNEO" EntityType="Self.TBL_DETALLE_TORNEO" />
           <EntitySet Name="TBL_DISTRITO" EntityType="Self.TBL_DISTRITO" />
-          <EntitySet Name="TBL_ENC_TORNEOS" EntityType="Self.TBL_ENC_TORNEOS" />
           <EntitySet Name="TBL_ENCUENTROS_X_TORNEO" EntityType="Self.TBL_ENCUENTROS_X_TORNEO" />
           <EntitySet Name="TBL_EQUIPO" EntityType="Self.TBL_EQUIPO" />
           <EntitySet Name="TBL_GOLEADORES" EntityType="Self.TBL_GOLEADORES" />
@@ -1367,10 +1309,6 @@
             <End Role="TBL_JUGADORES" EntitySet="TBL_JUGADORES" />
             <End Role="TBL_CORREOS" EntitySet="TBL_CORREOS" />
           </AssociationSet>
-          <AssociationSet Name="FK__TBL_DETAL__C_FK___01142BA1" Association="Self.FK__TBL_DETAL__C_FK___01142BA1">
-            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
-            <End Role="TBL_DETALLE_TORNEO" EntitySet="TBL_DETALLE_TORNEO" />
-          </AssociationSet>
           <AssociationSet Name="FK__TBL_DETAL__C_FK___02084FDA" Association="Self.FK__TBL_DETAL__C_FK___02084FDA">
             <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
             <End Role="TBL_DETALLE_TORNEO" EntitySet="TBL_DETALLE_TORNEO" />
@@ -1382,18 +1320,6 @@
           <AssociationSet Name="FK__TBL_JUGAD__C_FK___5FB337D6" Association="Self.FK__TBL_JUGAD__C_FK___5FB337D6">
             <End Role="TBL_DISTRITO" EntitySet="TBL_DISTRITO" />
             <End Role="TBL_JUGADORES" EntitySet="TBL_JUGADORES" />
-          </AssociationSet>
-          <AssociationSet Name="FK__TBL_ENC_T__C_FK___7E37BEF6" Association="Self.FK__TBL_ENC_T__C_FK___7E37BEF6">
-            <End Role="TBL_USUARIOS_LOG" EntitySet="TBL_USUARIOS_LOG" />
-            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__TBL_ENCUE__C_FK___04E4BC85" Association="Self.FK__TBL_ENCUE__C_FK___04E4BC85">
-            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
-            <End Role="TBL_ENCUENTROS_X_TORNEO" EntitySet="TBL_ENCUENTROS_X_TORNEO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__TBL_GOLEA__C_FK___09A971A2" Association="Self.FK__TBL_GOLEA__C_FK___09A971A2">
-            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
-            <End Role="TBL_GOLEADORES" EntitySet="TBL_GOLEADORES" />
           </AssociationSet>
           <AssociationSet Name="FK__TBL_ENCUE__C_FK___05D8E0BE" Association="Self.FK__TBL_ENCUE__C_FK___05D8E0BE">
             <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
@@ -1603,10 +1529,6 @@
             <End Role="TBL_POSICIONES" EntitySet="TBL_POSICIONES" />
           </AssociationSet>
           <EntitySet Name="TBL_TABLA_POSICIONES" EntityType="programacion5Model.TBL_TABLA_POSICIONES" />
-          <AssociationSet Name="FK__TBL_TABLA__C_FK___6AEFE058" Association="programacion5Model.FK__TBL_TABLA__C_FK___6AEFE058">
-            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
-            <End Role="TBL_TABLA_POSICIONES" EntitySet="TBL_TABLA_POSICIONES" />
-          </AssociationSet>
           <AssociationSet Name="FK__TBL_TABLA__C_FK___6BE40491" Association="programacion5Model.FK__TBL_TABLA__C_FK___6BE40491">
             <End Role="TBL_EQUIPO" EntitySet="TBL_EQUIPO" />
             <End Role="TBL_TABLA_POSICIONES" EntitySet="TBL_TABLA_POSICIONES" />
@@ -1623,13 +1545,6 @@
           <FunctionImport Name="SP_ELIMINAR_TORNEOS">
           <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="SP_REGISTRAR_TORNEO">
-            <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
-            <Parameter Name="FECHA_INICIAL" Mode="In" Type="DateTime" />
-            <Parameter Name="FECHA_FINAL" Mode="In" Type="DateTime" />
-            <Parameter Name="NOMBRE_TORNEO" Mode="In" Type="String" />
-            <Parameter Name="CANTIDAD_EQUIPOS" Mode="In" Type="Int16" />
-          </FunctionImport>
           <FunctionImport Name="SP_INICIAR_TORNEO">
           <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -1642,6 +1557,37 @@
             <Parameter Name="ID_VISITA" Mode="In" Type="Int32" />
             <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
             <Parameter Name="FECHA" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="TBL_ENC_TORNEOS" EntityType="programacion5Model.TBL_ENC_TORNEOS" />
+          <AssociationSet Name="FK__TBL_DETAL__C_FK___01142BA1" Association="programacion5Model.FK__TBL_DETAL__C_FK___01142BA1">
+            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
+            <End Role="TBL_DETALLE_TORNEO" EntitySet="TBL_DETALLE_TORNEO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TBL_ENC_T__C_FK___7E37BEF6" Association="programacion5Model.FK__TBL_ENC_T__C_FK___7E37BEF6">
+            <End Role="TBL_USUARIOS_LOG" EntitySet="TBL_USUARIOS_LOG" />
+            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TBL_ENCUE__C_FK___04E4BC85" Association="programacion5Model.FK__TBL_ENCUE__C_FK___04E4BC85">
+            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
+            <End Role="TBL_ENCUENTROS_X_TORNEO" EntitySet="TBL_ENCUENTROS_X_TORNEO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TBL_GOLEA__C_FK___46B27FE2" Association="programacion5Model.FK__TBL_GOLEA__C_FK___46B27FE2">
+            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
+            <End Role="TBL_GOLEADORES" EntitySet="TBL_GOLEADORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TBL_TABLA__C_FK___6AEFE058" Association="programacion5Model.FK__TBL_TABLA__C_FK___6AEFE058">
+            <End Role="TBL_ENC_TORNEOS" EntitySet="TBL_ENC_TORNEOS" />
+            <End Role="TBL_TABLA_POSICIONES" EntitySet="TBL_TABLA_POSICIONES" />
+          </AssociationSet>
+          <FunctionImport Name="SP_REGISTRAR_TORNEO">
+            <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+            <Parameter Name="FECHA_INICIAL" Mode="In" Type="DateTime" />
+            <Parameter Name="FECHA_FINAL" Mode="In" Type="DateTime" />
+            <Parameter Name="NOMBRE_TORNEO" Mode="In" Type="String" />
+            <Parameter Name="CANTIDAD_EQUIPOS" Mode="In" Type="Int16" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" ReturnType="Collection(programacion5Model.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result)">
+            <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1871,21 +1817,9 @@
           <Property Name="C_FK_EQUIPO" Type="Int32" />
           <Property Name="C_PUNTO" Type="Int16" Nullable="false" />
           <Property Name="C_FK_ENCUENTRO" Type="Int32" />
-          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="programacion5Model.FK__TBL_TABLA__C_FK___6AEFE058" FromRole="TBL_TABLA_POSICIONES" ToRole="TBL_ENC_TORNEOS" />
           <NavigationProperty Name="TBL_EQUIPO" Relationship="programacion5Model.FK__TBL_TABLA__C_FK___6BE40491" FromRole="TBL_TABLA_POSICIONES" ToRole="TBL_EQUIPO" />
+          <NavigationProperty Name="TBL_ENC_TORNEOS" Relationship="programacion5Model.FK__TBL_TABLA__C_FK___6AEFE058" FromRole="TBL_TABLA_POSICIONES" ToRole="TBL_ENC_TORNEOS" />
         </EntityType>
-        <Association Name="FK__TBL_TABLA__C_FK___6AEFE058">
-          <End Type="programacion5Model.TBL_ENC_TORNEOS" Role="TBL_ENC_TORNEOS" Multiplicity="0..1" />
-          <End Type="programacion5Model.TBL_TABLA_POSICIONES" Role="TBL_TABLA_POSICIONES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TBL_ENC_TORNEOS">
-              <PropertyRef Name="C_CONSECUTIVO" />
-            </Principal>
-            <Dependent Role="TBL_TABLA_POSICIONES">
-              <PropertyRef Name="C_FK_ENC_TORNEO" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TBL_TABLA__C_FK___6BE40491">
           <End Type="programacion5Model.TBL_EQUIPO" Role="TBL_EQUIPO" Multiplicity="0..1" />
           <End Type="programacion5Model.TBL_TABLA_POSICIONES" Role="TBL_TABLA_POSICIONES" Multiplicity="*" />
@@ -1916,6 +1850,89 @@
           <Property Type="String" Name="FECHA_FINAL" Nullable="true" MaxLength="4000" />
           <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
           <Property Type="Int16" Name="C_CANT_EQUIPOS" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="TBL_ENC_TORNEOS">
+          <Key>
+            <PropertyRef Name="C_CONSECUTIVO" />
+          </Key>
+          <Property Name="C_CONSECUTIVO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_FK_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="C_FECHA_INICIAL" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="C_FECHA_FINAL" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="C_NOMBRE_TORNEO" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="C_CANT_EQUIPOS" Type="Int16" Nullable="false" />
+          <Property Name="C_ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="C_FINALIZADO" Type="Boolean" />
+          <NavigationProperty Name="TBL_DETALLE_TORNEO" Relationship="programacion5Model.FK__TBL_DETAL__C_FK___01142BA1" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_DETALLE_TORNEO" />
+          <NavigationProperty Name="TBL_USUARIOS_LOG" Relationship="programacion5Model.FK__TBL_ENC_T__C_FK___7E37BEF6" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_USUARIOS_LOG" />
+          <NavigationProperty Name="TBL_ENCUENTROS_X_TORNEO" Relationship="programacion5Model.FK__TBL_ENCUE__C_FK___04E4BC85" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_ENCUENTROS_X_TORNEO" />
+          <NavigationProperty Name="TBL_GOLEADORES" Relationship="programacion5Model.FK__TBL_GOLEA__C_FK___46B27FE2" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_GOLEADORES" />
+          <NavigationProperty Name="TBL_TABLA_POSICIONES" Relationship="programacion5Model.FK__TBL_TABLA__C_FK___6AEFE058" FromRole="TBL_ENC_TORNEOS" ToRole="TBL_TABLA_POSICIONES" />
+        </EntityType>
+        <Association Name="FK__TBL_DETAL__C_FK___01142BA1">
+          <End Type="programacion5Model.TBL_ENC_TORNEOS" Role="TBL_ENC_TORNEOS" Multiplicity="0..1" />
+          <End Type="programacion5Model.TBL_DETALLE_TORNEO" Role="TBL_DETALLE_TORNEO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ENC_TORNEOS">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_DETALLE_TORNEO">
+              <PropertyRef Name="C_FK_CONS_TORNEO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TBL_ENC_T__C_FK___7E37BEF6">
+          <End Type="programacion5Model.TBL_USUARIOS_LOG" Role="TBL_USUARIOS_LOG" Multiplicity="1" />
+          <End Type="programacion5Model.TBL_ENC_TORNEOS" Role="TBL_ENC_TORNEOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_USUARIOS_LOG">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_ENC_TORNEOS">
+              <PropertyRef Name="C_FK_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TBL_ENCUE__C_FK___04E4BC85">
+          <End Type="programacion5Model.TBL_ENC_TORNEOS" Role="TBL_ENC_TORNEOS" Multiplicity="0..1" />
+          <End Type="programacion5Model.TBL_ENCUENTROS_X_TORNEO" Role="TBL_ENCUENTROS_X_TORNEO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ENC_TORNEOS">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_ENCUENTROS_X_TORNEO">
+              <PropertyRef Name="C_FK_ENC_TORNEO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TBL_GOLEA__C_FK___46B27FE2">
+          <End Type="programacion5Model.TBL_ENC_TORNEOS" Role="TBL_ENC_TORNEOS" Multiplicity="0..1" />
+          <End Type="programacion5Model.TBL_GOLEADORES" Role="TBL_GOLEADORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ENC_TORNEOS">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_GOLEADORES">
+              <PropertyRef Name="C_FK_ENC_TORNEO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TBL_TABLA__C_FK___6AEFE058">
+          <End Type="programacion5Model.TBL_ENC_TORNEOS" Role="TBL_ENC_TORNEOS" Multiplicity="0..1" />
+          <End Type="programacion5Model.TBL_TABLA_POSICIONES" Role="TBL_TABLA_POSICIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_ENC_TORNEOS">
+              <PropertyRef Name="C_CONSECUTIVO" />
+            </Principal>
+            <Dependent Role="TBL_TABLA_POSICIONES">
+              <PropertyRef Name="C_FK_ENC_TORNEO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result">
+          <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
+          <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
+          <Property Type="Int32" Name="JUEGOS" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1990,19 +2007,6 @@
                 <ScalarProperty Name="fechaModifica" ColumnName="fechaModifica" />
                 <ScalarProperty Name="vc_Estado" ColumnName="vc_Estado" />
                 <ScalarProperty Name="id_DistritoInec" ColumnName="id_DistritoInec" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TBL_ENC_TORNEOS">
-            <EntityTypeMapping TypeName="programacion5Model.TBL_ENC_TORNEOS">
-              <MappingFragment StoreEntitySet="TBL_ENC_TORNEOS">
-                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
-                <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
-                <ScalarProperty Name="C_FECHA_INICIAL" ColumnName="C_FECHA_INICIAL" />
-                <ScalarProperty Name="C_FECHA_FINAL" ColumnName="C_FECHA_FINAL" />
-                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
-                <ScalarProperty Name="C_CANT_EQUIPOS" ColumnName="C_CANT_EQUIPOS" />
-                <ScalarProperty Name="C_ESTADO" ColumnName="C_ESTADO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2379,7 +2383,6 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_ELIMINAR_TORNEOS" FunctionName="programacion5Model.Store.SP_ELIMINAR_TORNEOS" />
-          <FunctionImportMapping FunctionImportName="SP_REGISTRAR_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_TORNEO" />
           <FunctionImportMapping FunctionImportName="SP_INICIAR_TORNEO" FunctionName="programacion5Model.Store.SP_INICIAR_TORNEO" />
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_LISTA_TORNEOS" FunctionName="programacion5Model.Store.SP_CONSULTAR_LISTA_TORNEOS">
             <ResultMapping>
@@ -2393,6 +2396,30 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_ENCUENTRO_X_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_ENCUENTRO_X_TORNEO" />
+          <EntitySetMapping Name="TBL_ENC_TORNEOS">
+            <EntityTypeMapping TypeName="programacion5Model.TBL_ENC_TORNEOS">
+              <MappingFragment StoreEntitySet="TBL_ENC_TORNEOS">
+                <ScalarProperty Name="C_FINALIZADO" ColumnName="C_FINALIZADO" />
+                <ScalarProperty Name="C_ESTADO" ColumnName="C_ESTADO" />
+                <ScalarProperty Name="C_CANT_EQUIPOS" ColumnName="C_CANT_EQUIPOS" />
+                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
+                <ScalarProperty Name="C_FECHA_FINAL" ColumnName="C_FECHA_FINAL" />
+                <ScalarProperty Name="C_FECHA_INICIAL" ColumnName="C_FECHA_INICIAL" />
+                <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
+                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_REGISTRAR_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_TORNEO" />
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" FunctionName="programacion5Model.Store.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result">
+                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
+                <ScalarProperty Name="C_NOMBRE_EQUIPO" ColumnName="C_NOMBRE_EQUIPO" />
+                <ScalarProperty Name="JUEGOS" ColumnName="JUEGOS" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -30,11 +30,11 @@ namespace Proyecto_V.Models
         public short C_GOL_VISITA { get; set; }
         public bool C_ESTADO { get; set; }
     
-        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
         public virtual TBL_EQUIPO TBL_EQUIPO { get; set; }
         public virtual TBL_EQUIPO TBL_EQUIPO1 { get; set; }
         public virtual ICollection<TBL_GOLEADORES> TBL_GOLEADORES { get; set; }
         public virtual ICollection<TBL_POSICIONES> TBL_POSICIONES { get; set; }
         public virtual ICollection<TBL_POSICIONES> TBL_POSICIONES1 { get; set; }
+        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
     }
 }

@@ -141,5 +141,10 @@ namespace Proyecto_V.Forms
         {
             pc_iniciar();   
         }
+
+        protected void btn_cerrar_torneo_Click(object sender, EventArgs e)
+        {
+            lbl_mensaje.Text = _torneo.pc_validar_cant_juegos();
+        }
     }
 }

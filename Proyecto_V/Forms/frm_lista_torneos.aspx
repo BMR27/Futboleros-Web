@@ -60,7 +60,8 @@
         <asp:Button ID="btn_cambiar" runat="server" Text="Cambiar Torneo" CssClass="btn btn-primary" OnClick="btn_cambiar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_eliminar" runat="server" Text="Eliminar Torneo" CssClass="btn btn-primary" OnClick="btn_eliminar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_actualizar" runat="server" Text="Actualizar Torneo" CssClass="btn btn-primary" OnClick="btn_actualizar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btn_iniciar" runat="server" Text="Iniciar Torneo" CssClass="btn btn-primary" OnClick="btn_iniciar_Click" />
+        <asp:Button ID="btn_iniciar" runat="server" Text="Iniciar Torneo" CssClass="btn btn-primary" OnClick="btn_iniciar_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btn_cerrar_torneo" runat="server" Text="Cerrar Torneo" CssClass="btn btn-primary" OnClick="btn_cerrar_torneo_Click" />
         <br />
         <asp:Label Text="" ID="lbl_mensaje" runat="server" />
      </div>

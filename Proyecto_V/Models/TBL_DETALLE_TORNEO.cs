@@ -18,7 +18,7 @@ namespace Proyecto_V.Models
         public Nullable<int> C_FK_CONS_TORNEO { get; set; }
         public Nullable<int> C_FK_EQUIPOS { get; set; }
     
-        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
         public virtual TBL_EQUIPO TBL_EQUIPO { get; set; }
+        public virtual TBL_ENC_TORNEOS TBL_ENC_TORNEOS { get; set; }
     }
 }
