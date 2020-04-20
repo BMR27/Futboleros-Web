@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="../Hoja%20Estilos/EstilosJugEquipos.css" rel="stylesheet" />
     <asp:ScriptManager ID="scmReporteClientes" runat="server"></asp:ScriptManager>
+
     <div class="jumbotron text-center">
         <h2>Reportes del por torneo</h2>
     </div>

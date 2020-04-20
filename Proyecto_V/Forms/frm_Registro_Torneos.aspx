@@ -18,7 +18,7 @@
                 <asp:Label Text="Nombre del Torneo" runat="server" />  
                 <asp:RequiredFieldValidator ID="rq_Txt_NombreTorneo" runat="server" ErrorMessage="* Debe ingresar el nombre del torneo" ControlToValidate="TxtNombreTorneo" ForeColor="Red"></asp:RequiredFieldValidator>             
                 <asp:RegularExpressionValidator ID="rgvTxtNombreTorneo" runat="server" ErrorMessage="El nombre del torneo solo puede llevar letras" ControlToValidate="TxtNombreTorneo" ForeColor="Red" ValidationExpression="[A-Za-z ]*"></asp:RegularExpressionValidator>
-                <asp:TextBox runat="server" ID="TxtNombreTorneo" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="TxtNombreTorneo" CssClass="form-control" MaxLength="60" />
             </div>
 
            

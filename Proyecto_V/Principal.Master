@@ -37,8 +37,9 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">FUTBOLEROS</a>
-                     <p>The time is @DateTime.Now</p>
+                   
+                    <img src="../Imagenes/logo.jpg" width="100" height="100" /><br />
+                     <a class="navbar-brand" href="#">FUTBOLEROS</a>
                 </div>
               
                 <ul class="nav navbar-nav">
