@@ -159,7 +159,11 @@ namespace Proyecto_V.Forms
             }
             else
             {
-                _Encuentros.pc_actualizar_partidos();
+                lbl_mensaje_erro.Text = _Encuentros.pc_actualizar_partidos();
+                if (lbl_mensaje_erro.Text == "Partido actualizado y finalizado")
+                {
+                    pc_consultar_partidos();
+                }
             }
         }
         #endregion

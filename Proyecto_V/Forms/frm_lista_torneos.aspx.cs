@@ -144,6 +144,15 @@ namespace Proyecto_V.Forms
 
         protected void btn_cerrar_torneo_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < tbl_lista_torneos.Rows.Count; i++)
+            {
+                CheckBox check = (CheckBox)tbl_lista_torneos.Rows[i].FindControl("ch_tbl_torneos");
+                if (check.Checked == true)
+                {
+                    _torneo.idConsecutivo_Torneo = Convert.ToInt32(tbl_lista_torneos.Rows[i].Cells[0].Text);
+                    break;
+                }
+            }
             lbl_mensaje.Text = _torneo.pc_validar_cant_juegos();
         }
     }

@@ -61,8 +61,8 @@
                     </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style ="border:1px solid black; text-align:center; background-color:black; color:white; font-style:unset";>
                             <asp:LinkButton Text="Registrar Jugadores"   CausesValidation="false" ID="btn_registrar_jugador" OnClick="btn_registrar_jugador_Click" runat="server" /><br/>
-                          <a class="dropdown-item" href="frm_Estadisticas Jugadores.aspx">Estadisticas Jugadores</a><br/>
-                            <asp:LinkButton Text="Ver lista jugadores" ID="btn_lista_jugadores" OnClick="btn_lista_jugadores_Click" CausesValidation="false" runat="server" />
+                            <asp:LinkButton Text="Ver lista jugadores" ID="btn_lista_jugadores" OnClick="btn_lista_jugadores_Click" CausesValidation="false" runat="server" /> <br />
+                             <asp:LinkButton Text="Asignar Jugadores" ID="btn_asignar_jugador" OnClick="btn_asignar_jugador_Click" CausesValidation="false" runat="server" />
                         </div>
                    </li>
                     <li class="nav-item dropdown">
