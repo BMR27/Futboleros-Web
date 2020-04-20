@@ -26,6 +26,7 @@
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
+                          
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre Jugador</Value>

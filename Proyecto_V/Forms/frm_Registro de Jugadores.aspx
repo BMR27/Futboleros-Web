@@ -26,7 +26,7 @@
                     <asp:RequiredFieldValidator ID="rq_txt_cedula" runat="server" ErrorMessage="* Debe indicar el número de Cédula" ControlToValidate="txt_cedula" ForeColor="Red"></asp:RequiredFieldValidator>
                     <br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:RegularExpressionValidator ID="rgvTxt_Cedula" runat="server" ErrorMessage="Debe ingresar la cédula en el formato (000000000)"  ControlToValidate="txt_cedula" ForeColor="Red" ValidationExpression="^([d]{0,10})$" Display="Dynamic"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="rgvTxt_Cedula" runat="server" ErrorMessage="Debe ingresar la cédula en el formato (000000000)"  ControlToValidate="txt_cedula" ForeColor="Red" ValidationExpression="^([d]{0,9})$" Display="Dynamic"></asp:RegularExpressionValidator>
                     <asp:TextBox runat="server" ID="txt_cedula" CssClass="form-control" MaxLength="9"/>
                 </div>
             </div>

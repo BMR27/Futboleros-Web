@@ -187,6 +187,7 @@
     <Content Include="Imagenes\images5.jpg" />
     <Content Include="Imagenes\images6.jpg" />
     <Content Include="Imagenes\inicio.jpg" />
+    <Content Include="Imagenes\logo.jpg" />
     <Content Include="Models\ModeloDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModeloDB.Context.cs</LastGenOutput>
