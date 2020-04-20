@@ -456,3 +456,4 @@ C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\vbc
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\vbc.rsp
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\VBCSCompiler.exe
 C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bryan Mejia Ruiz\Desktop\Proyecto Repositorio\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
