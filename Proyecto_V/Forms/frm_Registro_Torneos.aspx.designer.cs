@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Proyecto_V.Forms
-{
-
-
-    public partial class frm_Registro_Torneos
-    {
-
+namespace Proyecto_V.Forms {
+    
+    
+    public partial class frm_Registro_Torneos {
+        
         /// <summary>
         /// Control rq_Txt_NombreTorneo.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_Txt_NombreTorneo;
-
+        
         /// <summary>
         /// Control rgvTxtNombreTorneo.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxtNombreTorneo;
-
+        
         /// <summary>
         /// Control TxtNombreTorneo.
         /// </summary>
@@ -40,7 +38,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtNombreTorneo;
-
+        
         /// <summary>
         /// Control btn_imagen_calendar.
         /// </summary>
@@ -49,7 +47,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btn_imagen_calendar;
-
+        
         /// <summary>
         /// Control txt_fecha_Inicio.
         /// </summary>
@@ -58,7 +56,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_fecha_Inicio;
-
+        
         /// <summary>
         /// Control dt_Fecha_Inicio.
         /// </summary>
@@ -67,7 +65,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar dt_Fecha_Inicio;
-
+        
         /// <summary>
         /// Control btn_imagen_calendar1.
         /// </summary>
@@ -76,7 +74,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton btn_imagen_calendar1;
-
+        
         /// <summary>
         /// Control txt_fecha_Final.
         /// </summary>
@@ -85,7 +83,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_fecha_Final;
-
+        
         /// <summary>
         /// Control dt_Fecha_Final.
         /// </summary>
@@ -94,7 +92,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar dt_Fecha_Final;
-
+        
         /// <summary>
         /// Control rq_Txt_Cantidad_Equipos.
         /// </summary>
@@ -103,7 +101,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rq_Txt_Cantidad_Equipos;
-
+        
         /// <summary>
         /// Control rgvTxt_Cantidad_Equipos.
         /// </summary>
@@ -112,7 +110,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator rgvTxt_Cantidad_Equipos;
-
+        
         /// <summary>
         /// Control txt_Cantidad_Equipos.
         /// </summary>
@@ -121,7 +119,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Cantidad_Equipos;
-
+        
         /// <summary>
         /// Control btn_agregar_Torneo.
         /// </summary>
@@ -130,7 +128,7 @@ namespace Proyecto_V.Forms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_agregar_Torneo;
-
+        
         /// <summary>
         /// Control lbl_mensaje.
         /// </summary>

@@ -108,6 +108,10 @@ namespace Proyecto_V.Clases
 
                 mensaje = ex.Message;
             }
+            if (filas > 0)
+            {
+                mensaje = "Partido actualizado y finalizado";
+            }
             return mensaje;
         }
         #endregion

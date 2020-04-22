@@ -545,6 +545,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="FINALIZAR_TORNEO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+        </Function>
         <Function Name="FN_CONSULTAR_PARTIDOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
           <Parameter Name="ID_EQUIPO" Type="int" Mode="In" />
@@ -1586,6 +1589,9 @@
             <Parameter Name="NOMBRE_TORNEO" Mode="In" Type="String" />
             <Parameter Name="CANTIDAD_EQUIPOS" Mode="In" Type="Int16" />
           </FunctionImport>
+          <FunctionImport Name="FINALIZAR_TORNEO">
+          <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" ReturnType="Collection(programacion5Model.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result)">
             <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -2411,6 +2417,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="SP_REGISTRAR_TORNEO" FunctionName="programacion5Model.Store.SP_REGISTRAR_TORNEO" />
+          <FunctionImportMapping FunctionImportName="FINALIZAR_TORNEO" FunctionName="programacion5Model.Store.FINALIZAR_TORNEO" />
           <FunctionImportMapping FunctionImportName="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" FunctionName="programacion5Model.Store.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO">
             <ResultMapping>
               <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result">

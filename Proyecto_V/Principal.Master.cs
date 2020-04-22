@@ -109,5 +109,10 @@ namespace Proyecto_V
         {
            // Label1.Text = DateTime.Now.ToString();
         }
+
+        protected void btn_asignar_jugador_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frm_jug_x_equipo.aspx");
+        }
     }
 }

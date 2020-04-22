@@ -163,6 +163,7 @@
     <Content Include="Forms\frm_Reportes.aspx" />
     <Content Include="Forms\frm_Tabla Acumulada.aspx" />
     <Content Include="Forms\frm_Tabla de Posiciones.aspx" />
+    <Content Include="Forms\frm_TorneosFinalizados.aspx" />
     <Content Include="Forms\frm_Ultimos Campeones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -447,6 +448,13 @@
     </Compile>
     <Compile Include="Forms\frm_Tabla de Posiciones.aspx.designer.cs">
       <DependentUpon>frm_Tabla de Posiciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_TorneosFinalizados.aspx.cs">
+      <DependentUpon>frm_TorneosFinalizados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_TorneosFinalizados.aspx.designer.cs">
+      <DependentUpon>frm_TorneosFinalizados.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_Ultimos Campeones.aspx.cs">
       <DependentUpon>frm_Ultimos Campeones.aspx</DependentUpon>

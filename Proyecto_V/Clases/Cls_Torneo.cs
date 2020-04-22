@@ -175,6 +175,7 @@ namespace Proyecto_V.Clases
         {
             string mensaje = "";
             int cont = 0;
+            int filas = 0;
             //consultamos  LOS JUEGOS 
             List<SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result> lista_partidos =
                 this.ModeloDB.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO(this.idConsecutivo_Torneo).ToList();
@@ -190,6 +191,24 @@ namespace Proyecto_V.Clases
                     }
                 }
                 break;
+            }
+            //VALIDAMOS EL MENSAJE SI ESTA VACIO ACTUALIZAMOS EL TORNEO
+            if (mensaje == "")
+            {
+                try
+                {
+                    filas = this.ModeloDB.FINALIZAR_TORNEO(this.idConsecutivo_Torneo);
+                }
+                catch (Exception sql)
+                {
+                    mensaje = sql.Message;
+                 
+                }
+                //VALIDAMOS LAS FILAS
+                if (filas > 0)
+                {
+                    mensaje = "El torneo finalizó con existo";
+                }
             }
 
             return mensaje;
