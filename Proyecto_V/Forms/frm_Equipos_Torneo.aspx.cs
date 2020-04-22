@@ -75,16 +75,11 @@ namespace Proyecto_V.Forms
             ////ENVIAMOS LOS DATOS
             if (_equipos.pc_equipo_x_torneo(lista_datos_equipo) > 0)
             {
-                pc_capturar_datos_equipo();
-                switch (_equipos.pc_registrar_equipo())
-                {
-                    case -100:
-                        lbl_mensaje.Text = "Equipo agregado al torneo registrado";
-                        break;
-                    default:
-                        lbl_mensaje.Text = "Ocurrio un error";
-                        break;
-                }
+                lbl_mensaje.Text = "Se inserto correctamente";
+            }
+            else
+            {
+                lbl_mensaje.Text = "No se insertó el equipo, posiblemente ya se encuentre regitrado en este torneo ó el torneo no admite mas equipos";
             }
 
         }
