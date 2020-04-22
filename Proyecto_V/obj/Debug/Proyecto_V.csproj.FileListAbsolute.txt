@@ -319,7 +319,6 @@ C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyec
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csproj.CopyComplete
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.dll
 C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.pdb
-C:\Users\Andrey Azofeifa\Source\Repos\Proyecto-Final\Proyecto_V\obj\Debug\Proyecto_V.csprojAssemblyReference.cache
 C:\Users\Bryan\Desktop\Proyecto\Proyecto_V\bin\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Bryan\Desktop\Proyecto\Proyecto_V\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Bryan\Desktop\Proyecto\Proyecto_V\bin\SqlServerTypes\x86\msvcr120.dll

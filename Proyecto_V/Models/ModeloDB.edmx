@@ -604,6 +604,9 @@
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
+        <Function Name="SP_CONSULTAR_CAMPEON" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+        </Function>
         <Function Name="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
         </Function>
@@ -631,6 +634,7 @@
         <Function Name="SP_CONSULTAR_PROVINCIAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SP_CONSULTAR_TORNEOS_FINALIZADOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -651,6 +655,9 @@
           <Parameter Name="CEDULA" Type="char" Mode="In" />
         </Function>
         <Function Name="SP_ELIMINAR_TORNEOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GOLEADOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID_TORNEO" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -1593,6 +1600,13 @@
           <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO" ReturnType="Collection(programacion5Model.SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result)">
+          <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CONSULTAR_TORNEOS_FINALIZADOS" ReturnType="Collection(programacion5Model.SP_CONSULTAR_TORNEOS_FINALIZADOS_Result)" />
+          <FunctionImport Name="SP_CONSULTAR_CAMPEON" ReturnType="Collection(programacion5Model.SP_CONSULTAR_CAMPEON_Result)">
+          <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GOLEADOR" ReturnType="Collection(programacion5Model.SP_GOLEADOR_Result)">
             <Parameter Name="ID_TORNEO" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -1939,6 +1953,25 @@
           <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
           <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
           <Property Type="Int32" Name="JUEGOS" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CONSULTAR_TORNEOS_FINALIZADOS_Result">
+          <Property Type="Int32" Name="C_CONSECUTIVO" Nullable="false" />
+          <Property Type="Int32" Name="C_FK_USUARIO" Nullable="false" />
+          <Property Type="DateTime" Name="C_FECHA_INICIAL" Nullable="false" />
+          <Property Type="DateTime" Name="C_FECHA_FINAL" Nullable="false" />
+          <Property Type="String" Name="C_NOMBRE_TORNEO" Nullable="false" MaxLength="60" />
+          <Property Type="Int16" Name="C_CANT_EQUIPOS" Nullable="false" />
+          <Property Type="Boolean" Name="C_ESTADO" Nullable="false" />
+          <Property Type="Boolean" Name="C_FINALIZADO" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_CONSULTAR_CAMPEON_Result">
+          <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
+          <Property Type="Int32" Name="PUNTOS" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GOLEADOR_Result">
+          <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="182" />
+          <Property Type="String" Name="C_NOMBRE_EQUIPO" Nullable="false" MaxLength="60" />
+          <Property Type="Int32" Name="GOLES" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2424,6 +2457,37 @@
                 <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
                 <ScalarProperty Name="C_NOMBRE_EQUIPO" ColumnName="C_NOMBRE_EQUIPO" />
                 <ScalarProperty Name="JUEGOS" ColumnName="JUEGOS" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_TORNEOS_FINALIZADOS" FunctionName="programacion5Model.Store.SP_CONSULTAR_TORNEOS_FINALIZADOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_TORNEOS_FINALIZADOS_Result">
+                <ScalarProperty Name="C_CONSECUTIVO" ColumnName="C_CONSECUTIVO" />
+                <ScalarProperty Name="C_FK_USUARIO" ColumnName="C_FK_USUARIO" />
+                <ScalarProperty Name="C_FECHA_INICIAL" ColumnName="C_FECHA_INICIAL" />
+                <ScalarProperty Name="C_FECHA_FINAL" ColumnName="C_FECHA_FINAL" />
+                <ScalarProperty Name="C_NOMBRE_TORNEO" ColumnName="C_NOMBRE_TORNEO" />
+                <ScalarProperty Name="C_CANT_EQUIPOS" ColumnName="C_CANT_EQUIPOS" />
+                <ScalarProperty Name="C_ESTADO" ColumnName="C_ESTADO" />
+                <ScalarProperty Name="C_FINALIZADO" ColumnName="C_FINALIZADO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_CONSULTAR_CAMPEON" FunctionName="programacion5Model.Store.SP_CONSULTAR_CAMPEON">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_CONSULTAR_CAMPEON_Result">
+                <ScalarProperty Name="C_NOMBRE_EQUIPO" ColumnName="C_NOMBRE_EQUIPO" />
+                <ScalarProperty Name="PUNTOS" ColumnName="PUNTOS" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GOLEADOR" FunctionName="programacion5Model.Store.SP_GOLEADOR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="programacion5Model.SP_GOLEADOR_Result">
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="C_NOMBRE_EQUIPO" ColumnName="C_NOMBRE_EQUIPO" />
+                <ScalarProperty Name="GOLES" ColumnName="GOLES" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -213,6 +213,25 @@ namespace Proyecto_V.Clases
 
             return mensaje;
         }
+
+        //TORNEOS FINALIZADOS
+        public List<SP_CONSULTAR_TORNEOS_FINALIZADOS_Result> pc_torneos_finalizados()
+        {
+            return this.ModeloDB.SP_CONSULTAR_TORNEOS_FINALIZADOS().ToList();
+        }
+
+        //CONSULTAR CAMPEON
+        public List<SP_CONSULTAR_CAMPEON_Result> pc_consultar_campeon()
+        {
+            return this.ModeloDB.SP_CONSULTAR_CAMPEON( this.idConsecutivo_Torneo ).ToList();
+        }
+
+        //CONSULTAMOS EL GOLEADOR
+        public List<SP_GOLEADOR_Result> pc_consultar_goleador()
+        {
+            return this.ModeloDB.SP_GOLEADOR( this.idConsecutivo_Torneo ).ToList();
+        }
+
         #endregion
     }
 }

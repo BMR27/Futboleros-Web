@@ -689,5 +689,28 @@ namespace Proyecto_V.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result>("SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO", iD_TORNEOParameter);
         }
+    
+        public virtual ObjectResult<SP_CONSULTAR_TORNEOS_FINALIZADOS_Result> SP_CONSULTAR_TORNEOS_FINALIZADOS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_TORNEOS_FINALIZADOS_Result>("SP_CONSULTAR_TORNEOS_FINALIZADOS");
+        }
+    
+        public virtual ObjectResult<SP_CONSULTAR_CAMPEON_Result> SP_CONSULTAR_CAMPEON(Nullable<int> iD_TORNEO)
+        {
+            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
+                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
+                new ObjectParameter("ID_TORNEO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_CONSULTAR_CAMPEON_Result>("SP_CONSULTAR_CAMPEON", iD_TORNEOParameter);
+        }
+    
+        public virtual ObjectResult<SP_GOLEADOR_Result> SP_GOLEADOR(Nullable<int> iD_TORNEO)
+        {
+            var iD_TORNEOParameter = iD_TORNEO.HasValue ?
+                new ObjectParameter("ID_TORNEO", iD_TORNEO) :
+                new ObjectParameter("ID_TORNEO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GOLEADOR_Result>("SP_GOLEADOR", iD_TORNEOParameter);
+        }
     }
 }

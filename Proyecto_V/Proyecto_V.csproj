@@ -164,6 +164,7 @@
     <Content Include="Forms\frm_Tabla Acumulada.aspx" />
     <Content Include="Forms\frm_Tabla de Posiciones.aspx" />
     <Content Include="Forms\frm_TorneosFinalizados.aspx" />
+    <Content Include="Forms\frm_torneo_finalizado.aspx" />
     <Content Include="Forms\frm_Ultimos Campeones.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -456,6 +457,13 @@
     <Compile Include="Forms\frm_TorneosFinalizados.aspx.designer.cs">
       <DependentUpon>frm_TorneosFinalizados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm_torneo_finalizado.aspx.cs">
+      <DependentUpon>frm_torneo_finalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_torneo_finalizado.aspx.designer.cs">
+      <DependentUpon>frm_torneo_finalizado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm_Ultimos Campeones.aspx.cs">
       <DependentUpon>frm_Ultimos Campeones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -490,6 +498,9 @@
     <Compile Include="Models\RetornaProvincias_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SP_CONSULTAR_CAMPEON_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SP_CONSULTAR_CANT_PARTIDOS_X_TORNEO_EQUIPO_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
@@ -521,6 +532,12 @@
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SP_CONSULTAR_PROVINCIAS_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_CONSULTAR_TORNEOS_FINALIZADOS_Result.cs">
+      <DependentUpon>ModeloDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SP_GOLEADOR_Result.cs">
       <DependentUpon>ModeloDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
