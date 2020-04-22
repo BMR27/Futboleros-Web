@@ -79,7 +79,7 @@ namespace Proyecto_V.Forms
             }
             else
             {
-                lbl_mensaje.Text = "No se insertó el equipo, posiblemente ya se encuentre regitrado en este torneo ó el torneo no admite mas equipos";
+                lbl_mensaje.Text = "No se insertó el equipo, posiblemente ya se encuentre registrado en este torneo ó el torneo no admite mas equipos";
             }
 
         }
